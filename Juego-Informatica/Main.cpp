@@ -1,5 +1,5 @@
 #include "glut.h"
-
+//Hola
 void Dibujar() {
 
 	glFlush();
