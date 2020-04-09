@@ -144,6 +144,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="src\Mundo.cpp" />
+    <ClCompile Include="src\Personaje.cpp" />
+    <ClCompile Include="src\Plataformas.cpp" />
+    <ClCompile Include="src\Vector2D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Mundo.h" />
+    <ClInclude Include="src\Personaje.h" />
+    <ClInclude Include="src\Plataformas.h" />
+    <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
