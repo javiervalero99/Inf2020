@@ -15,6 +15,7 @@ public:
 	Vector2D velocidad;
 	Vector2D aceleracion;
 	void Dibuja();
+	Vector2D GetPosicion(); 
 	void Ataque_Basico();
 	void Salto(unsigned char key);
 	void TeclaDown(unsigned char key );

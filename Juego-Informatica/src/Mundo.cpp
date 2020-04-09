@@ -13,7 +13,7 @@ void Mundo::RotarOjo()
 void Mundo::Dibuja()
 {
 	gluLookAt(x_ojo, y_ojo, z_ojo,  // posicion del ojo
-			0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
+			hombre.GetPosicion().x, hombre.GetPosicion().y, 0.0, // hacia que punto mira  (donde este el personaje, quizas crear una clase camara) 
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
@@ -41,8 +41,8 @@ void Mundo::Mueve(float t)
 
 void Mundo::Inicializa()
 {
-	x_ojo=0;
-	y_ojo=10;
+	x_ojo=hombre.GetPosicion().x;
+	y_ojo=10 + hombre.GetPosicion().y;
 	z_ojo=-20;
 }
 

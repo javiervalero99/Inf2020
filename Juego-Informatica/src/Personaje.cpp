@@ -32,6 +32,18 @@ void Personaje::Dibuja()
 	glPopMatrix();
 }
 
+
+Vector2D Personaje::GetPosicion() {
+	Vector2D pos;
+	pos.x =posicion.x;
+	pos.y= posicion.y;
+
+	return pos;
+
+}
+
+
+
 void Personaje::Ataque_Basico(){
 
 }
