@@ -1,7 +1,7 @@
 #include "Personaje.h"
 #include <math.h>
 #include "glut.h"
-
+//puta
 #define SPACEBAR 32
 
 Personaje::Personaje()
