@@ -1,4 +1,5 @@
 #include "Mundo.h"
+#include <stdio.h>
 #include "glut.h"
 Mundo mundo;
 float t = 0;
@@ -8,6 +9,7 @@ float t = 0;
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
+void OnKeyboardUp(unsigned char key, int x, int y);
 
 int main(int argc, char* argv[])
 {
@@ -30,7 +32,7 @@ int main(int argc, char* argv[])
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
-
+	glutKeyboardUpFunc(OnKeyboardUp);
 	mundo.Inicializa();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
@@ -55,11 +57,16 @@ void OnDraw(void)
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
+
 	//poner aqui el código de teclado
-	if (key != 0)
-		mundo.TeclaDown(key);
-	else if (key == 0)
-		mundo.TeclaUp(key);
+	mundo.TeclaDown(key);
+
+	glutPostRedisplay();
+}
+void OnKeyboardUp(unsigned char key, int x_t, int y_t) {
+	t = 0;
+	mundo.TeclaUp(key);
+
 	glutPostRedisplay();
 }
 void glutKeyboardUpFunc(unsigned char key, int x_t, int y_t)
@@ -77,3 +84,4 @@ void OnTimer(int value)
 	glutTimerFunc(25, OnTimer, 0);
 	glutPostRedisplay();
 }
+
