@@ -6,7 +6,9 @@ private:
 	int salud;
 	float tiempo;
 public:
-	float VelocNeg;
+	int r, q; //r otorga la validación para cada operacion de direccion
+	//q cambia la sensibilidad de desplazamiento cuando saltas (permite movimientos más rapidos)
+	float s, m; //s es el incremento cuando TeclaDown y m es el incremento cuando TeclaUp (contario a TeclaDown)
 	bool valid_salto;
 	int i = 0;
 	Personaje();
