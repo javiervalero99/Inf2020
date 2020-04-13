@@ -1,12 +1,9 @@
 #include "Vector2D.h"
 
 Vector2D::Vector2D(float xv, float yv)
-{
-}
+{}
 
-Vector2D::~Vector2D()
-{
-}
+Vector2D::~Vector2D(){}
 
 float Vector2D::modulo()
 {

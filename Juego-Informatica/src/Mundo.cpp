@@ -12,8 +12,8 @@ void Mundo::RotarOjo()
 }
 void Mundo::Dibuja()
 {
-	gluLookAt(x_ojo, y_ojo, z_ojo,  // posicion del ojo
-			0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
+	gluLookAt(Hombre.GetPosicion().x, Hombre.GetPosicion().y, z_ojo,  // posicion del ojo
+			Hombre.GetPosicion().x, Hombre.GetPosicion().y, 0.0, // hacia que punto mira  (donde este el personaje, quizas crear una clase camara) 
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
@@ -30,32 +30,38 @@ void Mundo::Dibuja()
 	glEnd();
 	glEnable(GL_LIGHTING);
 	glTranslated(0, 1, 0);
-	hombre.Dibuja();
+	//Hombre.Dibuja();			//Dibuja el cuadrado que representa al hombre
+	Goku.Dibuja();
+	PutoSofrito.Dibuja();
 }
 
 
 void Mundo::Mueve(float t)
 {
-	hombre.Mueve(t);
+	Hombre.Mueve(t);
+	Goku.ActualizarPos(Hombre.posicion.x, Hombre.posicion.y);
+
 }
 
 void Mundo::Inicializa()
 {
-	x_ojo=0;
-	y_ojo=10;
+	x_ojo=Hombre.GetPosicion().x;
+	y_ojo=10 + Hombre.GetPosicion().y;
 	z_ojo=-20;
+	Goku.Inicializa("D:/@Descargas/Goku1.png", Hombre.posicion.x, Hombre.posicion.y, 3, 3);
+	PutoSofrito.Inicializa("D:/@Descargas/PutoSofrito1.png", 0, 1, 3, 3);
 }
 
 void Mundo::TeclaUp(unsigned char key)
 {
 
-	hombre.TeclaUp(key);
+	Hombre.TeclaUp(key);
 	
 }
 void Mundo::TeclaDown(unsigned char key)
 {
 
-	hombre.TeclaDown(key);	
+	Hombre.TeclaDown(key);	
 }
 //Asi lo tengo yo para la práctica 4 y me funciona. Lo único es que cuando sueltas la tecla sigue moviendose a la izquierda
 /*void Mundo::TeclaEspecial(unsigned char key)
@@ -63,10 +69,10 @@ void Mundo::TeclaDown(unsigned char key)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		hombre.setVel(-5.0f, 0.0f);
+		Hombre.setVel(-5.0f, 0.0f);
 		break;
 	case GLUT_KEY_RIGHT:
-		hombre.setVel(5.0f, 0.0f);
+		Hombre.setVel(5.0f, 0.0f);
 		break;
 	}
 }
