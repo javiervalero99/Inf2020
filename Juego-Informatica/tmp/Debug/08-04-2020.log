@@ -1,5 +1,9 @@
 ﻿  Main.cpp
   Imagen.cpp
   Mundo.cpp
+  Personaje.cpp
+  Plataformas.cpp
+  Vector2D.cpp
   Generando código...
-  08-04-2020.vcxproj -> D:\GitHub\Inf2020\Juego-Informatica\bin\08-04-2020.exe
+  LINK : no se encontró D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  08-04-2020.vcxproj -> D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe

@@ -9,6 +9,7 @@ public:
 	int r, q; //r otorga la validación para cada operacion de direccion
 	//q cambia la sensibilidad de desplazamiento cuando saltas (permite movimientos más rapidos)
 	float s, m; //s es el incremento cuando TeclaDown y m es el incremento cuando TeclaUp (contario a TeclaDown)
+	int estados[2] = { 0 ,0 }; //maquina de estados para a y d
 	bool valid_salto;
 	int i = 0;
 	Personaje();
