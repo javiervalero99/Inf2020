@@ -10,6 +10,7 @@ void Mundo::RotarOjo()
 	x_ojo=dist*cos(ang);
 	z_ojo=dist*sin(ang);
 }
+
 void Mundo::Dibuja()
 {
 	gluLookAt(Hombre.GetPosicion().x, Hombre.GetPosicion().y, z_ojo,  // posicion del ojo
@@ -35,12 +36,11 @@ void Mundo::Dibuja()
 	PutoSofrito.Dibuja();
 }
 
-
 void Mundo::Mueve(float t)
 {
 	Hombre.Mueve(t);
 	Goku.ActualizarPos(Hombre.posicion.x, Hombre.posicion.y);
-
+	Goku.ActualizarEstado();
 }
 
 void Mundo::Inicializa()
@@ -48,15 +48,13 @@ void Mundo::Inicializa()
 	x_ojo=Hombre.GetPosicion().x;
 	y_ojo=10 + Hombre.GetPosicion().y;
 	z_ojo=-20;
-	Goku.Inicializa("D:/@Descargas/Goku1.png", Hombre.posicion.x, Hombre.posicion.y, 3, 3);
+	Goku.Inicializa("D:/@Descargas/GokuOndaVital.png", 8, 1, 1, true, Hombre.posicion.x, Hombre.posicion.y, 3, 4);
 	PutoSofrito.Inicializa("D:/@Descargas/PutoSofrito1.png", 0, 1, 3, 3);
 }
 
 void Mundo::TeclaUp(unsigned char key)
 {
-
 	Hombre.TeclaUp(key);
-	
 }
 void Mundo::TeclaDown(unsigned char key)
 {

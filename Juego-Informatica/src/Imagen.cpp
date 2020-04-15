@@ -18,5 +18,4 @@ void Imagen::Dibuja()
 {	
 	ETSIDI::Sprite sprite(TexturePath, PosX, PosY,Ancho, Alto);
 	sprite.draw();
-	sprite.loop();
 }

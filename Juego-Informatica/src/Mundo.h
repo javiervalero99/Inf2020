@@ -1,5 +1,6 @@
 #include "Personaje.h"
 #include "Imagen.h"
+#include "ImagenBucle.h"
 
 class Mundo
 {
@@ -16,6 +17,6 @@ public:
 	float y_ojo;
 	float z_ojo;
 	Personaje Hombre;
-	Imagen Goku;
+	ImagenBucle Goku;
 	Imagen PutoSofrito;
 };

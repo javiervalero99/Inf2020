@@ -1,6 +1,7 @@
 #include "Personaje.h"
 #include <math.h>
 #include <stdio.h>
+#include <cmath>
 #include "glut.h"
 
 #define SPACEBAR 32
@@ -30,20 +31,11 @@ void Personaje::Mueve(float t)
 	posicion.y += velocidad.y * t + (1 / 2) * aceleracion.y * pow(t, 2);
 	velocidad.y += aceleracion.y * t;*/
 	//
-	if ((r == 1) && (velocidad.x <= 10.0))
-		velocidad.x += s;
-	if ((r == 2) && (velocidad.x > 0))
-		velocidad.x -= m;
-	if ((r == 3) && (velocidad.x >= -10.0))
-		velocidad.x -= s;
-	if ((r == 4) && (velocidad.x < 0))
-		velocidad.x += m;
-	if (((r == 2) && (velocidad.x <= 0)) || ((r == 4) && (velocidad.x >= 0))) {
-		velocidad.x = 0;
-		r = 0;
-	}
+
+
 	//printf("r=%d y velocidad=%f\n", r, velocidad.x);
-	posicion.x += velocidad.x * 0.025;
+	posicion.x += velocidad.x * 0.025 + (1 / 2) * aceleracion.x * pow(0.025, 2);
+	velocidad.x -= aceleracion.x * 0.025;
 	//salto
 	velocidad.y -= aceleracion.y * 0.025;
 	posicion.y += velocidad.y * 0.025 - (1 / 2) * aceleracion.y * pow(0.025, 2);
@@ -54,6 +46,31 @@ void Personaje::Mueve(float t)
 		q = 0;
 		valid_salto = true;
 	}
+
+	if (velocidad.x > 10)
+		velocidad.x = 10;
+	if (velocidad.x < -10)
+		velocidad.x = -10;
+
+	//compensacion de la acerlacion
+	if (abs(velocidad.x) < 2 && aceleracion.x != 0)
+	{
+		velocidad.x = 0;
+		aceleracion.x = 0;
+	}
+	// 
+	//gestiom maquina de estados 
+	if (estados[0] == estados[1]) {
+		if (velocidad.x < 0)
+			aceleracion.x = -12;
+		if (velocidad.x > 0)
+			aceleracion.x = 12;
+
+	}
+	else if (estados[0] == 1 && estados[1] == 0)
+		velocidad.x = 10;
+	else if (estados[0] == 0 && estados[1] == 1)
+		velocidad.x = -10;
 }
 
 void Personaje::Dibuja()
@@ -94,40 +111,24 @@ void Personaje::TeclaDown(unsigned char f) { //esta va con OnKeyboardDown
 		q = 1;
 		valid_salto = false;
 	}
-	if (f == 'a') {
-		r = 1;
+	if (f == 'a')
+		estados[0] = 1;
+
+	if (f == 'd')
+		estados[1] = 1;
+	if (posicion.y == 0)
+	{
+		valid_salto = true;
 
 	}
-	if (f == 'd') {
-		r = 3;
 
-	}
-	if (q != 0) {
-		s = 2.6;
-		m = 3;
-	}
-	if (q == 0) {
-		if ((f == 'a') || (f == 'd')) {
-			s = 0.6;
-			m = 1.0;
-		}
-
-	}
-	if (f == 'k') {
-		while (1) {
-		}
-	}
 };
 
 
 void Personaje::TeclaUp(unsigned char f) { //esta va con glutKeyboardUpFunc
-	if (f == 'a') {
-		r = 2;
-	}
-	if (f == 'd') {
-		r = 4;
-	}
-
-
+	if (f == 'a')
+		estados[0] = 0;
+	if (f == 'd')
+		estados[1] = 0;
 
 };

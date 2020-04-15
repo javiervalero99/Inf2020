@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\Imagen.cpp" />
+    <ClCompile Include="src\ImagenBucle.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Personaje.cpp" />
     <ClCompile Include="src\Plataformas.cpp" />
@@ -152,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Imagen.h" />
+    <ClInclude Include="src\ImagenBucle.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Personaje.h" />
     <ClInclude Include="src\Plataformas.h" />
