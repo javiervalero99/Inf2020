@@ -5,7 +5,7 @@ void ImagenBucle::Inicializa(const char* texturePath,int columnas, int filas, bo
 	strcpy_s(TexturePath, texturePath);
 	Columnas = columnas;
 	Filas = filas;
-	FPS = fps;		//40FPS //20FPS //10FPS Múltiplos de 40
+	frecuencia_actualizacion = fps;
 	Repeticion = repeticion;
 	PosX = x;
 	PosY = y;
@@ -19,16 +19,16 @@ void ImagenBucle::ActualizarPos(float x, float y) {
 	PosY = y;
 }
 
-void ImagenBucle::ActualizarEstado()	//Se realiza 40 veces por segundo
+void ImagenBucle::Actualizar40FPS()	//Se realiza 40 veces por segundo
 {	
-	Estado = Estado + 0.25;
+	Estado = Estado + 1;		//Se varia el 1 para cambiar la velocidad
 	if (Estado > (Filas * Columnas))
 		Estado = 0;
 }
 
 void ImagenBucle::Dibuja()
 {
-	ETSIDI::SpriteSequence spritesecuence(TexturePath, Columnas, Filas, FPS, Repeticion, PosX, PosY, Ancho, Alto, Estado);
+	ETSIDI::SpriteSequence spritesecuence(TexturePath, Columnas, Filas, frecuencia_actualizacion, Repeticion, PosX, PosY, Ancho, Alto, Estado);
 		spritesecuence.draw();
 		spritesecuence.loop();
 }

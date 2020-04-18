@@ -40,7 +40,7 @@ void Mundo::Mueve(float t)
 {
 	Hombre.Mueve(t);
 	Goku.ActualizarPos(Hombre.posicion.x, Hombre.posicion.y);
-	Goku.ActualizarEstado();
+	Goku.Actualizar40FPS();
 }
 
 void Mundo::Inicializa()
@@ -48,7 +48,7 @@ void Mundo::Inicializa()
 	x_ojo=Hombre.GetPosicion().x;
 	y_ojo=10 + Hombre.GetPosicion().y;
 	z_ojo=-20;
-	Goku.Inicializa("D:/@Descargas/GokuOndaVital.png", 8, 1, 1, true, Hombre.posicion.x, Hombre.posicion.y, 3, 4);
+	Goku.Inicializa("D:/@Descargas/GokuOndaVital.png", 8, 1, 0.1, true, Hombre.posicion.x, Hombre.posicion.y, 3, 4);
 	PutoSofrito.Inicializa("D:/@Descargas/PutoSofrito1.png", 0, 1, 3, 3);
 }
 
