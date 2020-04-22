@@ -21,7 +21,7 @@ void ImagenBucle::ActualizarPos(float x, float y) {
 
 void ImagenBucle::Actualizar40FPS()	//Se realiza 40 veces por segundo
 {	
-	Estado = Estado + 1;		//Se varia el 1 para cambiar la velocidad
+	Estado = Estado + 0.2;		//Se varia el 1 para cambiar la velocidad
 	if (Estado > (Filas * Columnas))
 		Estado = 0;
 }

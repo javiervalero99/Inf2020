@@ -1,2 +1,5 @@
-﻿  ImagenBucle.cpp
+﻿  Mundo.cpp
+D:\GitHub\Inf2020\Juego-Informatica\src\Mundo.cpp(51,18): warning C4129: 'S': secuencia de escape de carácter no reconocida
+D:\GitHub\Inf2020\Juego-Informatica\src\Mundo.cpp(52,25): warning C4129: 'S': secuencia de escape de carácter no reconocida
+D:\GitHub\Inf2020\Juego-Informatica\src\Mundo.cpp(53,21): warning C4129: 'C': secuencia de escape de carácter no reconocida
   08-04-2020.vcxproj -> D:\GitHub\Inf2020\Juego-Informatica\bin\08-04-2020.exe

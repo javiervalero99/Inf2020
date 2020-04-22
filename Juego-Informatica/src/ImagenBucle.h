@@ -6,7 +6,7 @@
 
 class ImagenBucle {
 	friend class Personaje;
-private:
+public:
 	char TexturePath[100];
 	int Columnas;
 	int Filas;

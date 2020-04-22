@@ -1,6 +1,7 @@
 #include "Personaje.h"
 #include "Imagen.h"
 #include "ImagenBucle.h"
+#include "ETSIDI.h"
 
 class Mundo
 {

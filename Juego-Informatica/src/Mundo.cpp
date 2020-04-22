@@ -48,8 +48,9 @@ void Mundo::Inicializa()
 	x_ojo=Hombre.GetPosicion().x;
 	y_ojo=10 + Hombre.GetPosicion().y;
 	z_ojo=-20;
-	Goku.Inicializa("D:/@Descargas/GokuOndaVital.png", 8, 1, 0.1, true, Hombre.posicion.x, Hombre.posicion.y, 3, 4);
-	PutoSofrito.Inicializa("D:/@Descargas/PutoSofrito1.png", 0, 1, 3, 3);
+	Goku.Inicializa("\Sprites/GokuOndaVital.png", 8, 1, 0.1, true, Hombre.posicion.x, Hombre.posicion.y, 3, 4);
+	PutoSofrito.Inicializa("\Sprites/PutoSofrito1.png", 0, 1, 3, 3);
+	ETSIDI::playMusica("\Crimson_Nights_Track_02.mp3", true);
 }
 
 void Mundo::TeclaUp(unsigned char key)
@@ -58,7 +59,6 @@ void Mundo::TeclaUp(unsigned char key)
 }
 void Mundo::TeclaDown(unsigned char key)
 {
-
 	Hombre.TeclaDown(key);	
 }
 //Asi lo tengo yo para la práctica 4 y me funciona. Lo único es que cuando sueltas la tecla sigue moviendose a la izquierda
