@@ -144,6 +144,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="src\ColliderMap.cpp" />
+    <ClCompile Include="src\CollisionMundo.cpp" />
     <ClCompile Include="src\Imagen.cpp" />
     <ClCompile Include="src\ImagenBucle.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
@@ -152,6 +154,8 @@
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ColliderMap.h" />
+    <ClInclude Include="src\CollisionMundo.h" />
     <ClInclude Include="src\Imagen.h" />
     <ClInclude Include="src\ImagenBucle.h" />
     <ClInclude Include="src\Mundo.h" />

@@ -2,6 +2,8 @@
 #include "Imagen.h"
 #include "ImagenBucle.h"
 #include "ETSIDI.h"
+#include "ColliderMap.h"
+#include "CollisionMundo.h"
 
 class Mundo
 {
@@ -17,7 +19,15 @@ public:
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;
-	Personaje Hombre;
 	ImagenBucle Goku;
 	Imagen PutoSofrito;
+	Personaje Hombre;
+	ColliderMap Principal;
+	ColliderMap Pared1;
+	ColliderMap PlataformaSalto;
+	ColliderMap Pared2;
+	ColliderMap SeccionMiniPlataforma1;
+	ColliderMap SeccionMiniPlataforma2;
+	ColliderMap SeccionMiniPlataforma3;
+	ColliderMap SeccionPlataformaMediana1; //con arbol
 };

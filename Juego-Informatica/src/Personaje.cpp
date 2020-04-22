@@ -1,7 +1,6 @@
 #include "Personaje.h"
-#include <math.h>
-#include <stdio.h>
 #include <cmath>
+#include <stdio.h>
 #include "glut.h"
 
 #define SPACEBAR 32
@@ -11,12 +10,14 @@ Personaje::Personaje()
 	posicion.x = 0;
 	posicion.y = 0;
 	valid_salto = true;
+	cae = false;
 }
 
 void Personaje::SetTiempo(float t)
 {
 	tiempo = t;
 }
+
 
 Personaje::~Personaje()
 {
@@ -40,12 +41,12 @@ void Personaje::Mueve(float t)
 	velocidad.y -= aceleracion.y * 0.025;
 	posicion.y += velocidad.y * 0.025 - (1 / 2) * aceleracion.y * pow(0.025, 2);
 
-	if (posicion.y <= 0) {
+	/*if (posicion.y <= 0) {
 		velocidad.y = 0;
 		aceleracion.y = 0;
 		q = 0;
 		valid_salto = true;
-	}
+	}*/
 
 	if (velocidad.x > 10)
 		velocidad.x = 10;
@@ -62,10 +63,14 @@ void Personaje::Mueve(float t)
 	//gestiom maquina de estados 
 	if (estados[0] == estados[1]) {
 		if (velocidad.x < 0)
-			aceleracion.x = -12;
+			aceleracion.x = -20;
 		if (velocidad.x > 0)
 			aceleracion.x = 12;
 
+	}
+	if (cae == true) {
+		aceleracion.y = 30;
+		cae = false;
 	}
 	else if (estados[0] == 1 && estados[1] == 0)
 		velocidad.x = 10;
@@ -103,11 +108,16 @@ void Personaje::Salto(unsigned char key) {
 }
 
 void Personaje::TeclaDown(unsigned char f) { //esta va con OnKeyboardDown
+	if (posicion.y == 0)
+	{
+		valid_salto = true;
+
+	}
 
 	if ((f == ' ') && (valid_salto == true))
 	{
 		aceleracion.y = 20.0;
-		velocidad.y = 10.0;
+		velocidad.y = 12.5;
 		q = 1;
 		valid_salto = false;
 	}
@@ -116,11 +126,7 @@ void Personaje::TeclaDown(unsigned char f) { //esta va con OnKeyboardDown
 
 	if (f == 'd')
 		estados[1] = 1;
-	if (posicion.y == 0)
-	{
-		valid_salto = true;
 
-	}
 
 };
 
