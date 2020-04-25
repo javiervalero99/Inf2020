@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\ColliderMap.cpp" />
     <ClCompile Include="src\CollisionMundo.cpp" />
@@ -154,6 +155,7 @@
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Enemigo.h" />
     <ClInclude Include="src\ColliderMap.h" />
     <ClInclude Include="src\CollisionMundo.h" />
     <ClInclude Include="src\Imagen.h" />
