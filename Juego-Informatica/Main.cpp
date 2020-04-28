@@ -50,7 +50,7 @@ void OnDraw(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	mundo.Dibuja();
+mundo.Dibuja();
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();

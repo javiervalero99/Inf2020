@@ -121,20 +121,22 @@ void Personaje::TeclaDown(unsigned char f) { //esta va con OnKeyboardDown
 		q = 1;
 		valid_salto = false;
 	}
-	if (f == 'a')
+	if (f == 'a'  || f == 'A')
 		estados[0] = 1;
 
-	if (f == 'd')
-		estados[1] = 1;
+	if (f == 'd' || f == 'D') {
 
+
+		estados[1] = 1;
+	}
 
 };
 
 
 void Personaje::TeclaUp(unsigned char f) { //esta va con glutKeyboardUpFunc
-	if (f == 'a')
+	if (f == 'a' || f == 'A')
 		estados[0] = 0;
-	if (f == 'd')
+	if (f == 'd' || f == 'D')
 		estados[1] = 0;
 
 };

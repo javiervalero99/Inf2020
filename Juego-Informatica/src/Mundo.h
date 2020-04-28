@@ -4,6 +4,7 @@
 #include "ETSIDI.h"
 #include "ColliderMap.h"
 #include "CollisionMundo.h"
+#include "Enemigo.h"
 
 class Mundo
 {
@@ -30,4 +31,5 @@ public:
 	ColliderMap SeccionMiniPlataforma2;
 	ColliderMap SeccionMiniPlataforma3;
 	ColliderMap SeccionPlataformaMediana1; //con arbol
+	Enemigo enemigo;
 };

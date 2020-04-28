@@ -33,6 +33,10 @@ void Mundo::Dibuja()
 	glTranslated(0, 1, 0);
 	Hombre.Dibuja();			//Dibuja el cuadrado que representa al hombre
 	//Goku.Dibuja();
+
+	enemigo.Dibuja();
+
+
 	PutoSofrito.Dibuja();
 	Principal.Dibuja();
 	Pared1.Dibuja();
@@ -57,7 +61,13 @@ void Mundo::Dibuja()
 		Hombre.j++;
 	}
 
-
+	//enemigo
+	bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
+	if (valid9 == false)
+	{
+		enemigo.cae = true;
+		enemigo.j++;
+	}
 
 }
 
@@ -66,6 +76,11 @@ void Mundo::Mueve(float t)
 	Hombre.Mueve(t);
 	Goku.ActualizarPos(Hombre.posicion.x, Hombre.posicion.y);
 	Goku.Actualizar40FPS();
+	enemigo.Mueve(t);
+
+
+	//enemigo
+	enemigo.Persigue(Hombre);
 }
 
 void Mundo::Inicializa()
