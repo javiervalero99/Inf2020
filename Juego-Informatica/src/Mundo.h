@@ -5,10 +5,14 @@
 #include "ColliderMap.h"
 #include "CollisionMundo.h"
 #include "Enemigo.h"
+#include "MenuPrincipal.h"
+#include "Opcion_Menu.h"
 
 class Mundo
 {
 public: 
+	Mundo();
+	virtual ~Mundo();
 	void Tecla(unsigned char key);
 	void Inicializa();
 	void RotarOjo();
@@ -16,10 +20,12 @@ public:
 	void Dibuja();
 	void TeclaUp(unsigned char key);
 	void TeclaDown(unsigned char key);
+	void ClickDch(int state, int x, int y);
 
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;
+	bool menuDestruido;
 	ImagenBucle Goku;
 	Imagen PutoSofrito;
 	Personaje Hombre;
@@ -32,4 +38,5 @@ public:
 	ColliderMap SeccionMiniPlataforma3;
 	ColliderMap SeccionPlataformaMediana1; //con arbol
 	Enemigo enemigo;
+	MenuPrincipal menu;
 };

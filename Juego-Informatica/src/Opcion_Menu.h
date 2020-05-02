@@ -5,7 +5,7 @@
 class Opcion_Menu
 {
 public:
-	Opcion_Menu();
+	Opcion_Menu(Vector2D arr, Vector2D ab);
 	~Opcion_Menu();
 	void Dibujar();
 	void SetID(int ID);
@@ -17,6 +17,7 @@ private:
 	int Identificador;
 	unsigned int red, green, blue;		//Color de la opcion.
 	float largo, alto;
-	Vector2D EsquinasRecuadro;		//Esquinas del recuadro.
+	Vector2D Arriba;//Esquinas del recuadro.
+	Vector2D Abajo;
 };
 
