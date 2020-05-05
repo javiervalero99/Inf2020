@@ -7,7 +7,7 @@
 #include "Enemigo.h"
 #include "MenuPrincipal.h"
 #include "Opcion_Menu.h"
-
+#include "HUD.h"
 class Mundo
 {
 public: 
@@ -39,4 +39,5 @@ public:
 	ColliderMap SeccionPlataformaMediana1; //con arbol
 	Enemigo enemigo;
 	MenuPrincipal menu;
+	HUD hud;
 };

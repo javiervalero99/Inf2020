@@ -93,6 +93,10 @@ void Mundo::Dibuja()
 			enemigo.j++;
 		}
 	}
+
+	hud.SetPos(Hombre);
+	hud.Dibuja();
+
 }
 
 void Mundo::Mueve(float t)
