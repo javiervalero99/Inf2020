@@ -7,6 +7,15 @@ ColliderMap::ColliderMap()
 
 }
 
+ColliderMap::ColliderMap(float Arribax, float Arribay, float Abajox, float Abajoy)
+{
+    Arriba.x = Arribax;
+    Arriba.y = Arribay;
+    Abajo.x = Abajox;
+    Abajo.y = Abajoy;
+
+}
+
 void ColliderMap::Dibuja()
 {
 	float centroX = Arriba.x - Abajo.y;

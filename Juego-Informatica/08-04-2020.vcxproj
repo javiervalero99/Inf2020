@@ -149,12 +149,13 @@
     <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\Imagen.cpp" />
     <ClCompile Include="src\ImagenBucle.cpp" />
+    <ClCompile Include="src\InteraccionListas.cpp" />
+    <ClCompile Include="src\ListaCollider.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\MenuPrincipal.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Opcion_Menu.cpp" />
     <ClCompile Include="src\Personaje.cpp" />
-    <ClCompile Include="src\Plataformas.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,11 +165,12 @@
     <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\Imagen.h" />
     <ClInclude Include="src\ImagenBucle.h" />
+    <ClInclude Include="src\InteraccionListas.h" />
+    <ClInclude Include="src\ListaCollider.h" />
     <ClInclude Include="src\MenuPrincipal.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Opcion_Menu.h" />
     <ClInclude Include="src\Personaje.h" />
-    <ClInclude Include="src\Plataformas.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

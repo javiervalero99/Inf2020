@@ -1,9 +1,10 @@
 #pragma once
 #include "vector2D.h"
-
+#include <iostream>
 class ColliderMap {
 public:
 	ColliderMap();
+	ColliderMap(float Arribax, float Arribay, float Abajox, float Abajoy);
 	virtual ~ColliderMap(){}
 	void Inicializa(float arribax, float arribay, float abajox, float abajoy){
 		Arriba.x = arribax; //Arrba y izq
@@ -14,5 +15,6 @@ public:
 	void Dibuja();
 	Vector2D Arriba;
 	Vector2D Abajo;
+	ColliderMap* Encima=NULL;
 	friend class CollisionMundo;
 };

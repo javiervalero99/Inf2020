@@ -1,9 +1,8 @@
 #include "Mundo.h"
-#include <math.h>
-#include <stdio.h>
-#include <string>
 #include "glut.h"
 
+#define route "\Data_Game/Game_Parameters.txt"
+using namespace std;
 Mundo::Mundo()
 {
 	x_ojo = y_ojo = z_ojo = 0;
@@ -62,36 +61,14 @@ void Mundo::Dibuja()
 
 
 		PutoSofrito.Dibuja();
-		Principal.Dibuja();
-		Pared1.Dibuja();
-		PlataformaSalto.Dibuja();
-		Pared2.Dibuja();
-		SeccionMiniPlataforma1.Dibuja();
-		SeccionMiniPlataforma2.Dibuja();
-		SeccionMiniPlataforma3.Dibuja();
-		SeccionPlataformaMediana1.Dibuja();
-		
-		bool valid2 = CollisionMundo::Collision(Hombre, Pared1);
-		bool valid4 = CollisionMundo::Collision(Hombre, Pared2);
-		float valid3 = CollisionMundo::Collision(Hombre, PlataformaSalto);
-		bool valid1 = CollisionMundo::Collision(Hombre, Principal, PlataformaSalto);
-		bool valid5 = CollisionMundo::Collision(Hombre, SeccionMiniPlataforma1);
-		bool valid6 = CollisionMundo::Collision(Hombre, SeccionMiniPlataforma2);
-		bool valid7 = CollisionMundo::Collision(Hombre, SeccionMiniPlataforma3);
-		bool valid8 = CollisionMundo::Collision(Hombre, SeccionPlataformaMediana1);
-		if ((valid2 == false) && (valid1 == false) && (valid4 == false) && (valid5 == false) && (valid6 == false) && (valid7 == false) && (valid8 == false) && (Hombre.j == 0)) {
-
-			Hombre.cae = true;
-			Hombre.j++;
-		}
-
-		//enemigo
-		bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
-		if (valid9 == false)
+		Colliders.Dibuja();
+		InteraccionListas::Collision(Hombre, Colliders);
+		//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
+		/*if (valid9 == false)
 		{
 			enemigo.cae = true;
 			enemigo.j++;
-		}
+		}*/
 	}
 
 	hud.SetPos(Hombre);
@@ -117,17 +94,12 @@ void Mundo::Inicializa()
 	x_ojo = Hombre.GetPosicion().x;
 	y_ojo = 10 + Hombre.GetPosicion().y;
 	z_ojo = -20;
-	Goku.Inicializa("\Sprites/GokuOndaVital.png", 8, 1, 0.1, true, Hombre.posicion.x, Hombre.posicion.y, 3, 4);
-	PutoSofrito.Inicializa("\Sprites/PutoSofrito1.png", 0, 1, 3, 3);
+	//---------------------Sprites---------------------------------
+	Goku.Inicializa("\Data_Game/Sprites/GokuOndaVital.png", 8, 1, 0.1, true, Hombre.posicion.x, Hombre.posicion.y, 3, 4);
+	PutoSofrito.Inicializa("\Data_Game/Sprites/PutoSofrito1.png", 0, 1, 3, 3);
 	//ETSIDI::playMusica("\Crimson_Nights_Track_02.mp3", true);
-	Principal.Inicializa(0, -0.65, -12.0, -5.0);
-	Pared1.Inicializa(-12.0, 2.0, -15.0, -5.0);
-	PlataformaSalto.Inicializa(-6, 5.5, -10, 5);
-	Pared2.Inicializa(-15.0, 8, -30.0, -5.0);
-	SeccionMiniPlataforma1.Inicializa(-32.0, 5, -34.0, 3);
-	SeccionMiniPlataforma2.Inicializa(-36.5, 7, -38, 6);
-	SeccionMiniPlataforma3.Inicializa(-40, 5, -42, 3);
-	SeccionPlataformaMediana1.Inicializa(-45, 7, -52, 0);
+	//--------------------Colliders--------------------------------
+	Leer_Fichero(route);
 	//------------------Menu--------------------------------------
 
 
@@ -173,4 +145,100 @@ void Mundo::ClickDch(int state, int x, int y)
 	if ((x_en_boton_juego == true) && (y_en_boton_juego == true)) {
 		menuDestruido = true;
 	}
+}
+
+void Mundo::Leer_Fichero(const char direction[])
+{
+	int m = 0;
+	char file[100];
+	fstream fichero(direction, ios::in);
+	for (int i = 0; !fichero.eof(); i++) {
+		fichero.getline(file, 100);
+		if (!strcmp(file, "Begin_Collider")) {
+			for (int j = 0; strcmp(file, "End_Collider"); j++) {
+
+				fichero.getline(file, 100);
+				if (strcmp(file, "End_Collider")) {
+					ColliderMap* p = new ColliderMap();
+					Leer_Collider(file, p);
+					Colliders.AddCollider(p);
+				}
+			}
+		}
+	}
+	fichero.close();
+}
+
+bool Mundo::Leer_Collider(char string[], ColliderMap* p)
+{
+	int parametro = 0;
+	int numeros[7];
+	int j = 0;
+	int k = 0;
+	int pointer = 0;
+	bool negativo = false;
+	bool decimales = false;
+	int posicionpunto;
+
+	float num_final;
+	for (int i = 0; string[i] != '\0'; i++) {
+		num_final = 0;
+		pointer = i;
+		if ((string[i] != ' ') && (string[i] != '-')) {
+			for (j = i; (string[j] != ' ') && (string[j] != '\0'); j++) {
+				if ((j - i) > 6) {
+					break;
+				}
+				if (string[j] != '.')
+					numeros[pointer - i] = (static_cast<int>(string[j]) - 48);
+				else {
+					decimales = true;
+					posicionpunto = j;
+					pointer--;
+				}
+				pointer++;
+			}
+			j--;
+			pointer--;
+			for (k = pointer; k > i - 1; k--)
+				num_final += numeros[k - i] * pow(10, (pointer - i) - (k - i));
+
+			if (decimales == true)
+				num_final /= pow(10, j - posicionpunto);
+
+			if (negativo == true)
+				num_final = -num_final;
+
+			switch (parametro) {
+			case 0:
+				p->Arriba.x = num_final;
+				break;
+			case 1:
+				p->Arriba.y = num_final;
+				break;
+			case 2:
+				p->Abajo.x = num_final;
+				break;
+			case 3:
+				p->Abajo.y = num_final;
+				break;
+			}
+			parametro++;
+			i = j;
+			j = 0;
+			decimales = false;
+			for (int m = 0; m < 3; m++) {
+				numeros[m] = 0;
+			}
+			if (parametro == 4) {
+				return true;
+			}
+
+		}
+		if (string[i] == '-')
+			negativo = true;
+		else
+			negativo = false;
+	}
+	return false;
 }

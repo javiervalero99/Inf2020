@@ -1,3 +1,9 @@
+#include <iostream>
+#include <fstream>
+#include <math.h>
+#include <stdio.h>
+#include <string>
+
 #include "Personaje.h"
 #include "Imagen.h"
 #include "ImagenBucle.h"
@@ -8,6 +14,8 @@
 #include "MenuPrincipal.h"
 #include "Opcion_Menu.h"
 #include "HUD.h"
+#include "ListaCollider.h"
+#include "InteraccionListas.h"
 class Mundo
 {
 public: 
@@ -21,7 +29,8 @@ public:
 	void TeclaUp(unsigned char key);
 	void TeclaDown(unsigned char key);
 	void ClickDch(int state, int x, int y);
-
+	void Leer_Fichero(const char[]);
+	bool Leer_Collider(char[], ColliderMap* p);
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;
@@ -29,14 +38,7 @@ public:
 	ImagenBucle Goku;
 	Imagen PutoSofrito;
 	Personaje Hombre;
-	ColliderMap Principal;
-	ColliderMap Pared1;
-	ColliderMap PlataformaSalto;
-	ColliderMap Pared2;
-	ColliderMap SeccionMiniPlataforma1;
-	ColliderMap SeccionMiniPlataforma2;
-	ColliderMap SeccionMiniPlataforma3;
-	ColliderMap SeccionPlataformaMediana1; //con arbol
+	ListaCollider Colliders;
 	Enemigo enemigo;
 	MenuPrincipal menu;
 	HUD hud;

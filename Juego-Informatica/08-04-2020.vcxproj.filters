@@ -13,84 +13,126 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\Collider">
+      <UniqueIdentifier>{2400f523-8fc0-4cde-9b0a-13f267261a57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Imagenes">
+      <UniqueIdentifier>{ca5590af-0a33-4784-a05c-ddc8b11990c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Menu">
+      <UniqueIdentifier>{9b81e829-cd1d-4295-b3ed-58882d6d274e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\InteraccionListas">
+      <UniqueIdentifier>{54865e81-dc79-4cb9-98a7-b561f58bfff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Personaje/Enemigo">
+      <UniqueIdentifier>{775b59cd-1395-4d31-a1b0-f997bada8301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\HUD">
+      <UniqueIdentifier>{fa55b0b8-12a3-4b6f-99a7-c4cf216d3e3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Collider">
+      <UniqueIdentifier>{5b0fa395-3d1b-4821-b3fa-22a2a759de3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\HUD">
+      <UniqueIdentifier>{34d713b7-2430-46b3-be73-c91f1ec323e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Personaje/Enemigo">
+      <UniqueIdentifier>{cf0f84d1-709e-4266-b8e7-f25045d1e8b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Imagenes">
+      <UniqueIdentifier>{03ebc6d1-fab5-4a42-a4dc-418383f76e98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Menu">
+      <UniqueIdentifier>{94ef25a8-11bb-462b-8189-a47476df2849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\InteraccionListas">
+      <UniqueIdentifier>{1ffbde28-d1ed-46b8-876f-b34fb360323a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Mundo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Personaje.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Plataformas.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="src\Vector2D.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Imagen.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ImagenBucle.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ColliderMap.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CollisionMundo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Enemigo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MenuPrincipal.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Opcion_Menu.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\Main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\ColliderMap.cpp">
+      <Filter>Archivos de origen\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CollisionMundo.cpp">
+      <Filter>Archivos de origen\Collider</Filter>
+    </ClCompile>
     <ClCompile Include="src\HUD.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Personaje.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemigo.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Imagen.cpp">
+      <Filter>Archivos de origen\Imagenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ImagenBucle.cpp">
+      <Filter>Archivos de origen\Imagenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaCollider.cpp">
+      <Filter>Archivos de origen\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InteraccionListas.cpp">
+      <Filter>Archivos de origen\InteraccionListas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MenuPrincipal.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Opcion_Menu.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Mundo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Personaje.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Plataformas.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\Vector2D.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Imagen.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ImagenBucle.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\ColliderMap.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Collider</Filter>
     </ClInclude>
     <ClInclude Include="src\CollisionMundo.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaCollider.h">
+      <Filter>Archivos de encabezado\Collider</Filter>
     </ClInclude>
     <ClInclude Include="src\Enemigo.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
     </ClInclude>
-    <ClInclude Include="src\MenuPrincipal.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\ImagenBucle.h">
+      <Filter>Archivos de encabezado\Imagenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Imagen.h">
+      <Filter>Archivos de encabezado\Imagenes</Filter>
     </ClInclude>
     <ClInclude Include="src\Opcion_Menu.h">
+      <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MenuPrincipal.h">
+      <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InteraccionListas.h">
+      <Filter>Archivos de encabezado\InteraccionListas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Personaje.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mundo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\HUD.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\HUD</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
