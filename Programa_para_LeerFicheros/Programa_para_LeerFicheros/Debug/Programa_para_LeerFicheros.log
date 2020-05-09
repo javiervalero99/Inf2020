@@ -1,0 +1,9 @@
+﻿  Main.cpp
+C:\Users\eusvs\source\repos\Programa_para_LeerFicheros\Programa_para_LeerFicheros\Main.cpp(12,13): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+C:\Users\eusvs\source\repos\Programa_para_LeerFicheros\Programa_para_LeerFicheros\Main.cpp(13,15): warning C4129: 'D': secuencia de escape de carácter no reconocida
+C:\Users\eusvs\source\repos\Programa_para_LeerFicheros\Programa_para_LeerFicheros\Main.cpp(57,55): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\eusvs\source\repos\Programa_para_LeerFicheros\Programa_para_LeerFicheros\Main.cpp(64,18): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\eusvs\source\repos\Programa_para_LeerFicheros\Programa_para_LeerFicheros\Main.cpp(67,19): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\eusvs\source\repos\Programa_para_LeerFicheros\Programa_para_LeerFicheros\Main.cpp(70,18): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\eusvs\source\repos\Programa_para_LeerFicheros\Programa_para_LeerFicheros\Main.cpp(73,18): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+  Programa_para_LeerFicheros.vcxproj -> C:\Users\eusvs\source\repos\Programa_para_LeerFicheros\Debug\Programa_para_LeerFicheros.exe
