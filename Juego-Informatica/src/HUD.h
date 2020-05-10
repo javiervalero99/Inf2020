@@ -15,6 +15,6 @@ public:
 	 //meter funcion de los archivos de imagen
 	 void SetPos(Personaje& p);
 	 //consutla arturo
-	 void SetVida(Personaje p);
+	 void SetVida(Personaje& p);
 
 };

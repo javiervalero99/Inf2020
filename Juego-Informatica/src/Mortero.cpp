@@ -25,7 +25,7 @@ void Mortero::Dibuja()
 
 bool Mortero::disparo(float x) //crea la parabola y dice si se ha disparado
 {
-	angulo = (9.8 * x) / (velo0 * velo0);
+	angulo = (9.8 *( x-posicion.x)) / (velo0 * velo0);
 	angulo = (asin(angulo) / 2);
 	velocidad.x = velo0 * cos(angulo);
 	velocidad.y = velo0 * sin(angulo);
@@ -46,9 +46,9 @@ void Mortero::Mueve(float t)
 void Mortero::detona(Personaje& p)
 {
 	Vector2D explosion = p.posicion - posicion;
-	if (explosion.modulo < 3.0);
+	if (explosion.modulo() < 3.0);
 
-	p.SetSalud = p.GetSalud - 2;
+	p.SetSalud( p.GetSalud() - 2);
 }
 
 

@@ -144,8 +144,8 @@ void Personaje::TeclaUp(unsigned char f) { //esta va con glutKeyboardUpFunc
 int Personaje::GetSalud()
 {
 	
-	int	s = salud;
-	return s;
+	
+	return salud;
 }
 void Personaje::SetSalud(int n)
 {
