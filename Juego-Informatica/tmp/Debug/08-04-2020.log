@@ -1,0 +1,16 @@
+﻿  Artillero.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Artillero.cpp(5,8): warning C4101: 'acc': variable local sin referencia
+  HUD.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\HUD.cpp(32,22): error C3867: 'Personaje::GetSalud': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+  Mortero.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mortero.cpp(41,28): error C3867: 'Vector2D::modulo': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mortero.cpp(41,28): error C2446: <': no hay conversión de 'double' en 'float (__thiscall Vector2D::* )(void)'
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mortero.cpp(41,25): message : No existe un contexto en el que sea posible realizar esta conversión
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mortero.cpp(43,29): error C3867: 'Personaje::GetSalud': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mortero.cpp(43,29): error C2296: '-': no es válido; el operando izquierdo es de tipo 'int (__thiscall Personaje::* )(void)'
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mortero.cpp(41,29): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+  Mundo.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(100,18): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(101,25): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(104,15): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  Generando código...

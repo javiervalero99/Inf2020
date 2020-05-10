@@ -53,7 +53,7 @@ Vector2D Enemigo::GetPosicion()
 void Enemigo::Persigue(Personaje& p)
 {
 	// si no hay nada en medio(las disntacias  otra cosa no es mayor ) lo persigue
-	float acc = 5;
+	float acc = 15;
 
 
 	if (acc >= DistanciaPlayer(p))
@@ -69,9 +69,7 @@ void Enemigo::Persigue(Personaje& p)
 
 
 	}
-	else  {//enemigo en modo default; puede implantarse lo que sea
-		patrulla(19, 22);
-	}
+
 
 }
 
@@ -93,21 +91,16 @@ float Enemigo::DistanciaPared()
 	return 0.0f;
 }
 
-void Enemigo::patrulla(ColliderMap& a, ColliderMap& b)
+void Enemigo::ataca(Personaje& p)
 {
-	//sacas la distancia y si colisionas contra a
-	velocidad.x = 3;
-	// si colisiona contra b
-	velocidad.x = -3;
+	float acc = 2;
+	if (DistanciaPlayer(p) < acc) {
+// to-do meterla animacion
+		p.SetSalud(p.GetSalud() - 1);
 
+
+	}
 }
 
-void Enemigo::patrulla(float x1, float x2)
-{
 
-		if (fabs(posicion.x) <= x1)
-	velocidad.x = -3;
-		if (fabs(posicion.x) >= x2)
-		velocidad.x = 3;
 
-}

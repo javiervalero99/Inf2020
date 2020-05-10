@@ -74,6 +74,8 @@ void Mundo::Dibuja()
 	hud.SetPos(Hombre);
 	hud.Dibuja();
 
+	
+
 }
 
 void Mundo::Mueve(float t)

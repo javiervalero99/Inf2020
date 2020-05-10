@@ -19,9 +19,6 @@
     <Filter Include="Archivos de encabezado\Imagenes">
       <UniqueIdentifier>{ca5590af-0a33-4784-a05c-ddc8b11990c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Menu">
-      <UniqueIdentifier>{9b81e829-cd1d-4295-b3ed-58882d6d274e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\InteraccionListas">
       <UniqueIdentifier>{54865e81-dc79-4cb9-98a7-b561f58bfff1}</UniqueIdentifier>
     </Filter>
@@ -48,6 +45,9 @@
     </Filter>
     <Filter Include="Archivos de origen\InteraccionListas">
       <UniqueIdentifier>{1ffbde28-d1ed-46b8-876f-b34fb360323a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Menu">
+      <UniqueIdentifier>{9b81e829-cd1d-4295-b3ed-58882d6d274e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +93,15 @@
     <ClCompile Include="src\Opcion_Menu.cpp">
       <Filter>Archivos de origen\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\Patrullero.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Artillero.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mortero.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector2D.h">
@@ -133,6 +142,15 @@
     </ClInclude>
     <ClInclude Include="src\HUD.h">
       <Filter>Archivos de encabezado\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Patrullero.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Artillero.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mortero.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

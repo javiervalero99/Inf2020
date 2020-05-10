@@ -11,6 +11,7 @@ Personaje::Personaje()
 	posicion.y = 0;
 	valid_salto = true;
 	cae = false;
+	salud = 3;
 }
 
 void Personaje::SetTiempo(float t)
@@ -139,4 +140,16 @@ void Personaje::TeclaUp(unsigned char f) { //esta va con glutKeyboardUpFunc
 	if (f == 'd' || f == 'D')
 		estados[1] = 0;
 
-};
+}
+int Personaje::GetSalud()
+{
+	
+	int	s = salud;
+	return s;
+}
+void Personaje::SetSalud(int n)
+{
+	salud = n;
+}
+
+

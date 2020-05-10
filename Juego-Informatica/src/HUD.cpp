@@ -27,6 +27,23 @@ void HUD::SetPos(Personaje& p)
     local = p.posicion;
 }
 
+void HUD::SetVida(Personaje p)
+{
+   int V = p.GetSalud;
+   switch (V)
+   {
+   case 1: //1 de vida
+
+       break;
+   case 2:  //2 de vida
+
+       break;
+   case 3:  //3 de vida
+
+       break;
+   }
+}
+
 
 
 

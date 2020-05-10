@@ -29,4 +29,7 @@ public:
 	void Salto(unsigned char key);
 	void TeclaDown(unsigned char key);
 	void TeclaUp(unsigned char key);
+	int GetSalud();
+	void SetSalud(int n);
+	
 };

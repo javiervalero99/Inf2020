@@ -24,8 +24,8 @@ public:
 	void Persigue(Personaje& p);
 	float DistanciaPlayer(Personaje& a);
 	float DistanciaPared();
-	void patrulla(ColliderMap& a, ColliderMap& b);
-	void patrulla(float x1, float x2);
+	void ataca(Personaje& p);
+	
 
 	friend class Interaccion;
 };

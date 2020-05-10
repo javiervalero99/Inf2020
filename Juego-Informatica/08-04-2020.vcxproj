@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Artillero.cpp" />
     <ClCompile Include="src\ColliderMap.cpp" />
     <ClCompile Include="src\CollisionMundo.cpp" />
     <ClCompile Include="src\Enemigo.cpp" />
@@ -153,12 +154,15 @@
     <ClCompile Include="src\ListaCollider.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\MenuPrincipal.cpp" />
+    <ClCompile Include="src\Mortero.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Opcion_Menu.cpp" />
+    <ClCompile Include="src\Patrullero.cpp" />
     <ClCompile Include="src\Personaje.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Artillero.h" />
     <ClInclude Include="src\ColliderMap.h" />
     <ClInclude Include="src\CollisionMundo.h" />
     <ClInclude Include="src\Enemigo.h" />
@@ -168,8 +172,10 @@
     <ClInclude Include="src\InteraccionListas.h" />
     <ClInclude Include="src\ListaCollider.h" />
     <ClInclude Include="src\MenuPrincipal.h" />
+    <ClInclude Include="src\Mortero.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Opcion_Menu.h" />
+    <ClInclude Include="src\Patrullero.h" />
     <ClInclude Include="src\Personaje.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>

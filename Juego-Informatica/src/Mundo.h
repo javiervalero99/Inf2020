@@ -16,6 +16,7 @@
 #include "HUD.h"
 #include "ListaCollider.h"
 #include "InteraccionListas.h"
+#include "Patrullero.h"
 class Mundo
 {
 public: 
@@ -39,7 +40,8 @@ public:
 	Imagen PutoSofrito;
 	Personaje Hombre;
 	ListaCollider Colliders;
-	Enemigo enemigo;
+	//Enemigo enemigo;
 	MenuPrincipal menu;
 	HUD hud;
+	Patrullero enemigo;
 };
