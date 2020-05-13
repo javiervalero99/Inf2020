@@ -22,7 +22,7 @@ void ColliderMap::Dibuja()
 	float centroY = Arriba.y - Abajo.y;
   //  glTranslatef(centroX, centroY, 0);
 
-    glColor3f(5.0, 5.0, 5.0);
+    glColor3f(0.0, 5.0, 5.0);
     glBegin(GL_POLYGON);
     glVertex3f(Arriba.x, Arriba.y, 0.0);
     glVertex3f(Arriba.x, Abajo.y, 0.0);

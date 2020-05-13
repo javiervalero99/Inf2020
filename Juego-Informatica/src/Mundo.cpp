@@ -16,11 +16,11 @@ Mundo::~Mundo()
 
 void Mundo::RotarOjo()
 {
-	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
-	float ang=atan2(z_ojo,x_ojo);
-	ang+=0.05f;
-	x_ojo=dist*cos(ang);
-	z_ojo=dist*sin(ang);
+	float dist = sqrt(x_ojo * x_ojo + z_ojo * z_ojo);
+	float ang = atan2(z_ojo, x_ojo);
+	ang += 0.05f;
+	x_ojo = dist * cos(ang);
+	z_ojo = dist * sin(ang);
 }
 
 void Mundo::Dibuja()
@@ -42,26 +42,34 @@ void Mundo::Dibuja()
 
 	//aqui es donde hay que poner el codigo de dibujo
 	//dibujo del suelo
-		glDisable(GL_LIGHTING);
-		glTranslated(0, -1, 0);
-		glBegin(GL_POLYGON);
-		glColor3ub(255, 0, 0);
-		glVertex3f(-5.0f, 0, -5.0f);
-		glVertex3f(-5.0f, 0, 5.0f);
+
 		glColor3ub(255, 255, 0);
-		glVertex3f(5.0f, 0, 5.0f);
-		glVertex3f(5.0f, 0, -5.0f);
-		glEnd();
-		glEnable(GL_LIGHTING);
 		glTranslated(0, 1, 0);
 		Hombre.Dibuja();			//Dibuja el cuadrado que representa al hombre
 		//Goku.Dibuja();
 
 		enemigo.Dibuja();
+		//Para no ver collider
+		glRotatef(180, 0, 1, 0);
+		glTranslated(0, 0, 1);
+		Mapa.Dibuja();
+		glTranslated(0, 0, 1);
+		glRotatef(-180, 0, 1, 0);
+		glTranslated(0, 0, 70);
+		Fondo.Dibuja();
+		glTranslated(0, 0, -70);
 
-
-		PutoSofrito.Dibuja();
+		//Para ver collider
+		/*glRotatef(180, 0, 1, 0);
+		glTranslated(0, 0, -4);
+		Mapa.Dibuja();
+		glTranslated(0, 0, 4);
+		glRotatef(-180, 0, 1, 0);
+		glTranslated(0, 0, 70);
+		Fondo.Dibuja();
+		glTranslated(0, 0, -70);
 		Colliders.Dibuja();
+		*/
 		InteraccionListas::Collision(Hombre, Colliders);
 		//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
 		/*if (valid9 == false)
@@ -74,7 +82,7 @@ void Mundo::Dibuja()
 	hud.SetPos(Hombre);
 	hud.Dibuja();
 
-	
+
 
 }
 
@@ -85,7 +93,6 @@ void Mundo::Mueve(float t)
 		Goku.ActualizarPos(Hombre.posicion.x, Hombre.posicion.y);
 		Goku.Actualizar40FPS();
 		enemigo.Mueve(t);
-		//enemigo
 		enemigo.Persigue(Hombre);
 	}
 }
@@ -93,21 +100,28 @@ void Mundo::Mueve(float t)
 
 void Mundo::Inicializa()
 {
+
+	//---------------Spamear en cualquier parte del mapa--------------
+	Hombre.posicion.x = -11;
+	Hombre.posicion.y = 10.0;
+	//--------------------------------------------------------
+	//menuDestruido = true;
 	x_ojo = Hombre.GetPosicion().x;
 	y_ojo = 10 + Hombre.GetPosicion().y;
 	z_ojo = -20;
 	//---------------------Sprites---------------------------------
 	Goku.Inicializa("\Data_Game/Sprites/GokuOndaVital.png", 8, 1, 0.1, true, Hombre.posicion.x, Hombre.posicion.y, 3, 4);
-	PutoSofrito.Inicializa("\Data_Game/Sprites/PutoSofrito1.png", 0, 1, 3, 3);
+	Mapa.Inicializa("\Data_Game/Nivel1/Mapa.png", 69.3, 4.3, 140, 20);
+	Fondo.Inicializa("\Data_Game/Nivel1/Fondo.png", -60, 4.3, 450, 90);
 	//ETSIDI::playMusica("\Crimson_Nights_Track_02.mp3", true);
 	//--------------------Colliders--------------------------------
 	Leer_Fichero(route);
 	//------------------Menu--------------------------------------
 
 
-Vector2D Arriba(0.2, -0.025);
-Vector2D Abajo(0.1, -0.075);
-	Opcion_Menu* op = new Opcion_Menu(Arriba,Abajo);
+	Vector2D Arriba(0.2, -0.025);
+	Vector2D Abajo(0.1, -0.075);
+	Opcion_Menu* op = new Opcion_Menu(Arriba, Abajo);
 	op->SetColor(0, 155, 75);
 	menu.AddOpcion(op);
 	Vector2D Arriba1(-0.2, -0.025);
@@ -142,8 +156,8 @@ void Mundo::ClickDch(int state, int x, int y)
 {
 	Vector2D boton_juego_Arriba(70, 340);
 	Vector2D boton_juego_Abajo(235, 422);
-	bool x_en_boton_juego = (x >= 70) && (x <= 340);
-	bool y_en_boton_juego= (y <= 422) && (y >= 235);
+	bool x_en_boton_juego = (x >= 70) && (x <= 233);
+	bool y_en_boton_juego = (y >= 340) && (y <= 425);
 	if ((x_en_boton_juego == true) && (y_en_boton_juego == true)) {
 		menuDestruido = true;
 	}
@@ -244,3 +258,4 @@ bool Mundo::Leer_Collider(char string[], ColliderMap* p)
 	}
 	return false;
 }
+

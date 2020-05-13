@@ -15,6 +15,5 @@ public:
 	void Dibuja();
 	Vector2D Arriba;
 	Vector2D Abajo;
-	ColliderMap* Encima=NULL;
 	friend class CollisionMundo;
 };

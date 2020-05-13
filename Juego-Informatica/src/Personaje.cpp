@@ -25,16 +25,8 @@ Personaje::~Personaje()
 }
 
 void Personaje::Mueve(float t)
-{/*
+{
  //Ecuaciones de movimiento
-	posicion.x += velocidad.x * t + (1 / 2) * aceleracion.x * pow(t, 2);
-	printf("x=%f\n", posicion.x);
-	velocidad.x += aceleracion.x * t;
-	posicion.y += velocidad.y * t + (1 / 2) * aceleracion.y * pow(t, 2);
-	velocidad.y += aceleracion.y * t;*/
-	//
-
-
 	//printf("r=%d y velocidad=%f\n", r, velocidad.x);
 	posicion.x += velocidad.x * 0.025 + (1 / 2) * aceleracion.x * pow(0.025, 2);
 	velocidad.x -= aceleracion.x * 0.025;
@@ -42,12 +34,7 @@ void Personaje::Mueve(float t)
 	velocidad.y -= aceleracion.y * 0.025;
 	posicion.y += velocidad.y * 0.025 - (1 / 2) * aceleracion.y * pow(0.025, 2);
 
-	/*if (posicion.y <= 0) {
-		velocidad.y = 0;
-		aceleracion.y = 0;
-		q = 0;
-		valid_salto = true;
-	}*/
+
 
 	if (velocidad.x > 10)
 		velocidad.x = 10;
@@ -70,12 +57,12 @@ void Personaje::Mueve(float t)
 
 	}
 	if (cae == true) {
-		aceleracion.y = 30;
+		aceleracion.y = 15;
 		cae = false;
 	}
-	else if (estados[0] == 1 && estados[1] == 0)
+	if (estados[0] == 1 && estados[1] == 0)
 		velocidad.x = 10;
-	else if (estados[0] == 0 && estados[1] == 1)
+	if (estados[0] == 0 && estados[1] == 1)
 		velocidad.x = -10;
 }
 
@@ -117,8 +104,7 @@ void Personaje::TeclaDown(unsigned char f) { //esta va con OnKeyboardDown
 
 	if ((f == ' ') && (valid_salto == true))
 	{
-		aceleracion.y = 20.0;
-		velocidad.y = 12.5;
+		velocidad.y = 10.5;
 		q = 1;
 		valid_salto = false;
 	}

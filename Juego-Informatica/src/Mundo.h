@@ -19,7 +19,7 @@
 #include "Patrullero.h"
 class Mundo
 {
-public: 
+public:
 	Mundo();
 	virtual ~Mundo();
 	void Tecla(unsigned char key);
@@ -37,7 +37,8 @@ public:
 	float z_ojo;
 	bool menuDestruido;
 	ImagenBucle Goku;
-	Imagen PutoSofrito;
+	Imagen Mapa;
+	Imagen Fondo;
 	Personaje Hombre;
 	ListaCollider Colliders;
 	//Enemigo enemigo;
@@ -45,3 +46,4 @@ public:
 	HUD hud;
 	Patrullero enemigo;
 };
+
