@@ -1,2 +1,3 @@
-﻿  Personaje.cpp
-  08-04-2020.vcxproj -> C:\Inf2020\Juego-Informatica\bin\08-04-2020.exe
+﻿  Main.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Main.cpp(106,15): warning C4805: '==': combinación no segura del tipo 'float' y el tipo 'bool' en la operación
+  08-04-2020.vcxproj -> D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe

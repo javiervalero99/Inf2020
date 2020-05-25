@@ -5,6 +5,7 @@ class Artillero :
 	public Enemigo
 {
 	
+public:
 
 	void ataca(Personaje& p);
 };

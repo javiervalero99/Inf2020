@@ -138,4 +138,10 @@ void Personaje::SetSalud(int n)
 	salud = n;
 }
 
+void Personaje::daño(float t)
+{
+
+}
+
+
 

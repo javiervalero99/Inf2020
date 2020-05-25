@@ -102,6 +102,9 @@
     <ClCompile Include="src\Mortero.cpp">
       <Filter>Archivos de origen\Personaje/Enemigo</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tiempo.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector2D.h">
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="src\Mortero.h">
       <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiempo.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@ Enemigo::Enemigo()
 	posicion.x = -20;
 	posicion.y = 8+1.3/2;
 	velocidad.x = 1;
+	cae = false;
 }
 
 Enemigo::~Enemigo()

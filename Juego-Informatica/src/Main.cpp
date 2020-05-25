@@ -1,8 +1,14 @@
 #include "Mundo.h"
 #include <stdio.h>
+#include <iostream>
 
 Mundo mundo;
-float t = 0;
+float t;
+float tiempo_juego = 0;
+int i = 0;
+
+
+
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
@@ -89,8 +95,23 @@ void OnTimer(int value)
 {
 	//poner aqui el código de animacion
 	mundo.Mueve(t);
-	t += 0.25;
-	//no borrar estas lineas
+	//temp
+	
+
+	if (tiempo_juego > 10) {
+		i++;
+		 float millis = tiempo_juego - 0.025*i;
+		
+		 float x = Tiempo::contaje(tiempo_juego, 5, millis);
+	if(	x == true)
+		std::cout << "ueeeeeeeeeeeeeee"<< std::endl;
+	}
+	tiempo_juego += 0.025;
+
+
+	// se consigue lo mismo haciendo 0.025*i y cuando llegue a 5 sales 
+	
+	//no borrar eZtas lineas
 	glutTimerFunc(25, OnTimer, 0);
 	glutPostRedisplay();
 }

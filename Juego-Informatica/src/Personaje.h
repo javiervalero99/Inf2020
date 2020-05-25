@@ -33,5 +33,5 @@ public:
 
 	int GetSalud();
 	void SetSalud(int n);
-	
+	void daño(float t);
 };

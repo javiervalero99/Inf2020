@@ -6,6 +6,7 @@ Mortero::Mortero()
 	velo0 = 20;
 	velocidad.x = velo0;
 	velocidad.y = velo0;
+	
 }
 
 Mortero::~Mortero()
@@ -49,6 +50,11 @@ void Mortero::detona(Personaje& p)
 	if (explosion.modulo() < 3.0);
 
 	p.SetSalud( p.GetSalud() - 2);
+}
+
+void Mortero::SetPos(Vector2D pos)
+{
+	posicion = pos;
 }
 
 

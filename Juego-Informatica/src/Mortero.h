@@ -19,6 +19,6 @@ public:
 	bool disparo(float x);
 	void Mueve(float t);
 	void detona(Personaje& p);
-
+	void SetPos(Vector2D pos);
 
 };

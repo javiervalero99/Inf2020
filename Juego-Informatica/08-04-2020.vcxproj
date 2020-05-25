@@ -159,6 +159,7 @@
     <ClCompile Include="src\Opcion_Menu.cpp" />
     <ClCompile Include="src\Patrullero.cpp" />
     <ClCompile Include="src\Personaje.cpp" />
+    <ClCompile Include="src\Tiempo.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +178,7 @@
     <ClInclude Include="src\Opcion_Menu.h" />
     <ClInclude Include="src\Patrullero.h" />
     <ClInclude Include="src\Personaje.h" />
+    <ClInclude Include="src\Tiempo.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

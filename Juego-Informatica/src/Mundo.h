@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string>
 
+
 #include "Personaje.h"
 #include "Imagen.h"
 #include "ImagenBucle.h"
@@ -17,6 +18,8 @@
 #include "ListaCollider.h"
 #include "InteraccionListas.h"
 #include "Patrullero.h"
+#include "Artillero.h"
+#include "Tiempo.h"
 class Mundo
 {
 public:
@@ -45,5 +48,9 @@ public:
 	MenuPrincipal menu;
 	HUD hud;
 	Patrullero enemigo;
+	Artillero artillero;
+
+	// variables de juego
+	
 };
 

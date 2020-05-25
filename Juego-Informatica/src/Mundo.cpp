@@ -71,6 +71,7 @@ void Mundo::Dibuja()
 		Colliders.Dibuja();
 		*/
 		InteraccionListas::Collision(Hombre, Colliders);
+		InteraccionListas::Collision(enemigo, Colliders);
 		//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
 		/*if (valid9 == false)
 		{
@@ -83,7 +84,7 @@ void Mundo::Dibuja()
 	hud.Dibuja();
 
 
-
+	artillero.Dibuja();
 }
 
 void Mundo::Mueve(float t)
@@ -94,6 +95,10 @@ void Mundo::Mueve(float t)
 		Goku.Actualizar40FPS();
 		enemigo.Mueve(t);
 		enemigo.Persigue(Hombre);
+
+		// 
+		artillero.ataca(Hombre);
+		
 	}
 }
 
@@ -258,4 +263,8 @@ bool Mundo::Leer_Collider(char string[], ColliderMap* p)
 	}
 	return false;
 }
+
+
+
+
 

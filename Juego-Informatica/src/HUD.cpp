@@ -15,10 +15,10 @@ HUD::~HUD()
 void HUD::Dibuja()
 {
 	glBegin(GL_QUADS);
-    glVertex2f(4.0+local.x,5.0+local.y);
+    glVertex2f(4.0+local.x,3.0+local.y);
+    glVertex2f(6.0+local.x, 3.0+local.y);
     glVertex2f(6.0+local.x, 5.0+local.y);
-    glVertex2f(6.0+local.x, 7.0+local.y);
-    glVertex2f(4.0+local.x, 7.0+local.y);
+    glVertex2f(4.0+local.x, 5.0+local.y);
     glEnd();
 }
 
