@@ -8,10 +8,13 @@
 Personaje::Personaje()
 {
 	posicion.x = 0;
+	posicion.x = 0;
 	posicion.y = 0;
 	valid_salto = true;
 	cae = false;
 	salud = 3;
+
+	collider.setTam(1.3, 1.3);
 }
 
 void Personaje::SetTiempo(float t)
@@ -70,7 +73,7 @@ void Personaje::Dibuja()
 {
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
-	glutSolidCube(1.3f);
+	collider.Dibuja();
 	glTranslated(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
 }

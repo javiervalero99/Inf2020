@@ -39,7 +39,6 @@ public:
 	float y_ojo;
 	float z_ojo;
 	bool menuDestruido;
-	ImagenBucle Goku;
 	Imagen Mapa;
 	Imagen Fondo;
 	Personaje Hombre;

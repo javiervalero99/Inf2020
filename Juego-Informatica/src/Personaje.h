@@ -1,12 +1,12 @@
 #pragma once
 #include "Vector2D.h"
+#include "Collision_Movil.h"
 class Personaje {
 private:
-
 	float altura;
 	int salud;
 	float tiempo;
-
+	Collision_Movil collider;
 public:
 	bool cae;
 	int r, q, j; //r otorga la validación para cada operacion de direccion
@@ -26,6 +26,7 @@ public:
 	void Dibuja();
 	Vector2D GetPosicion();
 	void Ataque_Basico();
+	//------------------------------------Teclas-----------------------
 	void Salto(unsigned char key);
 	void TeclaDown(unsigned char key);
 	void TeclaUp(unsigned char key);
@@ -34,4 +35,6 @@ public:
 	int GetSalud();
 	void SetSalud(int n);
 	void daño(float t);
+	friend class CollisionMundo;
 };
+

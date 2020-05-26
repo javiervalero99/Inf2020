@@ -18,7 +18,7 @@ void Enemigo::Dibuja()
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
 	glColor3ub(255, 0, 0);
-	glutSolidCube(1.3f);
+	glutSolidCube(0.0f);
 	glTranslated(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
 
