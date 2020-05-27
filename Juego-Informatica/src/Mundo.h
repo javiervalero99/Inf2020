@@ -12,8 +12,6 @@
 #include "ColliderMap.h"
 #include "CollisionMundo.h"
 #include "Enemigo.h"
-#include "MenuPrincipal.h"
-#include "Opcion_Menu.h"
 #include "HUD.h"
 #include "ListaCollider.h"
 #include "InteraccionListas.h"
@@ -38,19 +36,18 @@ public:
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;
-	bool menuDestruido;
-//	ImagenBucle Goku;
+	bool FIN = false;
+	//	ImagenBucle Goku;
 	Imagen Mapa;
 	Imagen Fondo;
 	Personaje Hombre;
 	ListaCollider Colliders;
 
-	MenuPrincipal menu;
+
 	HUD hud;
 	Patrullero enemigo;
 	Artillero artillero;
 
 	// variables de juego
-	
-};
 
+};

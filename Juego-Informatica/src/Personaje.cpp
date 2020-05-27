@@ -14,7 +14,7 @@ Personaje::Personaje(): Run("\Data_Game/Pers_Ppal/run.png", 4, 1, 100), Die("\Da
 	cae = false;
 	salud = 3;
 
-	collider.setTam(1.3, 1.3);
+	collider.setTam(1, 2.25);
 
 	Run.setSize(2, 3);
 	Run.setCenter(1, 1);
@@ -93,7 +93,7 @@ void Personaje::Dibuja()
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
 	
-	//collider.Dibuja();
+	//	collider.Dibuja();
 
 
 	if (velocidad.x < -0.01)

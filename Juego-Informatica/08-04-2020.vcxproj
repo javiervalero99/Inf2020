@@ -147,6 +147,7 @@
     <ClCompile Include="src\ColliderMap.cpp" />
     <ClCompile Include="src\CollisionMundo.cpp" />
     <ClCompile Include="src\Collision_Movil.cpp" />
+    <ClCompile Include="src\Coordinador_Juego.cpp" />
     <ClCompile Include="src\Enemigo.cpp" />
     <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\Imagen.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="src\ColliderMap.h" />
     <ClInclude Include="src\CollisionMundo.h" />
     <ClInclude Include="src\Collision_Movil.h" />
+    <ClInclude Include="src\Coordinador_Juego.h" />
     <ClInclude Include="src\Enemigo.h" />
     <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\Imagen.h" />

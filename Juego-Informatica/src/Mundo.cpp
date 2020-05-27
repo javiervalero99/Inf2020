@@ -6,12 +6,10 @@ using namespace std;
 Mundo::Mundo()
 {
 	x_ojo = y_ojo = z_ojo = 0;
-	menuDestruido = false;
 }
 
 Mundo::~Mundo()
 {
-	menu.DestroyMenu();
 }
 
 void Mundo::RotarOjo()
@@ -25,60 +23,51 @@ void Mundo::RotarOjo()
 
 void Mundo::Dibuja()
 {
-	if (menuDestruido == false) {
-		glDisable(GL_LIGHTING);
-		menu.CreateMenu();
-		glRasterPos3f(-0.08, 0, -0.25);
-		char ButtonTitle[10] = "Jugar";
-		for (int i = 0; ButtonTitle[i] != '\0'; i++) {
-			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ButtonTitle[i]);  // Updates the position
-		}
-		glEnable(GL_LIGHTING);
-	}
-	if (menuDestruido == true) {
-		gluLookAt(Hombre.GetPosicion().x, Hombre.GetPosicion().y, z_ojo,  // posicion del ojo
-			Hombre.GetPosicion().x, Hombre.GetPosicion().y, 0.0, // hacia que punto mira  (donde este el personaje, quizas crear una clase camara) 
-			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
-	//aqui es donde hay que poner el codigo de dibujo
-	//dibujo del suelo
+	glEnable(GL_LIGHTING);
+	gluLookAt(Hombre.GetPosicion().x, Hombre.GetPosicion().y, z_ojo,  // posicion del ojo
+		Hombre.GetPosicion().x, Hombre.GetPosicion().y, 0.0, // hacia que punto mira  (donde este el personaje, quizas crear una clase camara) 
+		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
-		glColor3ub(255, 255, 0);
-		glTranslated(0, 1, 0);
-		Hombre.Dibuja();			//Dibuja el cuadrado que representa al hombre
-		
+//aqui es donde hay que poner el codigo de dibujo
+//dibujo del suelo
 
-		enemigo.Dibuja();
-		
-		glRotatef(180, 0, 1, 0);
-		glTranslated(0, 0, 1);
-		Mapa.Dibuja();
-		glTranslated(0, 0, 1);
-		glRotatef(-180, 0, 1, 0);
-		glTranslated(0, 0, 70);
-	//	Fondo.Dibuja();
-		glTranslated(0, 0, -70);
+	glColor3ub(255, 255, 0);
+	glTranslated(0, 1, 0);
+	Hombre.Dibuja();			//Dibuja el cuadrado que representa al hombre
 
-		//Para ver collider
-		/*glRotatef(180, 0, 1, 0);
-		glTranslated(0, 0, -4);
-		Mapa.Dibuja();
-		glTranslated(0, 0, 4);
-		glRotatef(-180, 0, 1, 0);
-		glTranslated(0, 0, 70);
-		Fondo.Dibuja();
-		glTranslated(0, 0, -70);
-		Colliders.Dibuja();
-		*/
-		InteraccionListas::Collision(Hombre, Colliders);
-		InteraccionListas::Collision(enemigo, Colliders);
-		//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
-		/*if (valid9 == false)
-		{
-			enemigo.cae = true;
-			enemigo.j++;
-		}*/
-	}
+
+	enemigo.Dibuja();
+
+	glRotatef(180, 0, 1, 0);
+	glTranslated(0, 0, 1);
+	Mapa.Dibuja();
+	glTranslated(0, 0, 1);
+	glRotatef(-180, 0, 1, 0);
+	glTranslated(0, 0, 70);
+
+	glTranslated(0, 0, -70);
+
+	//Para ver collider
+	/*glRotatef(180, 0, 1, 0);
+	glTranslated(0, 0, -4);
+	Mapa.Dibuja();
+	glTranslated(0, 0, 4);
+	glRotatef(-180, 0, 1, 0);
+	glTranslated(0, 0, 70);
+	Fondo.Dibuja();
+	glTranslated(0, 0, -70);
+	Colliders.Dibuja();
+	*/
+	InteraccionListas::Collision(Hombre, Colliders);
+	InteraccionListas::Collision(enemigo, Colliders);
+	//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
+	/*if (valid9 == false)
+	{
+		enemigo.cae = true;
+		enemigo.j++;
+	}*/
+
 
 	hud.SetPos(Hombre);
 	hud.Dibuja();
@@ -89,16 +78,14 @@ void Mundo::Dibuja()
 
 void Mundo::Mueve(float t)
 {
-	if (menuDestruido == true) {
-		Hombre.Mueve(t);
-	
-		enemigo.Mueve(t);
-		enemigo.Persigue(Hombre);
+	Hombre.Mueve(t);
 
-		// 
-		artillero.ataca(Hombre);
-		
-	}
+	enemigo.Mueve(t);
+	enemigo.Persigue(Hombre);
+
+	// 
+	artillero.ataca(Hombre);
+
 }
 
 
@@ -109,35 +96,17 @@ void Mundo::Inicializa()
 	Hombre.posicion.x = -11;
 	Hombre.posicion.y = 10.0;
 	//--------------------------------------------------------
-	//menuDestruido = true;
 	x_ojo = Hombre.GetPosicion().x;
 	y_ojo = 10 + Hombre.GetPosicion().y;
 	z_ojo = -20;
 	//---------------------Sprites---------------------------------
-	
+
 	Mapa.Inicializa("\Data_Game/Nivel1/Mapa.png", 69.3, 4.3, 140, 20);
 	Fondo.Inicializa("\Data_Game/Nivel1/Fondo.png", -60, 4.3, 450, 90);
 	//ETSIDI::playMusica("\Crimson_Nights_Track_02.mp3", true);
 	//--------------------Colliders--------------------------------
 	Leer_Fichero(route);
-	//------------------Menu--------------------------------------
 
-
-	Vector2D Arriba(0.2, -0.025);
-	Vector2D Abajo(0.1, -0.075);
-	Opcion_Menu* op = new Opcion_Menu(Arriba, Abajo);
-	op->SetColor(0, 155, 75);
-	menu.AddOpcion(op);
-	Vector2D Arriba1(-0.2, -0.025);
-	Vector2D Abajo1(-0.1, -0.075);
-	Opcion_Menu* op1 = new Opcion_Menu(Arriba1, Abajo1);
-	op1->SetColor(0, 155, 75);
-	menu.AddOpcion(op1);
-	Vector2D Arriba2(-0.05, -0.125);
-	Vector2D Abajo2(0.05, -0.15);
-	Opcion_Menu* op2 = new Opcion_Menu(Arriba2, Abajo2);
-	op2->SetColor(0, 155, 75);
-	menu.AddOpcion(op2);
 
 }
 
@@ -147,25 +116,11 @@ void Mundo::TeclaUp(unsigned char key)
 }
 void Mundo::TeclaDown(unsigned char key)
 {
-	printf("%d\n", key);
-	if (key == 27) {
-		menuDestruido = false;
-	}
-	else {
-		Hombre.TeclaDown(key);
-	}
+	//printf("%d\n", key);
+
+	Hombre.TeclaDown(key);
 }
 
-void Mundo::ClickDch(int state, int x, int y)
-{
-	Vector2D boton_juego_Arriba(70, 340);
-	Vector2D boton_juego_Abajo(235, 422);
-	bool x_en_boton_juego = (x >= 70) && (x <= 233);
-	bool y_en_boton_juego = (y >= 340) && (y <= 425);
-	if ((x_en_boton_juego == true) && (y_en_boton_juego == true)) {
-		menuDestruido = true;
-	}
-}
 
 void Mundo::Leer_Fichero(const char direction[])
 {

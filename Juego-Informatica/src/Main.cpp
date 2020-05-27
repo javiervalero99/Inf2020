@@ -1,8 +1,8 @@
-#include "Mundo.h"
+#include "Coordinador_Juego.h"
 #include <stdio.h>
 #include <iostream>
 
-Mundo mundo;
+Coordinador_Juego juego;
 float t;
 float tiempo_juego = 0;
 int i = 0;
@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 	glutKeyboardFunc(OnKeyboardDown);
 	glutKeyboardUpFunc(OnKeyboardUp);
 	glutMouseFunc(MouseFunc);
-	mundo.Inicializa();
+	juego.Inicializa();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
@@ -58,7 +58,7 @@ void OnDraw(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	mundo.Dibuja();
+	juego.Dibuja();
 
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
@@ -67,50 +67,50 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 
 	//poner aqui el código de teclado
-	mundo.TeclaDown(key);
+	juego.TeclaDown(key);
 
 	glutPostRedisplay();
 }
 void OnKeyboardUp(unsigned char key, int x_t, int y_t) {
 	t = 0;
-	mundo.TeclaUp(key);
+	juego.TeclaUp(key);
 
 	glutPostRedisplay();
 }
 void MouseFunc(int button, int state, int x, int y)
 {
 	if ((button == GLUT_LEFT_BUTTON) && (state == GLUT_DOWN)) {
-		mundo.ClickDch(state, x, y);
+		juego.ClickDch(state, x, y);
 		printf("x=%d, y=%d\n", x, y);
 
 	}
 }
 void glutKeyboardUpFunc(unsigned char key, int x_t, int y_t)
 {
-	mundo.TeclaUp(key);
+	juego.TeclaUp(key);
 	glutPostRedisplay();
 }
 
 void OnTimer(int value)
 {
 	//poner aqui el código de animacion
-	mundo.Mueve(t);
+	juego.Mueve();
 	//temp
-	
+
 
 	if (tiempo_juego > 10) {
 		i++;
-		 float millis = tiempo_juego - 0.025*i;
-		
-		 float x = Tiempo::contaje(tiempo_juego, 5, millis);
-	//if(	x == true)
-		//std::cout << "ueeeeeeeeeeeeeee"<< std::endl;
+		float millis = tiempo_juego - 0.025 * i;
+
+		float x = Tiempo::contaje(tiempo_juego, 5, millis);
+		//if(	x == true)
+			//std::cout << "ueeeeeeeeeeeeeee"<< std::endl;
 	}
 	tiempo_juego += 0.025;
 
 
 	// se consigue lo mismo haciendo 0.025*i y cuando llegue a 5 sales 
-	
+
 	//no borrar eZtas lineas
 	glutTimerFunc(25, OnTimer, 0);
 	glutPostRedisplay();

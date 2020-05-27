@@ -49,11 +49,14 @@
     <Filter Include="Archivos de encabezado\Menu">
       <UniqueIdentifier>{9b81e829-cd1d-4295-b3ed-58882d6d274e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Clases Principales">
+      <UniqueIdentifier>{8babc109-5b99-47d0-948d-24b8e0ec3363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Clases Principales">
+      <UniqueIdentifier>{deba4594-d256-4e92-90a4-41fdcd6f57e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Mundo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="src\Vector2D.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -108,6 +111,12 @@
     <ClCompile Include="src\Collision_Movil.cpp">
       <Filter>Archivos de origen\Collider</Filter>
     </ClCompile>
+    <ClCompile Include="src\Coordinador_Juego.cpp">
+      <Filter>Archivos de origen\Clases Principales</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mundo.cpp">
+      <Filter>Archivos de origen\Clases Principales</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector2D.h">
@@ -143,9 +152,6 @@
     <ClInclude Include="src\Personaje.h">
       <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Mundo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\HUD.h">
       <Filter>Archivos de encabezado\HUD</Filter>
     </ClInclude>
@@ -163,6 +169,12 @@
     </ClInclude>
     <ClInclude Include="src\Collision_Movil.h">
       <Filter>Archivos de encabezado\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Coordinador_Juego.h">
+      <Filter>Archivos de encabezado\Clases Principales</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mundo.h">
+      <Filter>Archivos de encabezado\Clases Principales</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
