@@ -1,7 +1,4 @@
-﻿  Enemigo.cpp
-  Mundo.cpp
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(117,18): warning C4129: 'D': secuencia de escape de carácter no reconocida
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(118,19): warning C4129: 'D': secuencia de escape de carácter no reconocida
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(121,15): warning C4129: 'D': secuencia de escape de carácter no reconocida
+﻿  CollisionMundo.cpp
+  Personaje.cpp
   Generando código...
-  08-04-2020.vcxproj -> C:\Inf2020\Juego-Informatica\bin\08-04-2020.exe
+  08-04-2020.vcxproj -> C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\Juego-Informatica\bin\08-04-2020.exe

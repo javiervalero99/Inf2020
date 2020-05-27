@@ -8,7 +8,6 @@
 Personaje::Personaje()
 {
 	posicion.x = 0;
-	posicion.x = 0;
 	posicion.y = 0;
 	valid_salto = true;
 	cae = false;
@@ -73,6 +72,7 @@ void Personaje::Dibuja()
 {
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
+	
 	collider.Dibuja();
 	glTranslated(-posicion.x, -posicion.y, 0);
 	glPopMatrix();

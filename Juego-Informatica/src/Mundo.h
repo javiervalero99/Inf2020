@@ -39,11 +39,12 @@ public:
 	float y_ojo;
 	float z_ojo;
 	bool menuDestruido;
+//	ImagenBucle Goku;
 	Imagen Mapa;
 	Imagen Fondo;
 	Personaje Hombre;
 	ListaCollider Colliders;
-	//Enemigo enemigo;
+
 	MenuPrincipal menu;
 	HUD hud;
 	Patrullero enemigo;

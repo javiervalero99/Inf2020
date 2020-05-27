@@ -46,9 +46,10 @@ void Mundo::Dibuja()
 		glColor3ub(255, 255, 0);
 		glTranslated(0, 1, 0);
 		Hombre.Dibuja();			//Dibuja el cuadrado que representa al hombre
-		//Goku.Dibuja();
+		
+
 		enemigo.Dibuja();
-		//Para no ver collider
+		
 		glRotatef(180, 0, 1, 0);
 		glTranslated(0, 0, 1);
 		Mapa.Dibuja();
@@ -77,21 +78,20 @@ void Mundo::Dibuja()
 			enemigo.cae = true;
 			enemigo.j++;
 		}*/
-
-		artillero.Dibuja();
-		hud.SetPos(Hombre);
-		hud.Dibuja();
 	}
 
+	hud.SetPos(Hombre);
+	hud.Dibuja();
 
 
-
+	artillero.Dibuja();
 }
 
 void Mundo::Mueve(float t)
 {
 	if (menuDestruido == true) {
 		Hombre.Mueve(t);
+	
 		enemigo.Mueve(t);
 		enemigo.Persigue(Hombre);
 
@@ -114,6 +114,7 @@ void Mundo::Inicializa()
 	y_ojo = 10 + Hombre.GetPosicion().y;
 	z_ojo = -20;
 	//---------------------Sprites---------------------------------
+	
 	Mapa.Inicializa("\Data_Game/Nivel1/Mapa.png", 69.3, 4.3, 140, 20);
 	Fondo.Inicializa("\Data_Game/Nivel1/Fondo.png", -60, 4.3, 450, 90);
 	//ETSIDI::playMusica("\Crimson_Nights_Track_02.mp3", true);

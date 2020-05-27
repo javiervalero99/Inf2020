@@ -5,6 +5,7 @@ d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\personaje.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\patrullero.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\opcion_menu.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\mundo.obj
+d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\mortero.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\menuprincipal.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\main.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\listacollider.obj
@@ -16,12 +17,38 @@ d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\enemigo.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\collisionmundo.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\collidermap.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\artillero.obj
+d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\tiempo.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\vc142.pdb
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\vc142.idb
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\vector2d.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\tiempo.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\personaje.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\patrullero.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\opcion_menu.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\mundo.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\mortero.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\menuprincipal.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\main.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\listacollider.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\interaccionlistas.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\imagenbucle.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\imagen.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\hud.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\enemigo.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\collisionmundo.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\collidermap.obj
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\artillero.obj
 d:\repo_git\trabajo-de-informatica\juego-informatica\bin\08-04-2020.exe
 d:\repo_git\trabajo-de-informatica\juego-informatica\bin\08-04-2020.ilk
 d:\repo_git\trabajo-de-informatica\juego-informatica\bin\08-04-2020.pdb
-d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\08-04-2020.tlog\cl.command.1.tlog
-d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\08-04-2020.tlog\cl.read.1.tlog
-d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\08-04-2020.tlog\cl.write.1.tlog
-d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\08-04-2020.tlog\link.command.1.tlog
-d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\08-04-2020.tlog\link.read.1.tlog
-d:\repo_git\trabajo-de-informatica\juego-informatica\tmp\debug\08-04-2020.tlog\link.write.1.tlog
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\bin\08-04-2020.exe
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\bin\08-04-2020.ilk
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\bin\08-04-2020.pdb
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\main.obj.enc
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\tiempo.obj.enc
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\08-04-2020.tlog\cl.command.1.tlog
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\08-04-2020.tlog\cl.read.1.tlog
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\08-04-2020.tlog\cl.write.1.tlog
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\08-04-2020.tlog\link.command.1.tlog
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\08-04-2020.tlog\link.read.1.tlog
+c:\users\orgyn\desktop\campo de juegos\juego-informatica\tmp\debug\08-04-2020.tlog\link.write.1.tlog
