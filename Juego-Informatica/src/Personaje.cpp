@@ -5,7 +5,8 @@
 
 #define SPACEBAR 32
 
-Personaje::Personaje()
+Personaje::Personaje(): Run("\Data_Game/Pers_Ppal/run.png", 4, 1, 100), Die("\Data_Game/Pers_Ppal/death.png", 10, 1, 70), Static("\Data_Game/Pers_Ppal/static.png", 2, 1, 250), Basic("\Data_Game/Pers_Ppal/estocada.png", 4, 1, 70), Jump("\Data_Game/Pers_Ppal/jump.png", 5, 1, 80), Distance("\Data_Game/Pers_Ppal/ataque_distancia.png", 5, 1, 70)
+
 {
 	posicion.x = 0;
 	posicion.y = 0;
@@ -14,6 +15,22 @@ Personaje::Personaje()
 	salud = 3;
 
 	collider.setTam(1.3, 1.3);
+
+	Run.setSize(2, 3);
+	Run.setCenter(1, 1);
+	Die.setSize(1.5, 1.5);
+	Die.setCenter(0.75, 0);
+	Static.setSize(2, 3);
+	Static.setCenter(1, 1.1);
+	Basic.setSize(1, 2);
+	Basic.setCenter(0.5, 0);
+	Jump.setSize(3, 3);
+	Jump.setCenter(0.75, 0);
+	Distance.setSize(1.5, 1.5);
+	Distance.setCenter(0.75, 0.75);
+	
+
+
 }
 
 void Personaje::SetTiempo(float t)
@@ -66,6 +83,9 @@ void Personaje::Mueve(float t)
 		velocidad.x = 10;
 	if (estados[0] == 0 && estados[1] == 1)
 		velocidad.x = -10;
+
+	Run.loop();
+	Static.loop();
 }
 
 void Personaje::Dibuja()
@@ -73,9 +93,39 @@ void Personaje::Dibuja()
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
 	
-	collider.Dibuja();
+	//collider.Dibuja();
+
+
+	if (velocidad.x < -0.01)
+	{
+		Run.flip(false, false);
+		Static.flip(false, false);
+		Jump.flip(false, false);
+	}
+	else if (velocidad.x > 0.01)
+	{
+		Run.flip(true, false);
+		Static.flip(true, false);
+		Jump.flip(true, false);
+	}
+
+	//ZONA SPRITES
+	if ((velocidad.x != 0))//ESTA CORRIENDO
+	{
+		if (velocidad.y == 0)
+			Run.draw();
+	}
+	if ((velocidad.x == 0) && (velocidad.y == 0))//ESTA QUIETO
+	{
+		Static.draw();
+	}
+	if ((velocidad.y != 0))
+	{
+		Jump.draw();
+	}
 	glTranslated(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
+
 }
 
 

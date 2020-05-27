@@ -1,9 +1,18 @@
 #pragma once
+#include "ETSIDI.h"
 #include "Vector2D.h"
 #include "Collision_Movil.h"
+
+using ETSIDI::SpriteSequence;
 class Personaje {
 private:
 
+	SpriteSequence Run;//sprite corriendo
+	SpriteSequence Die;//sprite para muerte
+	SpriteSequence Static;//sprite para personaje quieto
+	SpriteSequence Basic;//sprite para ataque mele básico
+	SpriteSequence Jump;//sprite para salto
+	SpriteSequence Distance; //sprite para ataque a distancia
 	float altura;
 	int salud;
 	float tiempo;

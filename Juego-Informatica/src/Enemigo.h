@@ -18,7 +18,7 @@ public:
 
 	Enemigo();
 	~Enemigo();
-	void Dibuja();
+	virtual void Dibuja();
 	void Mueve(float t);
 	Vector2D GetPosicion();
 	void Persigue(Personaje& p);

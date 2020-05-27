@@ -1,4 +1,5 @@
-﻿  CollisionMundo.cpp
-  Personaje.cpp
-  Generando código...
-  08-04-2020.vcxproj -> C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\Juego-Informatica\bin\08-04-2020.exe
+﻿  Mundo.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(118,18): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(119,19): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(122,15): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  08-04-2020.vcxproj -> D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe

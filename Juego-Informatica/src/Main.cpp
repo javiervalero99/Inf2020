@@ -103,8 +103,8 @@ void OnTimer(int value)
 		 float millis = tiempo_juego - 0.025*i;
 		
 		 float x = Tiempo::contaje(tiempo_juego, 5, millis);
-	if(	x == true)
-		std::cout << "ueeeeeeeeeeeeeee"<< std::endl;
+	//if(	x == true)
+		//std::cout << "ueeeeeeeeeeeeeee"<< std::endl;
 	}
 	tiempo_juego += 0.025;
 

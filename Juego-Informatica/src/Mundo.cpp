@@ -56,7 +56,7 @@ void Mundo::Dibuja()
 		glTranslated(0, 0, 1);
 		glRotatef(-180, 0, 1, 0);
 		glTranslated(0, 0, 70);
-		Fondo.Dibuja();
+	//	Fondo.Dibuja();
 		glTranslated(0, 0, -70);
 
 		//Para ver collider
