@@ -74,6 +74,8 @@ void Mundo::Dibuja()
 
 
 	artillero.Dibuja();
+	if (fire);
+	mortero.Dibuja();
 }
 
 void Mundo::Mueve(float t)
@@ -84,8 +86,9 @@ void Mundo::Mueve(float t)
 	enemigo.Persigue(Hombre);
 
 	// 
-	artillero.ataca(Hombre);
-
+	fire = artillero.ataca(Hombre);
+	if(fire)
+mortero.Mueve(t);
 }
 
 
@@ -119,6 +122,9 @@ void Mundo::TeclaDown(unsigned char key)
 	//printf("%d\n", key);
 
 	Hombre.TeclaDown(key);
+
+
+	mortero.SetPos(artillero.GetPosicion());
 }
 
 

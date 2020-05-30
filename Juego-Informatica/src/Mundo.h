@@ -18,6 +18,7 @@
 #include "Patrullero.h"
 #include "Artillero.h"
 #include "Tiempo.h"
+#include "Mortero.h"
 class Mundo
 {
 public:
@@ -47,7 +48,8 @@ public:
 	HUD hud;
 	Patrullero enemigo;
 	Artillero artillero;
-
+	Mortero mortero;
+	bool fire;
 	// variables de juego
 
 };

@@ -4,9 +4,10 @@
 class Artillero :
 	public Enemigo
 {
-	
+	Mortero* m;
+	bool reload;
+
 public:
-
-	void ataca(Personaje& p);
+	Artillero();
+	bool ataca(Personaje& p);
 };
-

@@ -55,6 +55,12 @@
     <Filter Include="Archivos de origen\Clases Principales">
       <UniqueIdentifier>{deba4594-d256-4e92-90a4-41fdcd6f57e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Personaje/Enemigo\municion">
+      <UniqueIdentifier>{6a26c15f-69b0-47f3-ac73-16132ff1b611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Personaje/Enemigo\municion">
+      <UniqueIdentifier>{4f500b92-910b-4651-83f3-c14587586a35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Vector2D.cpp">
@@ -102,9 +108,6 @@
     <ClCompile Include="src\Artillero.cpp">
       <Filter>Archivos de origen\Personaje/Enemigo</Filter>
     </ClCompile>
-    <ClCompile Include="src\Mortero.cpp">
-      <Filter>Archivos de origen\Personaje/Enemigo</Filter>
-    </ClCompile>
     <ClCompile Include="src\Tiempo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -116,6 +119,12 @@
     </ClCompile>
     <ClCompile Include="src\Mundo.cpp">
       <Filter>Archivos de origen\Clases Principales</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mortero.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo\municion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CajaMunicion.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo\municion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,9 +170,6 @@
     <ClInclude Include="src\Artillero.h">
       <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Mortero.h">
-      <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
-    </ClInclude>
     <ClInclude Include="src\Tiempo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -175,6 +181,12 @@
     </ClInclude>
     <ClInclude Include="src\Mundo.h">
       <Filter>Archivos de encabezado\Clases Principales</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mortero.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo\municion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CajaMunicion.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo\municion</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,6 +7,7 @@ class Mortero {
 
 public:
 	Mortero();
+	Mortero(int x, int y);
 	virtual ~Mortero();
 
 	float angulo;

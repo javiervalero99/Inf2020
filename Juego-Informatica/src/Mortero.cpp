@@ -3,31 +3,48 @@
 
 Mortero::Mortero()
 {
-	velo0 = 20;
+	velo0 = 15;
+
 	velocidad.x = velo0;
 	velocidad.y = velo0;
-	
+	aceleracion.y = 9.8;
+	disparo(posicion.x + 6);
+
 }
+
+Mortero::Mortero(int x, int y)
+{
+	posicion.x = x;
+	posicion.y = y;
+	velo0 = 6;
+	velocidad.x = velo0;
+	velocidad.y = velo0;
+	aceleracion.y = 9.8;
+	disparo(posicion.x - 3);
+
+}
+
+
 
 Mortero::~Mortero()
 {
-	aceleracion.y = -9.8;
+
 }
 
 void Mortero::Dibuja()
 {
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
-	glutSolidSphere(2,30,40);
+	glutSolidSphere(0.5, 30, 40);
 	glTranslated(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
 }
 
 
-bool Mortero::disparo(float x) //crea la parabola y dice si se ha disparado
+bool Mortero::disparo(float x) //crea la parabola y dice si se ha disparado  // rango max 3
 {
-	angulo = (9.8 *( x-posicion.x)) / (velo0 * velo0);
-	angulo = (asin(angulo) / 2);
+	angulo = (9.8 * (x - posicion.x)) / (velo0 * velo0);
+	angulo = ((3.14 / 2) - (asin(angulo) / 2));
 	velocidad.x = velo0 * cos(angulo);
 	velocidad.y = velo0 * sin(angulo);
 	return true;
@@ -46,15 +63,16 @@ void Mortero::Mueve(float t)
 
 void Mortero::detona(Personaje& p)
 {
-	Vector2D explosion = p.posicion - posicion;
+
+	/*Vector2D explosion = p.posicion - posicion;
 	if (explosion.modulo() < 3.0);
 
 	p.SetSalud( p.GetSalud() - 2);
+	*/
 }
 
 void Mortero::SetPos(Vector2D pos)
 {
 	posicion = pos;
 }
-
 
