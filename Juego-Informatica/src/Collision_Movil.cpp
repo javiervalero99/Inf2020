@@ -1,7 +1,7 @@
 #include "Collision_Movil.h"
 #include "glut.h"
 
-Collision_Movil::Collision_Movil()
+Collision_Movil::Collision_Movil(float x, float y) :tam(x, y)
 {
 }
 

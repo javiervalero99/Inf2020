@@ -6,11 +6,11 @@ bool InteraccionListas::Collision(Personaje& h, ListaCollider lista)
 	bool InCollider = false;
 	bool valid = false;
 	for (int i = 0; i < lista.GetNumero(); i++) {
-			valid = CollisionMundo::Collision(h, (*lista[i]));
-			if (valid == true)
-				InCollider = true;
+		valid = CollisionMundo::Collision(h, (*lista[i]));
+		if (valid == true)
+			InCollider = true;
 	}
-	if (InCollider== false) {
+	if (InCollider == false) {
 		h.cae = true;
 		h.j++;
 		return false;
@@ -18,7 +18,7 @@ bool InteraccionListas::Collision(Personaje& h, ListaCollider lista)
 	else
 		return true;
 }
-bool InteraccionListas::Collision(Enemigo& p, ListaCollider lista)
+bool InteraccionListas::Collision(ObjetoGeneral& p, ListaCollider lista)
 {
 	bool InCollider = false;
 	bool valid = false;
@@ -28,10 +28,18 @@ bool InteraccionListas::Collision(Enemigo& p, ListaCollider lista)
 			InCollider = true;
 	}
 	if (InCollider == false) {
-	p.cae = true;
+		p.cae = true;
 		p.j++;
 		return false;
 	}
 	else
 		return true;
+}
+
+bool InteraccionListas::Collision(ListaEnemObj& l, ListaCollider lista)
+{
+	for (int i = 0; i < l.GetNumElem(); i++) {
+		Collision(l[i], lista);
+	}
+	return true;
 }

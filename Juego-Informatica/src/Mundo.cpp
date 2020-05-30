@@ -37,8 +37,7 @@ void Mundo::Dibuja()
 	Hombre.Dibuja();			//Dibuja el cuadrado que representa al hombre
 
 
-	enemigo.Dibuja();
-
+	Enemigos.Dibuja();
 	glRotatef(180, 0, 1, 0);
 	glTranslated(0, 0, 1);
 	Mapa.Dibuja();
@@ -60,20 +59,19 @@ void Mundo::Dibuja()
 	Colliders.Dibuja();
 	*/
 	InteraccionListas::Collision(Hombre, Colliders);
-	InteraccionListas::Collision(enemigo, Colliders);
-	//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
-	/*if (valid9 == false)
-	{
-		enemigo.cae = true;
-		enemigo.j++;
-	}*/
-
+	InteraccionListas::Collision(Enemigos, Colliders),
+		//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
+		/*if (valid9 == false)
+		{
+			enemigo.cae = true;
+			enemigo.j++;
+		}*/
 
 	hud.SetPos(Hombre);
 	hud.Dibuja();
 
 
-	artillero.Dibuja();
+	//artillero.Dibuja();
 	if (fire);
 	mortero.Dibuja();
 }
@@ -82,10 +80,10 @@ void Mundo::Mueve(float t)
 {
 	Hombre.Mueve(t);
 
-	enemigo.Mueve(t);
-	enemigo.Persigue(Hombre);
-
+	Enemigos.Mueve(t);
+	Enemigos.Persigue(Hombre);
 	// 
+
 	fire = artillero.ataca(Hombre);
 	if(fire)
 mortero.Mueve(t);
@@ -94,7 +92,9 @@ mortero.Mueve(t);
 
 void Mundo::Inicializa()
 {
-
+	//---------------Inicializamos lista de objetos y enemigos-------
+	Enemigos.AddElem(new Patrullero);
+	Enemigos.AddElem(new Artillero);
 	//---------------Spamear en cualquier parte del mapa--------------
 	Hombre.posicion.x = -11;
 	Hombre.posicion.y = 10.0;

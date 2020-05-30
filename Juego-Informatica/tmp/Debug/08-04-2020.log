@@ -1,6 +1,9 @@
-﻿  Mundo.cpp
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(77,11): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(107,18): warning C4129: 'D': secuencia de escape de carácter no reconocida
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(108,19): warning C4129: 'D': secuencia de escape de carácter no reconocida
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(111,15): warning C4129: 'D': secuencia de escape de carácter no reconocida
-  08-04-2020.vcxproj -> D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe
+﻿  Coordinador_Juego.cpp
+  Main.cpp
+  Mundo.cpp
+C:\Inf2020\Juego-Informatica\src\Mundo.cpp(75,11): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+C:\Inf2020\Juego-Informatica\src\Mundo.cpp(107,18): warning C4129: 'D': secuencia de escape de carácter no reconocida
+C:\Inf2020\Juego-Informatica\src\Mundo.cpp(108,19): warning C4129: 'D': secuencia de escape de carácter no reconocida
+C:\Inf2020\Juego-Informatica\src\Mundo.cpp(111,15): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  Generando código...
+  08-04-2020.vcxproj -> C:\Inf2020\Juego-Informatica\bin\08-04-2020.exe

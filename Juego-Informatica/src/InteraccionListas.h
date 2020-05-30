@@ -3,8 +3,10 @@
 #include "Personaje.h"
 #include "Enemigo.h"
 #include "CollisionMundo.h"
+#include "ListaEnemObj.h"
 class InteraccionListas {
 public:
 	static bool Collision(Personaje& h, ListaCollider lista);
-	static bool Collision(Enemigo& h, ListaCollider lista);
+	static bool Collision(ObjetoGeneral& h, ListaCollider lista);
+	static bool Collision(ListaEnemObj& l, ListaCollider lista);
 };

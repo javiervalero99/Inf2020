@@ -1,12 +1,8 @@
 #include "Enemigo.h"
 #pragma once
 
-Enemigo::Enemigo()
+Enemigo::Enemigo() :ObjetoGeneral(-20, 8 + 1.3 / 2, 1, 0, 1.3, 1.3)
 {
-	posicion.x = -20;
-	posicion.y = 8+1.3/2;
-	velocidad.x = 1;
-	cae = false;
 }
 
 Enemigo::~Enemigo()
@@ -18,7 +14,7 @@ void Enemigo::Dibuja()
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
 	glColor3ub(255, 0, 0);
-	glutSolidCube(1.3f);
+	Collider.Dibuja();
 	glTranslated(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
 
@@ -44,12 +40,6 @@ void Enemigo::Mueve(float t)
 
 }
 
-Vector2D Enemigo::GetPosicion()
-{
-	Vector2D res = posicion;
-	return res;
-	
-}
 
 void Enemigo::Persigue(Personaje& p)
 {
@@ -96,12 +86,9 @@ void Enemigo::ataca(Personaje& p)
 {
 	float acc = 2;
 	if (DistanciaPlayer(p) < acc) {
-// to-do meterla animacion
+		// to-do meterla animacion
 		p.SetSalud(p.GetSalud() - 1);
 
 
 	}
 }
-
-
-

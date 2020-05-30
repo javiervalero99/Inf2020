@@ -155,6 +155,7 @@
     <ClCompile Include="src\ImagenBucle.cpp" />
     <ClCompile Include="src\InteraccionListas.cpp" />
     <ClCompile Include="src\ListaCollider.cpp" />
+    <ClCompile Include="src\ListaEnemObj.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\MenuPrincipal.cpp" />
     <ClCompile Include="src\Mortero.cpp" />
@@ -178,9 +179,11 @@
     <ClInclude Include="src\ImagenBucle.h" />
     <ClInclude Include="src\InteraccionListas.h" />
     <ClInclude Include="src\ListaCollider.h" />
+    <ClInclude Include="src\ListaEnemObj.h" />
     <ClInclude Include="src\MenuPrincipal.h" />
     <ClInclude Include="src\Mortero.h" />
     <ClInclude Include="src\Mundo.h" />
+    <ClInclude Include="src\ObjetoGeneral.h" />
     <ClInclude Include="src\Opcion_Menu.h" />
     <ClInclude Include="src\Patrullero.h" />
     <ClInclude Include="src\Personaje.h" />

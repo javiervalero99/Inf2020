@@ -15,6 +15,7 @@
 #include "HUD.h"
 #include "ListaCollider.h"
 #include "InteraccionListas.h"
+#include "ListaEnemObj.h"
 #include "Patrullero.h"
 #include "Artillero.h"
 #include "Tiempo.h"
@@ -46,9 +47,10 @@ public:
 
 
 	HUD hud;
-	Patrullero enemigo;
+	//Patrullero enemigo;
 	Artillero artillero;
 	Mortero mortero;
+	ListaEnemObj Enemigos;
 	bool fire;
 	// variables de juego
 
