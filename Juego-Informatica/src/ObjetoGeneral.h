@@ -2,6 +2,7 @@
 #include "Vector2D.h"
 #include "Collision_Movil.h"
 #include "Personaje.h"
+#include "CajaMunicion.h"
 class ObjetoGeneral {
 protected:
 	float altura;
@@ -30,4 +31,6 @@ public:
 	void SetSalud(float s) { salud = s; }
 	void AddSalud(float s) { salud += s; }
 	virtual bool ataca(Personaje& p) = 0;
+	bool ifArtillero = false;
+	virtual CajaMunicion& Getcaja() {   CajaMunicion* var =new CajaMunicion ; return *var; }
 };

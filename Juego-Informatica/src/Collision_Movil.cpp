@@ -3,6 +3,7 @@
 
 Collision_Movil::Collision_Movil(float x, float y) :tam(x, y)
 {
+   
 }
 
 void Collision_Movil::Dibuja()

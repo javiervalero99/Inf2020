@@ -2,6 +2,7 @@
 #include "Personaje.h"
 #include "ColliderMap.h"
 #include "ObjetoGeneral.h"
+#include "Mortero.h"
 class CollisionMundo {
 public:
 
@@ -10,4 +11,5 @@ public:
 	static bool Collision(Personaje& per, ColliderMap pared);
 	static bool Collision(ObjetoGeneral& per, ColliderMap pared);
 	static bool Collision(ObjetoGeneral& obj, Personaje& per);
+	static bool Collision(Mortero& mor, ColliderMap pared);
 };

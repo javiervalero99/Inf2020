@@ -1,15 +1,5 @@
-﻿  Enemigo.cpp
-C:\Inf2020\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Inf2020\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Inf2020\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-  Mundo.cpp
-C:\Inf2020\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Inf2020\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Inf2020\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(76,11): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(108,18): warning C4129: 'D': secuencia de escape de carácter no reconocida
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(109,19): warning C4129: 'D': secuencia de escape de carácter no reconocida
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(112,15): warning C4129: 'D': secuencia de escape de carácter no reconocida
-  Generando código...
-C:\Inf2020\Juego-Informatica\src\Enemigo.cpp(96): warning C4715: 'Enemigo::ataca': no todas las rutas de acceso de control devuelven un valor
-  08-04-2020.vcxproj -> C:\Inf2020\Juego-Informatica\bin\08-04-2020.exe
+﻿  CajaMunicion.cpp
+C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\juego infor v2\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\juego infor v2\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\juego infor v2\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  08-04-2020.vcxproj -> C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\juego infor v2\Juego-Informatica\bin\08-04-2020.exe

@@ -1,7 +1,7 @@
 #pragma once
 #include "Mortero.h"
 
-Mortero::Mortero()
+Mortero::Mortero(): collider(0.5, 0.5)
 {
 	velo0 = 15;
 
@@ -9,19 +9,18 @@ Mortero::Mortero()
 	velocidad.y = velo0;
 	aceleracion.y = 9.8;
 	disparo(posicion.x + 6);
-
+	kabum = false;
 }
 
-Mortero::Mortero(int x, int y)
-{
-	posicion.x = x;
-	posicion.y = y;
-	velo0 = 6;
+Mortero::Mortero(Vector2D a, float range):collider(0.5, 0.5){
+	posicion = a;
+	velo0 = 15;
 	velocidad.x = velo0;
 	velocidad.y = velo0;
 	aceleracion.y = 9.8;
-	disparo(posicion.x - 3);
-
+	disparo(posicion.x + range);
+	
+	kabum = false;
 }
 
 
@@ -61,7 +60,7 @@ void Mortero::Mueve(float t)
 	posicion.y += velocidad.y * 0.025 - (1 / 2) * aceleracion.y * pow(0.025, 2);
 }
 
-void Mortero::detona(Personaje& p)
+bool Mortero::detona()
 {
 
 	/*Vector2D explosion = p.posicion - posicion;
@@ -69,6 +68,7 @@ void Mortero::detona(Personaje& p)
 
 	p.SetSalud( p.GetSalud() - 2);
 	*/
+	return 0;
 }
 
 void Mortero::SetPos(Vector2D pos)
@@ -76,3 +76,24 @@ void Mortero::SetPos(Vector2D pos)
 	posicion = pos;
 }
 
+Vector2D Mortero::GetPosicion()
+{
+	return posicion;
+}
+
+void Mortero::SetStatus()
+{
+	kabum = true;
+}
+
+bool Mortero::getStatus()
+{
+	return kabum;
+}
+
+// calculo para el artillero
+/*
+xmax = (Vo*Vo) *sen(2a)/g
+h lim = (Vo*Vo) *sen(a)/g
+se coge el angulo complementario para buscar parabolas altas, a altas velocidades. si es el angulo menor es como un cañonazo
+*/

@@ -1,13 +1,15 @@
 #pragma once
+#include "Collision_Movil.h"
 #include "Vector2D.h"
 #include <math.h>
 #include "Personaje.h"
 #include "glut.h"
-class Mortero {
 
+class Mortero {
+	bool kabum;
 public:
 	Mortero();
-	Mortero(int x, int y);
+	Mortero(Vector2D a, float range);
 	virtual ~Mortero();
 
 	float angulo;
@@ -19,7 +21,10 @@ public:
 	void Dibuja();
 	bool disparo(float x);
 	void Mueve(float t);
-	void detona(Personaje& p);
+	bool detona();
 	void SetPos(Vector2D pos);
-
+	Vector2D GetPosicion();
+	Collision_Movil collider;
+	void SetStatus( );
+	bool getStatus();
 };

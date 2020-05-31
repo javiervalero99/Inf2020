@@ -39,6 +39,8 @@ bool InteraccionListas::Collision(ListaEnemObj& l, ListaCollider lista)
 {
 	for (int i = 0; i < l.GetNumElem(); i++) {
 		Collision(l[i], lista);
+		if (l[i].ifArtillero)
+			Collision(l[i].Getcaja(), lista);
 	}
 	return true;
 }
@@ -63,5 +65,19 @@ bool InteraccionListas::Collision(ListaEnemObj& l, Personaje& h)
 		}
 	}
 	return true;
+}
+
+bool InteraccionListas::Collision(CajaMunicion& l, ListaCollider lista)
+{
+	if (l.getelem() != 0)
+	{
+		for (int i = 0; i < MAX_MORTEROS; i++)
+
+		{
+			for (int j = 0; j < lista.GetNumero(); j++)
+				CollisionMundo::Collision(*l[i], *lista[j]);
+		}
+	}
+	return 0;
 }
 

@@ -1,18 +1,17 @@
-
 #pragma once
 #include "Enemigo.h"
-#include "Personaje.h"
 #include "Mortero.h"
+#include "CajaMunicion.h"
 class Artillero :
 	public Enemigo
 {
-	Mortero* m;
-	bool reload;
+	CajaMunicion CajaMun;
+	double reload;
 
 public:
 	Artillero();
 	bool ataca(Personaje& p);
-	void Mueve(float t) {}
-
-	void Persigue(Personaje& p) {}
+	void Mueve(float t);
+	void Dibuja();
+	 CajaMunicion& Getcaja();
 };

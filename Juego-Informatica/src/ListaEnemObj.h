@@ -23,5 +23,5 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	void Persigue(Personaje& p);
-
+	bool ataca(Personaje& p);
 };

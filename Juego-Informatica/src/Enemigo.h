@@ -3,6 +3,7 @@
 #include "Personaje.h"
 #include "ColliderMap.h"
 #include "ObjetoGeneral.h"
+
 #include <math.h>
 #include "glut.h"
 class Enemigo :public ObjetoGeneral {
@@ -19,6 +20,7 @@ public:
 	float DistanciaPlayer(Personaje& a);
 	float DistanciaPared();
 	bool ataca(Personaje& p);
+	
 
 
 	friend class Interaccion;

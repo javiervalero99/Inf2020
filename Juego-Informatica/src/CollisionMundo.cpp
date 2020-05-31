@@ -124,3 +124,33 @@ bool CollisionMundo::Collision(ObjetoGeneral& obj, Personaje& per)
 	bool CollisionY = ((partArribaPersonaje + 0.01 >= partAbajoObj) && (partAbajoPersonaje + 0.01 <= partArribaObj));
 	return CollisionX && CollisionY;
 }
+
+bool CollisionMundo::Collision(Mortero& per, ColliderMap pared)
+{
+	//printf("velx=%f y vely=%f\n", per.velocidad.x, per.velocidad.y);
+//printf("%d\n", per.valid_salto);
+	float tamy = per.collider.tam.y / 2;
+	float tamx = per.collider.tam.x / 2;
+	bool In_collider = (per.GetPosicion().x - tamx <= pared.Arriba.x) && (per.GetPosicion().x + tamx >= pared.Abajo.x);//Estas en las X
+	bool Under_collider = (per.GetPosicion().y + tamy <= pared.Arriba.y) && (per.GetPosicion().y - tamy <= pared.Abajo.y);// || (per.GetPosicion().y + tamy <= pared.Arriba.y) && (per.GetPosicion().y - tamy >= pared.Abajo.y);
+	bool Up_collider = (per.GetPosicion().y - tamy - 0.01 <= pared.Arriba.y) && (per.GetPosicion().y - tamy - 0.01 >= pared.Abajo.y) && (per.GetPosicion().y + tamy >= pared.Arriba.y);
+
+
+
+	if ((In_collider == true) && (Under_collider == false)) {
+
+
+		//printf("Aire=%d, Suelo=%d\n", In_air,Up_collider);
+		if ((Up_collider == true) && (per.velocidad.y < 0)) {
+			//per.posicion.y = pared.Arriba.y + 0.64;
+			per.velocidad.x = 0;
+			per.velocidad.y = 0;
+			per.aceleracion.y = 0;
+			per.posicion.y = pared.Arriba.y + tamy;
+			per.SetStatus();
+		}
+
+	}
+	return Up_collider && In_collider;
+}
+

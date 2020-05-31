@@ -13,23 +13,40 @@ CajaMunicion::~CajaMunicion()
 
 void CajaMunicion::destruirContenido()
 {
-	for (int i = 0; i <usados; i++)
-		delete CajaMun[i];
-	usados = 0;
+	for (int i = 0; i < usados; i++) {
+		if (CajaMun[i]->getStatus() == true)
+	delete CajaMun[i];
+		
+	}
+}
+
+bool CajaMunicion::agregar(Vector2D art, float range)
+{
+	if (usados < MAX_MORTEROS)
+	{
+
+		CajaMun[usados++] = new Mortero(art, range);
+	}
+	else
+		return false;
+	return true;
 }
 
 void CajaMunicion::Dibuja()
 {
-	CajaMun[usados]->Dibuja();
+	for (int i = 0; i < usados; i++)
+		CajaMun[i]->Dibuja();
 }
 
 void CajaMunicion::Mueve(float t)
 {
-	CajaMun[usados]->Mueve(t);
+	for (int i = 0; i < usados; i++)
+		CajaMun[i]->Mueve(t);
 }
 
 void CajaMunicion::eliminar(int index)
 {
+
 }
 
 Mortero* CajaMunicion::operator[](int i)
@@ -39,4 +56,9 @@ Mortero* CajaMunicion::operator[](int i)
 	if (i < 0) // si te paas por abajo
 		i = 0;
 	return CajaMun[i];
+}
+
+int CajaMunicion::getelem()
+{
+	return usados;
 }

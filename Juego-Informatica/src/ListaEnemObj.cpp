@@ -97,3 +97,10 @@ void ListaEnemObj::Persigue(Personaje& p)
 	for (int i = 0; i < n; i++)
 		lista[i]->Persigue(p);
 }
+
+bool ListaEnemObj::ataca(Personaje& p)
+{
+	for (int i = 0; i < n; i++)
+		lista[i]->ataca( p);
+	return true;
+}

@@ -48,10 +48,8 @@ public:
 
 	HUD hud;
 	//Patrullero enemigo;
-	Artillero artillero;
-	Mortero mortero;
+	
 	ListaEnemObj Enemigos;
-	bool fire;
 	// variables de juego
 
 };

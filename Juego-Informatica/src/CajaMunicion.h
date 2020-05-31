@@ -11,8 +11,10 @@ public:
 	CajaMunicion();
 	virtual ~CajaMunicion();
 	void destruirContenido();
+	bool agregar(Vector2D art, float range);
 	void Dibuja();
 	void Mueve(float t);
 	void eliminar(int index);
 	Mortero* operator [](int i);
+	int getelem();
 };
