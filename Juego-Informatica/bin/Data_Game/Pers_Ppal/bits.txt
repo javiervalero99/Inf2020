@@ -1,0 +1,2 @@
+bits para tener en cuenta imagen
+estocada = 100 base por 50 altura
