@@ -60,12 +60,13 @@ void Mundo::Dibuja()
 	*/
 	InteraccionListas::Collision(Hombre, Colliders);
 	InteraccionListas::Collision(Enemigos, Colliders),
-		//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
-		/*if (valid9 == false)
-		{
-			enemigo.cae = true;
-			enemigo.j++;
-		}*/
+		InteraccionListas::Collision(Enemigos, Hombre);
+	//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
+	/*if (valid9 == false)
+	{
+		enemigo.cae = true;
+		enemigo.j++;
+	}*/
 
 	hud.SetPos(Hombre);
 	hud.Dibuja();
@@ -85,8 +86,8 @@ void Mundo::Mueve(float t)
 	// 
 
 	fire = artillero.ataca(Hombre);
-	if(fire)
-mortero.Mueve(t);
+	if (fire)
+		mortero.Mueve(t);
 }
 
 

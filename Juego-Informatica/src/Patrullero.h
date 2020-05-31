@@ -12,7 +12,7 @@ private:
 	SpriteSequence Surprise;//sprite sorpednido 
 
 
-public: 
+public:
 	Patrullero();
 	void patrulla(float x1, float x2);
 	void Persigue(Personaje& p);

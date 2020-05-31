@@ -44,6 +44,8 @@ bool CollisionMundo::Collision(Personaje& per, ColliderMap pared)
 		//printf("Aire=%d, Suelo=%d\n", In_air,Up_collider);
 		if ((Up_collider == true) && (per.velocidad.y < 0)) {
 			//per.posicion.y = pared.Arriba.y + 0.64;
+			if (per.velocidad.y <= -20)
+				per.SetSalud(0);
 			per.velocidad.y = 0;
 			per.aceleracion.y = 0;
 			per.posicion.y = pared.Arriba.y + tamy;
@@ -100,4 +102,25 @@ bool CollisionMundo::Collision(ObjetoGeneral& per, ColliderMap pared)
 
 	}
 	return Up_collider && In_collider;
+}
+
+bool CollisionMundo::Collision(ObjetoGeneral& obj, Personaje& per)
+{
+	float tamxPer = per.collider.tam.x / 2;
+	float tamxObj = obj.Collider.tam.x / 2;
+	float tamyPer = per.collider.tam.y / 2;
+	float tamyObj = obj.Collider.tam.y / 2;
+	float partDelantePersonaje = per.GetPosicion().x + tamxPer;
+	float partTraseraPersonaje = per.GetPosicion().x - tamxPer;
+	float partArribaPersonaje = per.GetPosicion().y + tamyPer;
+	float partAbajoPersonaje = per.GetPosicion().y - tamyPer;
+	float partDelanteObj = obj.GetPosicion().x + tamxObj;
+	float partTraseraObj = obj.GetPosicion().x - tamxObj;
+	float partArribaObj = obj.GetPosicion().y + tamyObj;
+	float partAbajoObj = obj.GetPosicion().y - tamyObj;
+
+
+	bool CollisionX = ((partDelantePersonaje + 0.01 >= partTraseraObj) && (partTraseraPersonaje + 0.01 <= partDelanteObj));
+	bool CollisionY = ((partArribaPersonaje + 0.01 >= partAbajoObj) && (partAbajoPersonaje + 0.01 <= partArribaObj));
+	return CollisionX && CollisionY;
 }

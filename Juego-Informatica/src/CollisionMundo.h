@@ -9,5 +9,5 @@ public:
 	virtual ~CollisionMundo();
 	static bool Collision(Personaje& per, ColliderMap pared);
 	static bool Collision(ObjetoGeneral& per, ColliderMap pared);
-
+	static bool Collision(ObjetoGeneral& obj, Personaje& per);
 };

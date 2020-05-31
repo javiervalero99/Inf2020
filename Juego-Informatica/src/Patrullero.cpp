@@ -8,7 +8,7 @@ Patrullero::Patrullero() : Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Di
 	posicion.y = 8 + 1.3 / 2;
 	velocidad.x = 1;
 	cae = false;
-	Run.setSize(2,2);
+	Run.setSize(2, 2);
 	Run.setCenter(1, 0.7);
 	Die.setSize(2, 2);
 	Die.setCenter(1, 0);
@@ -56,10 +56,10 @@ void Patrullero::Dibuja()
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
 
-	
 
 
-	if (velocidad.x >0.01)
+
+	if (velocidad.x > 0.01)
 	{
 		Run.flip(false, false);
 		Attack.flip(false, false);
@@ -76,7 +76,7 @@ void Patrullero::Dibuja()
 	//ZONA SPRITES
 	if ((velocidad.x != 0))//ESTA CORRIENDO
 	{
-			Run.draw();
+		Run.draw();
 	}
 
 	glTranslated(-posicion.x, -posicion.y, 0);

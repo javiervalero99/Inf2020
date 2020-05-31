@@ -18,6 +18,8 @@ private:
 	float tiempo;
 
 public:
+	int Dañoataque; //= a asignacionVida de Objeto General
+	bool validacionAsignacion;
 	bool cae;
 	int r, q, j; //r otorga la validación para cada operacion de direccion
 	//q cambia la sensibilidad de desplazamiento cuando saltas (permite movimientos más rapidos)
@@ -39,12 +41,11 @@ public:
 	void Salto(unsigned char key);
 	void TeclaDown(unsigned char key);
 	void TeclaUp(unsigned char key);
-
+	float GetSalud() { return salud; }
+	void SetSalud(float s) { salud = s; }
+	void AddSalud(float s) { salud += s; }
 
 	//
 	Collision_Movil collider;
-
-	int GetSalud();
-	void SetSalud(int n);
 	void daño(float t);
 };

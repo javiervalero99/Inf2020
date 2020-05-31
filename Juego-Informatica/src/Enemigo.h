@@ -18,7 +18,7 @@ public:
 	void Persigue(Personaje& p);
 	float DistanciaPlayer(Personaje& a);
 	float DistanciaPared();
-	void ataca(Personaje& p);
+	bool ataca(Personaje& p);
 
 
 	friend class Interaccion;

@@ -1,8 +1,10 @@
 #include "Enemigo.h"
 #pragma once
 
-Enemigo::Enemigo() :ObjetoGeneral(-20, 8 + 1.3 / 2, 1, 0, 1.3, 1.3)
+Enemigo::Enemigo() :ObjetoGeneral(-20, 8 + 1.3 / 2, 1, 0, 1.3, 1.3, 0)
 {
+	validacionAsignacion = true;
+	asignacionSalud = -1;
 }
 
 Enemigo::~Enemigo()
@@ -82,13 +84,14 @@ float Enemigo::DistanciaPared()
 	return 0.0f;
 }
 
-void Enemigo::ataca(Personaje& p)
+bool Enemigo::ataca(Personaje& p)
 {
 	float acc = 2;
 	if (DistanciaPlayer(p) < acc) {
 		// to-do meterla animacion
 		p.SetSalud(p.GetSalud() - 1);
-
+		return true;
 
 	}
 }
+
