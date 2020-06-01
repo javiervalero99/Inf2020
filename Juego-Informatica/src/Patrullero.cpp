@@ -2,7 +2,7 @@
 #pragma once
 
 
-Patrullero::Patrullero() : Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Die("\Data_Game/Enem_Pat/Pat_die.png", 10, 2, 100), Attack("\Data_Game/Enem_Pat/Pat_attack.png", 7, 1, 100), Surprise("\Data_Game/Enem_Pat/Pat_surprise.png", 5, 1, 100)
+Patrullero::Patrullero() : Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Die("\Data_Game/Enem_Pat/Pat_die.png", 10, 2, 100), Attack("\Data_Game/Enem_Pat/Pat_attack.png", 7, 1, 80), Surprise("\Data_Game/Enem_Pat/Pat_surprise.png", 5, 1, 150)
 {
 	posicion.x = -20;
 	posicion.y = 8 + 1.3 / 2;
@@ -16,6 +16,12 @@ Patrullero::Patrullero() : Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Di
 	Attack.setCenter(1, 0);
 	Surprise.setSize(2, 2);
 	Surprise.setCenter(1, 1);
+
+	estoy_atacando = false;
+	me_muero = false;
+	rayos_y_centellas = false;
+
+
 }
 
 void Patrullero::patrulla(float x1, float x2)
@@ -27,14 +33,32 @@ void Patrullero::patrulla(float x1, float x2)
 }
 void Patrullero::Persigue(Personaje& p)
 {
-
+	
 	// si no hay nada en medio(las disntacias  otra cosa no es mayor ) lo persigue
 	float acc = 5;
 
 
 	if (acc >= DistanciaPlayer(p))
 	{
-		// to do - preparar la matematica de pserseguir
+		if (contador == 0) {
+			rayos_y_centellas = true;
+			Surprise.setState(0, false);
+			contador++;
+		}
+		
+		if ( DistanciaPlayer(p) < 0.6) {
+			if (contador_a == 0) {
+				estoy_atacando = true;
+				Attack.setState(0, false);
+				contador_a++;
+			}
+			
+		}
+		if (DistanciaPlayer(p) >0.6)
+			contador_a = 0;
+			
+
+
 		float mov = p.posicion.x - posicion.x;
 		if (mov < 0)
 		{
@@ -46,6 +70,7 @@ void Patrullero::Persigue(Personaje& p)
 
 	}
 	else {//enemigo en modo default; puede implantarse lo que sea
+		contador = 0;
 		patrulla(19, 22);
 	}
 
@@ -53,11 +78,34 @@ void Patrullero::Persigue(Personaje& p)
 
 void Patrullero::Dibuja()
 {
+	estado_ay_caramba = Surprise.getState();
+	if (estado_ay_caramba == 4) {
+		rayos_y_centellas = false;
+		
+	}
+	estado_ataque = Attack.getState();
+	if (estado_ataque == 3 ) {
+		validacionAsignacion = true;
+
+	}
+	if (estado_ataque == 6) {
+		validacionAsignacion = false;
+		estoy_atacando = false;
+
+	}
+
+
+
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
 
+	if (rayos_y_centellas == true && estoy_atacando == false) {
+		Surprise.draw();
+	}
 
-
+	if ((estoy_atacando == true) &&(rayos_y_centellas == false)) {
+		Attack.draw();
+	}
 
 	if (velocidad.x > 0.01)
 	{
@@ -74,9 +122,10 @@ void Patrullero::Dibuja()
 		Surprise.flip(true, false);
 	}
 	//ZONA SPRITES
-	if ((velocidad.x != 0))//ESTA CORRIENDO
+	if ((velocidad.x != 0) && rayos_y_centellas == false && estoy_atacando ==false)//ESTA CORRIENDO
 	{
 		Run.draw();
+
 	}
 
 	glTranslated(-posicion.x, -posicion.y, 0);
@@ -97,5 +146,13 @@ void Patrullero::Mueve(float t)
 		cae = false;
 	}
 	Run.loop();
+	Surprise.loop();
+	Die.loop();
+	Attack.loop();
 
+}
+
+bool Patrullero::ataca(Personaje& p)
+{
+	return 0;
 }

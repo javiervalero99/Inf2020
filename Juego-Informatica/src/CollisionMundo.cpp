@@ -154,3 +154,24 @@ bool CollisionMundo::Collision(Mortero& per, ColliderMap pared)
 	return Up_collider && In_collider;
 }
 
+bool CollisionMundo::Collision(Mortero& obj, Personaje& per)
+{
+	float tamxPer = per.collider.tam.x / 2;
+	float tamxObj = obj.collider.tam.x / 2;
+	float tamyPer = per.collider.tam.y / 2;
+	float tamyObj = obj.collider.tam.y / 2;
+	float partDelantePersonaje = per.GetPosicion().x + tamxPer;
+	float partTraseraPersonaje = per.GetPosicion().x - tamxPer;
+	float partArribaPersonaje = per.GetPosicion().y + tamyPer;
+	float partAbajoPersonaje = per.GetPosicion().y - tamyPer;
+	float partDelanteObj = obj.GetPosicion().x + tamxObj;
+	float partTraseraObj = obj.GetPosicion().x - tamxObj;
+	float partArribaObj = obj.GetPosicion().y + tamyObj;
+	float partAbajoObj = obj.GetPosicion().y - tamyObj;
+
+
+	bool CollisionX = ((partDelantePersonaje + 0.01 >= partTraseraObj) && (partTraseraPersonaje + 0.01 <= partDelanteObj));
+	bool CollisionY = ((partArribaPersonaje + 0.01 >= partAbajoObj) && (partAbajoPersonaje + 0.01 <= partArribaObj));
+	return CollisionX && CollisionY;
+}
+

@@ -1,12 +1,19 @@
 #pragma once
+#include "ETSIDI.h"
 #include "Collision_Movil.h"
 #include "Vector2D.h"
 #include <math.h>
 #include "Personaje.h"
 #include "glut.h"
 
+using ETSIDI::SpriteSequence;
+
 class Mortero {
 	bool kabum;
+	//sprite
+	SpriteSequence forma;
+
+
 public:
 	Mortero();
 	Mortero(Vector2D a, float range);
@@ -27,4 +34,7 @@ public:
 	Collision_Movil collider;
 	void SetStatus( );
 	bool getStatus();
+	int validacionAsignacion;
+	int asignacionSalud;
+
 };

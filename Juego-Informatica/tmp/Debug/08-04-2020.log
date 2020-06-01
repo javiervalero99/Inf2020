@@ -1,5 +1,92 @@
-﻿  CajaMunicion.cpp
-C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\juego infor v2\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\juego infor v2\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\juego infor v2\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-  08-04-2020.vcxproj -> C:\Users\orgyn\Desktop\CAMPO DE JUEGOS\juego infor v2\Juego-Informatica\bin\08-04-2020.exe
+﻿  Artillero.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Artillero.cpp(4,32): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Artillero.cpp(4,85): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Artillero.cpp(4,146): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  CajaMunicion.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  ColliderMap.cpp
+  CollisionMundo.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  Collision_Movil.cpp
+  Coordinador_Juego.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  Enemigo.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  HUD.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  Imagen.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  ImagenBucle.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  InteraccionListas.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  ListaCollider.cpp
+  ListaEnemObj.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  Main.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+  MenuPrincipal.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\MenuPrincipal.cpp(43,2): warning C4551: la llamada a la función no tiene lista de argumentos
+  Mortero.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mortero.cpp(4,48): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mortero.cpp(20,70): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  Mundo.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(108,18): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(109,19): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Mundo.cpp(112,15): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  Opcion_Menu.cpp
+  Patrullero.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(5,32): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(5,83): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(5,138): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(5,196): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  Personaje.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(44,28): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(45,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.h(46,25): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,58): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,106): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,159): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,212): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,265): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,318): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  Generando código...
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\MenuPrincipal.cpp(31): warning C4715: 'MenuPrincipal::AddOpcion': no todas las rutas de acceso de control devuelven un valor
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Enemigo.cpp(96): warning C4715: 'Enemigo::ataca': no todas las rutas de acceso de control devuelven un valor
+  Compilando...
+  Tiempo.cpp
+  Vector2D.cpp
+  Generando código...
+  08-04-2020.vcxproj -> D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe

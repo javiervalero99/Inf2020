@@ -1,26 +1,36 @@
 #pragma once
 #include "Mortero.h"
 
-Mortero::Mortero(): collider(0.5, 0.5)
+Mortero::Mortero(): collider(0.5, 0.5) , forma("\Data_Game/Enemigo_Mortero/disparo.png", 1, 1, 1000)
 {
+
+	forma.setSize(1 ,1 );
+	forma.setCenter(1, 0);
 	velo0 = 15;
 
+	validacionAsignacion = 1;
 	velocidad.x = velo0;
 	velocidad.y = velo0;
 	aceleracion.y = 9.8;
 	disparo(posicion.x + 6);
 	kabum = false;
+	asignacionSalud = -2;
 }
 
-Mortero::Mortero(Vector2D a, float range):collider(0.5, 0.5){
+Mortero::Mortero(Vector2D a, float range):collider(0.5, 0.5) , forma("\Data_Game/Enemigo_Mortero/disparo.png", 1, 1, 1000) {
+	forma.setSize(2, 2);
+	forma.setCenter(1, 0);
+
 	posicion = a;
 	velo0 = 15;
 	velocidad.x = velo0;
 	velocidad.y = velo0;
 	aceleracion.y = 9.8;
 	disparo(posicion.x + range);
-	
+
+	validacionAsignacion = 1;
 	kabum = false;
+	asignacionSalud = -2;
 }
 
 
@@ -32,11 +42,20 @@ Mortero::~Mortero()
 
 void Mortero::Dibuja()
 {
+	if (velocidad.y > 0.01)
+		forma.flip(false, false);
+
+	if (velocidad.y < -0.01)
+		forma.flip(false, true);
+
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
-	glutSolidSphere(0.5, 30, 40);
+	//glutSolidSphere(0.5, 30, 40);
+	if(kabum ==false)
+	forma.draw();
 	glTranslated(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
+
 }
 
 
@@ -48,11 +67,12 @@ bool Mortero::disparo(float x) //crea la parabola y dice si se ha disparado  // 
 	velocidad.y = velo0 * sin(angulo);
 	return true;
 
+	
 }
 
 void Mortero::Mueve(float t)
 {
-
+	
 	posicion.x += velocidad.x * 0.025 + (1 / 2) * aceleracion.x * pow(0.025, 2);
 	velocidad.x -= aceleracion.x * 0.025;
 	//salto
@@ -63,11 +83,7 @@ void Mortero::Mueve(float t)
 bool Mortero::detona()
 {
 
-	/*Vector2D explosion = p.posicion - posicion;
-	if (explosion.modulo() < 3.0);
 
-	p.SetSalud( p.GetSalud() - 2);
-	*/
 	return 0;
 }
 

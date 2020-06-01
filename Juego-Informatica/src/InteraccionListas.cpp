@@ -50,6 +50,8 @@ bool InteraccionListas::Collision(ListaEnemObj& l, Personaje& h)
 	double Actual = GetTickCount();
 
 	for (int i = 0; i < l.GetNumElem(); i++) {
+		if (l[i].ifArtillero)
+			Collision(l[i].Getcaja(), h);
 		bool choque = false;
 		choque = CollisionMundo::Collision(l[i], h);
 		if (choque) {
@@ -79,5 +81,23 @@ bool InteraccionListas::Collision(CajaMunicion& l, ListaCollider lista)
 		}
 	}
 	return 0;
+}
+
+bool InteraccionListas::Collision(CajaMunicion& l, Personaje& h)
+{
+	double Actual = GetTickCount();
+
+	for (int i = 0; i < l.getelem(); i++) {
+		bool choque = false;
+		choque = CollisionMundo::Collision(*l[i], h);
+		if (choque) {
+
+			if (l[i]->validacionAsignacion) { //Interaccion ObjetoGeneral con salud del personaje
+				h.AddSalud(l[i] -> asignacionSalud);
+				l[i]->validacionAsignacion = false;
+			}
+		}
+	}
+	return true;
 }
 

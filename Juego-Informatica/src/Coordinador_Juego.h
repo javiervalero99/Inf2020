@@ -5,6 +5,7 @@
 #include "MenuPrincipal.h"
 #include "Opcion_Menu.h"
 #include "Vector2D.h"
+#include "Personaje.h"
 
 #include "glut.h"
 class Coordinador_Juego {

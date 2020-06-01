@@ -15,7 +15,7 @@ void CajaMunicion::destruirContenido()
 {
 	for (int i = 0; i < usados; i++) {
 		if (CajaMun[i]->getStatus() == true)
-	delete CajaMun[i];
+			delete CajaMun[i];
 		
 	}
 }
