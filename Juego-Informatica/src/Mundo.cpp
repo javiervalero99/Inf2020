@@ -38,6 +38,7 @@ void Mundo::Dibuja()
 
 
 	Enemigos.Dibuja();
+	
 	glRotatef(180, 0, 1, 0);
 	glTranslated(0, 0, 1);
 	Mapa.Dibuja();
@@ -46,9 +47,10 @@ void Mundo::Dibuja()
 	glTranslated(0, 0, 70);
 
 	glTranslated(0, 0, -70);
-
+	
 	//Para ver collider
-	/*glRotatef(180, 0, 1, 0);
+	/*
+	glRotatef(180, 0, 1, 0);
 	glTranslated(0, 0, -4);
 	Mapa.Dibuja();
 	glTranslated(0, 0, 4);
@@ -61,6 +63,7 @@ void Mundo::Dibuja()
 	InteraccionListas::Collision(Hombre, Colliders);
 	InteraccionListas::Collision(Enemigos, Colliders),
 		InteraccionListas::Collision(Enemigos, Hombre);
+	InteraccionListas::Collision(Colliders, Hombre.GetCarcaj());
 	//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
 	/*if (valid9 == false)
 	{
@@ -74,8 +77,8 @@ void Mundo::Dibuja()
 
 
 	//artillero.Dibuja();
-	
-	
+
+
 }
 
 void Mundo::Mueve(float t)
@@ -84,11 +87,11 @@ void Mundo::Mueve(float t)
 
 	Enemigos.Mueve(t);
 	Enemigos.Persigue(Hombre);
-	
+
 	//artillero.Mueve(t);
 	Enemigos.ataca(Hombre);
-	
-		
+
+
 }
 
 
@@ -126,7 +129,7 @@ void Mundo::TeclaDown(unsigned char key)
 	Hombre.TeclaDown(key);
 
 
-	
+
 }
 
 
@@ -225,8 +228,3 @@ bool Mundo::Leer_Collider(char string[], ColliderMap* p)
 	}
 	return false;
 }
-
-
-
-
-

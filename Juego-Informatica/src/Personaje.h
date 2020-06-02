@@ -17,7 +17,7 @@ private:
 	SpriteSequence Distance; //sprite para ataque a distancia
 
 	Carcaj carcaj;
-	
+
 	float altura;
 	int salud;
 	float tiempo;
@@ -51,7 +51,7 @@ public:
 	float GetSalud() { return salud; }
 	void SetSalud(float s) { salud = s; }
 	void AddSalud(float s) { salud += s; }
-
+	Carcaj& GetCarcaj() { return carcaj; }
 	//
 	Collision_Movil collider;
 	void daño(float t);

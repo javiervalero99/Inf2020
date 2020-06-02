@@ -94,7 +94,7 @@ bool InteraccionListas::Collision(CajaMunicion& l, Personaje& h)
 		if (choque) {
 
 			if (l[i]->validacionAsignacion) { //Interaccion ObjetoGeneral con salud del personaje
-				h.AddSalud(l[i] -> asignacionSalud);
+				h.AddSalud(l[i]->asignacionSalud);
 				l[i]->validacionAsignacion = false;
 			}
 		}
@@ -102,3 +102,22 @@ bool InteraccionListas::Collision(CajaMunicion& l, Personaje& h)
 	return true;
 }
 
+bool InteraccionListas::Collision(ListaEnemObj& l, Carcaj& c)
+{
+	for (int i = 0; i < c.getNumero(); i++) {
+		for (int j = 0; j < l.GetNumElem(); j++) {
+			//CollisionMundo::Collision(*c[i], *l[i]);
+		}
+	}
+	return false;
+}
+
+bool InteraccionListas::Collision(ListaCollider& l, Carcaj& c)
+{
+	for (int i = 0; i < c.getNumero(); i++) {
+		for (int j = 0; j < l.GetNumero(); j++) {
+			CollisionMundo::Collision(*c[i], *l[i]);
+		}
+	}
+	return false;
+}

@@ -1,6 +1,6 @@
 #include "Flecha.h"
 
-Flecha::Flecha() : arrow("\Data_Game/Objects/flecha.png", 1, 1, 100)//, ImpactoFlecha(0.1, 0.1)///revisar
+Flecha::Flecha() : arrow("\Data_Game/Objects/flecha.png", 1, 1, 100), ImpactoFlecha(2, 0.5)//, ImpactoFlecha(0.1, 0.1)///revisar
 {
 	posicion.x = -100;
 	posicion.y = -100;
@@ -8,7 +8,7 @@ Flecha::Flecha() : arrow("\Data_Game/Objects/flecha.png", 1, 1, 100)//, ImpactoF
 	arrow.setCenter(1.8, 1.1);
 }
 
-Flecha::Flecha(float posx, float posy, bool direccion_derecha) : arrow("\Data_Game/Objects/flecha.png", 1, 1, 100)
+Flecha::Flecha(float posx, float posy, bool direccion_derecha) : arrow("\Data_Game/Objects/flecha.png", 1, 1, 100), ImpactoFlecha(2, 0.5)
 {
 	posicion.x = -100;
 	posicion.y = -100;
@@ -44,6 +44,7 @@ void Flecha::Dibuja()
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	//ImpactoFlecha.Dibuja();
+	ImpactoFlecha.Dibuja();
 	arrow.draw();
 	glTranslatef(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
