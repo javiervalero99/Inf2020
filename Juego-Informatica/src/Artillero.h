@@ -18,6 +18,10 @@ class Artillero :
 	SpriteSequence die;
 	int estado_atq;
 	bool estoy_disp;
+	int estado_muerte;
+	bool me_muero;
+	int contador_muerte;
+	bool endgame;
 
 public:
 	Artillero();

@@ -1,10 +1,6 @@
-﻿  InteraccionListas.cpp
-  Personaje.cpp
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,58): warning C4129: 'D': secuencia de escape de carácter no reconocida
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,106): warning C4129: 'D': secuencia de escape de carácter no reconocida
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,160): warning C4129: 'D': secuencia de escape de carácter no reconocida
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,213): warning C4129: 'D': secuencia de escape de carácter no reconocida
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,267): warning C4129: 'D': secuencia de escape de carácter no reconocida
-D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,320): warning C4129: 'D': secuencia de escape de carácter no reconocida
-  Generando código...
+﻿  Artillero.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Artillero.cpp(4,32): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Artillero.cpp(4,85): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Artillero.cpp(4,146): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Artillero.cpp(48): warning C4715: 'Artillero::ataca': no todas las rutas de acceso de control devuelven un valor
   08-04-2020.vcxproj -> D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe

@@ -12,38 +12,56 @@ Artillero::Artillero() : atack("\Data_Game/Enemigo_Mortero/shot.png",3,1, 100), 
 	statico.setSize(2, 2);
 	statico.setCenter(1, 0);
 	estoy_disp = false;
+	endgame = 0;
+	contador_muerte = 0;
+	me_muero = false;
+	salud = 1;
 
 }
 
 bool Artillero::ataca(Personaje& p)
 {
-	float acc = 8;
+	if (me_muero == false) {
+		float acc = 8;
 
-	if (DistanciaPlayer(p) < acc) {
-		double time = GetTickCount();
-		double cooldown = time - reload;
-		if( time- reload > 500)
-			estoy_disp = false;
+		if (DistanciaPlayer(p) < acc) {
+			double time = GetTickCount();
+			double cooldown = time - reload;
+			if (time - reload > 500)
+				estoy_disp = false;
 
-		if (cooldown > 4000) {
-			atack.setState(0, false);
-			estoy_disp = true;
+			if (cooldown > 4000) {
+				atack.setState(0, false);
+				estoy_disp = true;
 
 				CajaMun.agregar(GetPosicion(), DistanciaPlayer(p));
 				reload = GetTickCount();
-		
+
+			}
+			return true;
 		}
-		return true;
+		else
+			return false;
+
+
 	}
-	else
-		return false;
-
-
-
 }
 
 void Artillero::Mueve(float t)
 {
+	estado_muerte = die.getState();
+	if (estado_muerte == 10 && me_muero == true)
+		endgame = true;
+
+	if (salud <= 0 && contador_muerte == 0)
+	{
+		me_muero = true;
+		die.setState(0, false);
+		contador_muerte++;
+		asignacionSalud = 0;
+
+	}
+
 	CajaMun.Mueve(t);
 	CajaMun.destruirContenido();
 
@@ -61,12 +79,15 @@ void Artillero::Dibuja()
 	glTranslated(posicion.x, posicion.y, 0);
 	//glColor3ub(255, 0, 0);
 	//glutSolidCube(1.3f);
-	if (estoy_disp == false)
+	if (estoy_disp == false && me_muero == false)
 		statico.draw();
-	if (estoy_disp == true)
+	if (estoy_disp == true && me_muero == false)
 		atack.draw();
 
-
+	if (me_muero == true) {
+		die.draw();
+		velocidad.x = 0;
+	}
 
 	glTranslated(-posicion.x, -posicion.y, 0);
 

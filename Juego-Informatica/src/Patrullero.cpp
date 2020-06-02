@@ -11,15 +11,18 @@ Patrullero::Patrullero() : Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Di
 	Run.setSize(2, 2);
 	Run.setCenter(1, 0.7);
 	Die.setSize(2, 2);
-	Die.setCenter(1, 0);
+	Die.setCenter(1, 1);
 	Attack.setSize(2, 2);
 	Attack.setCenter(1, 0);
 	Surprise.setSize(2, 2);
 	Surprise.setCenter(1, 1);
+	salud = 1;
 
 	estoy_atacando = false;
 	me_muero = false;
 	rayos_y_centellas = false;
+	endgame = false;
+	contador_nuerte = 0;
 
 
 }
@@ -80,6 +83,11 @@ void Patrullero::Persigue(Personaje& p)
 
 void Patrullero::Dibuja()
 {
+
+	estado_muerte = Die.getState();
+	if (estado_muerte == 10 && me_muero == true)
+		endgame = true;
+
 	estado_ay_caramba = Surprise.getState();
 	if (estado_ay_caramba == 4) {
 		rayos_y_centellas = false;
@@ -101,11 +109,11 @@ void Patrullero::Dibuja()
 	glPushMatrix();
 	glTranslated(posicion.x, posicion.y, 0);
 
-	if (rayos_y_centellas == true && estoy_atacando == false) {
+	if (rayos_y_centellas == true && estoy_atacando == false && me_muero == false) {
 		Surprise.draw();
 	}
 
-	if ((estoy_atacando == true) &&(rayos_y_centellas == false)) {
+	if ((estoy_atacando == true) &&(rayos_y_centellas == false) && me_muero == false) {
 		Attack.draw();
 	}
 
@@ -115,6 +123,7 @@ void Patrullero::Dibuja()
 		Attack.flip(false, false);
 		Die.flip(false, false);
 		Surprise.flip(false, false);
+		Die.flip(false, false);
 	}
 	else if (velocidad.x < -0.01)
 	{
@@ -122,20 +131,34 @@ void Patrullero::Dibuja()
 		Attack.flip(true, false);
 		Die.flip(true, false);
 		Surprise.flip(true, false);
+		Die.flip(true, false);
 	}
 	//ZONA SPRITES
-	if ((velocidad.x != 0) && rayos_y_centellas == false && estoy_atacando ==false)//ESTA CORRIENDO
+	if ((velocidad.x != 0) && rayos_y_centellas == false && estoy_atacando ==false && me_muero ==false)//ESTA CORRIENDO
 	{
 		Run.draw();
 
 	}
-
+	if (me_muero == true) {
+		Die.draw();
+		velocidad.x = 0;
+	}
 	glTranslated(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
 }
 
 void Patrullero::Mueve(float t)
 {
+
+	if (salud <= 0 && contador_nuerte == 0)
+	{
+		me_muero = true;
+		Die.setState(0, false);
+		contador_nuerte++;
+		asignacionSalud = 0;
+
+	}
+
 
 	posicion.x += velocidad.x * 0.025 + (1 / 2) * aceleracion.x * pow(0.025, 2);
 	velocidad.x -= aceleracion.x * 0.025;

@@ -15,9 +15,11 @@ private:
 	int estado_ataque;
 	int estado_die;
 	int estado_ay_caramba;
+	int estado_muerte;
 	bool estoy_atacando;
 	bool me_muero;
 	bool rayos_y_centellas;
+	bool endgame;
 public:
 	Patrullero();
 	void patrulla(float x1, float x2);
@@ -25,7 +27,7 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	bool ataca(Personaje& p);
-	int contador,contador_a ;
+	int contador,contador_a ,contador_nuerte;
 
 
 };

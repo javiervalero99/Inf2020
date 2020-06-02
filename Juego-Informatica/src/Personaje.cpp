@@ -33,6 +33,8 @@ Personaje::Personaje() :validacionAsignacion(false), Run("\Data_Game/Pers_Ppal/r
 	Jump.setCenter(1.5 ,1);
 	Distance.setSize(3.5, 3.5);
 	Distance.setCenter(1.75, 1.5);
+	
+	Dañoataque = -2;
 
 	endgame = false;
 	contador_muerte = 0;
