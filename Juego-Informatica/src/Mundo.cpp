@@ -69,6 +69,7 @@ void Mundo::Dibuja()
 	}*/
 
 	hud.SetPos(Hombre);
+	hud.SetVida(Hombre);
 	hud.Dibuja();
 
 

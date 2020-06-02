@@ -12,6 +12,10 @@ private:
 	int salud;
 	Vector2D local;
 //	SpriteSequence mostrar;
+	SpriteSequence full;
+	SpriteSequence half;
+	SpriteSequence none;
+
 
 public:
 	 void Dibuja();
