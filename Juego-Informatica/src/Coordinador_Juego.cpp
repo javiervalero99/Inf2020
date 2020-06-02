@@ -99,7 +99,7 @@ void Coordinador_Juego::Mueve()
 
 void Coordinador_Juego::Dibuja()
 {
-	if (estado == JUEGO && mundo.Hombre.GetSalud() == 0)
+	if (estado == JUEGO && mundo.Hombre.Muerte()==true)
 		estado = INICIO;
 	if (estado == INICIO) {
 		gluLookAt(0, 0, 7.5,

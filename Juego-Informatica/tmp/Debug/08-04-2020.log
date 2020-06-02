@@ -1,5 +1,10 @@
-﻿  Mundo.cpp
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(112,18): warning C4129: 'D': secuencia de escape de carácter no reconocida
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(113,19): warning C4129: 'D': secuencia de escape de carácter no reconocida
-C:\Inf2020\Juego-Informatica\src\Mundo.cpp(116,15): warning C4129: 'D': secuencia de escape de carácter no reconocida
-  08-04-2020.vcxproj -> C:\Inf2020\Juego-Informatica\bin\08-04-2020.exe
+﻿  InteraccionListas.cpp
+  Personaje.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,58): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,106): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,160): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,213): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,267): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Personaje.cpp(8,320): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  Generando código...
+  08-04-2020.vcxproj -> D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe

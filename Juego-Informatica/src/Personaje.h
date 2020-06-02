@@ -24,6 +24,12 @@ private:
 	int estado_flecha;
 	bool MiraDerecha;
 	bool estoy_disp;
+	bool estoy_atacando;
+	int estado_basico;
+	int estado_muerte;
+	bool muerte;
+	bool endgame;
+	int contador_muerte;
 public:
 	int Dañoataque; //= a asignacionVida de Objeto General
 	bool validacionAsignacion;
@@ -52,6 +58,7 @@ public:
 	void SetSalud(float s) { salud = s; }
 	void AddSalud(float s) { salud += s; }
 	Carcaj& GetCarcaj() { return carcaj; }
+	bool Muerte();
 	//
 	Collision_Movil collider;
 	void daño(float t);
