@@ -63,6 +63,7 @@ bool InteraccionListas::Collision(ListaEnemObj& l, Personaje& h)
 			if (l[i].validacionAsignacion) { //Interaccion ObjetoGeneral con salud del personaje
 				h.AddSalud(l[i].asignacionSalud);
 				l[i].validacionAsignacion = false;
+
 			}
 		}
 	}

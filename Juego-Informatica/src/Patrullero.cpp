@@ -35,7 +35,7 @@ void Patrullero::Persigue(Personaje& p)
 {
 	
 	// si no hay nada en medio(las disntacias  otra cosa no es mayor ) lo persigue
-	float acc = 5;
+	float acc = 6;
 
 
 	if (acc >= DistanciaPlayer(p))
@@ -51,6 +51,8 @@ void Patrullero::Persigue(Personaje& p)
 				estoy_atacando = true;
 				Attack.setState(0, false);
 				contador_a++;
+
+
 			}
 			
 		}

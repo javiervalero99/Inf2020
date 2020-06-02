@@ -129,6 +129,12 @@
     <ClCompile Include="src\ListaEnemObj.cpp">
       <Filter>Archivos de origen\Personaje/Enemigo</Filter>
     </ClCompile>
+    <ClCompile Include="src\Carcaj.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo\municion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Flecha.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo\municion</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector2D.h">
@@ -196,6 +202,12 @@
     </ClInclude>
     <ClInclude Include="src\ObjetoGeneral.h">
       <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Carcaj.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo\municion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Flecha.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo\municion</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

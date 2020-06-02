@@ -3,6 +3,8 @@
 #include "Vector2D.h"
 #include "Collision_Movil.h"
 
+#include "Carcaj.h"
+
 using ETSIDI::SpriteSequence;
 class Personaje {
 private:
@@ -13,10 +15,15 @@ private:
 	SpriteSequence Basic;//sprite para ataque mele básico
 	SpriteSequence Jump;//sprite para salto
 	SpriteSequence Distance; //sprite para ataque a distancia
+
+	Carcaj carcaj;
+	
 	float altura;
 	int salud;
 	float tiempo;
-
+	int estado_flecha;
+	bool MiraDerecha;
+	bool estoy_disp;
 public:
 	int Dañoataque; //= a asignacionVida de Objeto General
 	bool validacionAsignacion;

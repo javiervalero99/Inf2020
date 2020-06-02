@@ -10,6 +10,7 @@ private:
 	SpriteSequence Die;//sprite para muerte
 	SpriteSequence Attack;//sprite catacando
 	SpriteSequence Surprise;//sprite sorpednido 
+	
 
 	int estado_ataque;
 	int estado_die;

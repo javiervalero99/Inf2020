@@ -1,6 +1,9 @@
 #pragma once
 #include "Vector2D.h"
 #include "Personaje.h"
+#include "ETSIDI.h"
+
+using ETSIDI::SpriteSequence;
 class HUD{
 public:
 	HUD();
@@ -8,6 +11,7 @@ public:
 private:
 	int salud;
 	Vector2D local;
+//	SpriteSequence mostrar;
 
 public:
 	 void Dibuja();
