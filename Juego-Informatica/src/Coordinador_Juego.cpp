@@ -38,13 +38,13 @@ void Coordinador_Juego::TeclaUp(unsigned char key)
 
 void Coordinador_Juego::TeclaDown(unsigned char key)
 {
-	
+
 	if (estado == INICIO) {
 		if (key == 's') {
 			exit(0);
 		}
 	}
-	else if (estado == JUEGO){
+	else if (estado == JUEGO) {
 		mundo.TeclaDown(key);
 		if (key == 27)
 			estado = PAUSA;
@@ -68,14 +68,16 @@ void Coordinador_Juego::TeclaDown(unsigned char key)
 
 void Coordinador_Juego::ClickDch(int state, int x, int y)
 {
-	Vector2D boton_juego_Arriba(70, 340);
-	Vector2D boton_juego_Abajo(235, 422);
-	printf("x:%d  y:%d\n", x, y);
-	bool x_en_boton_juego = (x >= 117) && (x <= 325);
-	bool y_en_boton_juego = (y >= 352) && (y <= 455);
-	if ((x_en_boton_juego == true) && (y_en_boton_juego == true)) {
-		estado = JUEGO;
-		mundo.Inicializa();
+	if (estado == INICIO) {
+		Vector2D boton_juego_Arriba(70, 340);
+		Vector2D boton_juego_Abajo(235, 422);
+		printf("x:%d  y:%d\n", x, y);
+		bool x_en_boton_juego = (x >= 117) && (x <= 325);
+		bool y_en_boton_juego = (y >= 352) && (y <= 455);
+		if ((x_en_boton_juego == true) && (y_en_boton_juego == true)) {
+			estado = JUEGO;
+			mundo.Inicializa();
+		}
 	}
 }
 
@@ -100,20 +102,20 @@ void Coordinador_Juego::Dibuja()
 	if (estado == JUEGO && mundo.Hombre.GetSalud() == 0)
 		estado = INICIO;
 	if (estado == INICIO) {
-		gluLookAt(0, 0,7.5,
+		gluLookAt(0, 0, 7.5,
 			0.0, 0.0, 0.0,
 			0.0, 1.0, 0.0);
-			glDisable(GL_LIGHTING);
-			menu.CreateMenu();
-			ETSIDI::setTextColor(0, 0.5, 1);
-			ETSIDI::setFont("Data_Game/fuentes/Bitwise.ttf", 16);
-			ETSIDI::printxy("FREYA Y EL LADRON DE LUZ", -2, 2);
-			ETSIDI::setTextColor(1, 0, 0);
-			ETSIDI::setFont("Data_Game/fuentes/Bitwise.ttf", 12);
-			ETSIDI::printxy("JUGAR", -2, -1);
-			ETSIDI::printxy("COMO JUGAR", 1, -1);
+		glDisable(GL_LIGHTING);
+		menu.CreateMenu();
+		ETSIDI::setTextColor(0, 0.5, 1);
+		ETSIDI::setFont("Data_Game/fuentes/Bitwise.ttf", 16);
+		ETSIDI::printxy("FREYA Y EL LADRON DE LUZ", -2, 2);
+		ETSIDI::setTextColor(1, 0, 0);
+		ETSIDI::setFont("Data_Game/fuentes/Bitwise.ttf", 12);
+		ETSIDI::printxy("JUGAR", -2, -1);
+		ETSIDI::printxy("COMO JUGAR", 1, -1);
 	}
-		
+
 	else if (estado == JUEGO) {
 		mundo.Dibuja();
 	}
