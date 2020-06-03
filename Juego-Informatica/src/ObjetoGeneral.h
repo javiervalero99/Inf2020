@@ -7,7 +7,7 @@ class ObjetoGeneral {
 protected:
 	float altura;
 	float salud;
-
+	bool endgame;
 
 public:
 	int asignacionSalud; //Cuanto dañan o aportan al personaje, Daño<0, Vida>0
@@ -27,6 +27,7 @@ public:
 	Vector2D GetPosicion() { return posicion; }
 	void SetPosicion(Vector2D& pos) { posicion = pos; }
 	void SetPosicion(float posx, float posy) { posicion.x = posx; posicion.y = posy; }
+	bool Endgame() { return endgame; }
 	float GetSalud() { return salud; }
 	void SetSalud(float s) { salud = s; }
 	void AddSalud(float s) { salud += s; }

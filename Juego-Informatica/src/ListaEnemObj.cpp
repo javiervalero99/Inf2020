@@ -35,6 +35,15 @@ bool ListaEnemObj::AddElem(ObjetoGeneral* m)
 
 }
 
+void ListaEnemObj::Muerte()
+{
+	for (int i = 0; i < n; i++) {
+
+		if (lista[i]->Endgame())
+			DeleteElem(lista[i]);
+	}
+}
+
 bool ListaEnemObj::DeleteElem(ObjetoGeneral* m)
 {
 	for (int i = 0; i < n; i++) {
@@ -48,7 +57,8 @@ bool ListaEnemObj::DeleteElem(ObjetoGeneral* m)
 
 bool ListaEnemObj::DeleteElem(int index)
 {
-	if (n < index) {
+	if (index < n) {
+		delete lista[index];
 		for (int i = index; i < n; i++)
 			lista[i] = lista[i + 1];
 		n--;

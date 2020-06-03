@@ -21,7 +21,7 @@ class Artillero :
 	int estado_muerte;
 	bool me_muero;
 	int contador_muerte;
-	bool endgame;
+	
 
 public:
 	Artillero();

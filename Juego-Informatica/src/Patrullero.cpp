@@ -83,7 +83,7 @@ void Patrullero::Persigue(Personaje& p)
 
 void Patrullero::Dibuja()
 {
-
+	
 	estado_muerte = Die.getState();
 	if (estado_muerte == 10 && me_muero == true)
 		endgame = true;

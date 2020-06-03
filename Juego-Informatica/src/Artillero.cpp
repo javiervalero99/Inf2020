@@ -3,14 +3,15 @@
 
 Artillero::Artillero() : atack("\Data_Game/Enemigo_Mortero/shot.png",3,1, 100), die("\Data_Game/Enemigo_Mortero/death.png", 10, 1, 100), statico("\Data_Game/Enemigo_Mortero/static.png", 2, 1, 250)
 {
-
+	Collider.setTam(0.5, 0.5);
+	
 	ifArtillero = true;
 	atack.setSize(2, 2);
-	atack.setCenter(1, 0);
+	atack.setCenter(1, 1.4);
 	die.setSize(2, 2);
-	die.setCenter(1, 0);
+	die.setCenter(1, 1.4);
 	statico.setSize(2, 2);
-	statico.setCenter(1, 0);
+	statico.setCenter(1, 1.4);
 	estoy_disp = false;
 	endgame = 0;
 	contador_muerte = 0;
@@ -50,7 +51,7 @@ bool Artillero::ataca(Personaje& p)
 void Artillero::Mueve(float t)
 {
 	estado_muerte = die.getState();
-	if (estado_muerte == 10 && me_muero == true)
+	if (estado_muerte == 9 && me_muero == true)
 		endgame = true;
 
 	if (salud <= 0 && contador_muerte == 0)
@@ -72,6 +73,7 @@ void Artillero::Mueve(float t)
 
 void Artillero::Dibuja()
 { 
+	
 	estado_atq = atack.getState();
 	if (estado_atq == 9)
 		estoy_disp = false;

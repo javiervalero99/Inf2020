@@ -19,7 +19,7 @@ private:
 	bool estoy_atacando;
 	bool me_muero;
 	bool rayos_y_centellas;
-	bool endgame;
+	
 public:
 	Patrullero();
 	void patrulla(float x1, float x2);

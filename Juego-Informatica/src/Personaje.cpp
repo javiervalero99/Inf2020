@@ -83,7 +83,10 @@ void Personaje::Mueve(float t)
 	}
 	// 
 	//gestiom maquina de estados 
-	if (estados[0] == estados[1]) {
+	
+
+
+	if (estados[0] == estados[1] && estados[2] == 0) {
 		if (velocidad.x < 0)
 			aceleracion.x = -20;
 		if (velocidad.x > 0)
@@ -94,9 +97,9 @@ void Personaje::Mueve(float t)
 		aceleracion.y = 15;
 		cae = false;
 	}
-	if (estados[0] == 1 && estados[1] == 0)
+	if (estados[0] == 1 && estados[1] == 0 && estados[2] == 0)
 		velocidad.x = 10;
-	if (estados[0] == 0 && estados[1] == 1)
+	if (estados[0] == 0 && estados[1] == 1 && estados[2] == 0)
 		velocidad.x = -10;
 
 	Run.loop();
@@ -121,6 +124,7 @@ void Personaje::Dibuja()
 	if (estado_basico == 4) {
 		estoy_atacando = false;
 		validacionAsignacion = false;
+		collider.setTam(1, 2.25);
 	}
 
 	carcaj.Dibuja();
@@ -202,7 +206,7 @@ void Personaje::Salto(unsigned char key) {
 
 void Personaje::TeclaDown(unsigned char f) { //esta va con OnKeyboardDown
 	if (muerte == false) {
-
+		double time = GetTickCount();
 		if (posicion.y == 0)
 		{
 			valid_salto = true;
@@ -230,10 +234,14 @@ void Personaje::TeclaDown(unsigned char f) { //esta va con OnKeyboardDown
 			estoy_disp = true;
 		}
 		if (f == 'e' || f == 'E') {
-
-			Basic.setState(0, false);
-			estoy_atacando = true;
-			validacionAsignacion = true;
+			if (time - cd > 600) {
+				Basic.setState(0, false);
+				estoy_atacando = true;
+				validacionAsignacion = true;
+				estados[2] = 1;
+				collider.setTam(3, 2.25);
+				cd = GetTickCount();
+		}
 		}
 	}
 };
@@ -244,7 +252,8 @@ void Personaje::TeclaUp(unsigned char f) { //esta va con glutKeyboardUpFunc
 		estados[0] = 0;
 	if (f == 'd' || f == 'D')
 		estados[1] = 0;
-
+	if (f == 'e' || f == 'E')
+		estados[2] = 0;
 }
 
 

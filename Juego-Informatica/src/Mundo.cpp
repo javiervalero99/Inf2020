@@ -90,7 +90,7 @@ void Mundo::Mueve(float t)
 
 	//artillero.Mueve(t);
 	Enemigos.ataca(Hombre);
-
+	Enemigos.Muerte();
 
 }
 

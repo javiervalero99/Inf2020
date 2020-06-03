@@ -13,6 +13,7 @@ public:
 	~ListaEnemObj();
 	ListaEnemObj(const ListaEnemObj& L);
 	bool AddElem(ObjetoGeneral* m);
+	void Muerte();
 	bool DeleteElem(ObjetoGeneral* m);
 	bool DeleteElem(int idex);
 	ObjetoGeneral& GetElem(int index)const { return *lista[index]; }
