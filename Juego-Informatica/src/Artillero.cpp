@@ -20,10 +20,29 @@ Artillero::Artillero() : atack("\Data_Game/Enemigo_Mortero/shot.png",3,1, 100), 
 
 }
 
+Artillero::Artillero(int x, int y): atack("\Data_Game/Enemigo_Mortero/shot.png", 3, 1, 100), die("\Data_Game/Enemigo_Mortero/death.png", 10, 1, 100), statico("\Data_Game/Enemigo_Mortero/static.png", 2, 1, 250)
+{
+	Collider.setTam(0.5, 0.5);
+	posicion.x = x;
+	posicion.y = y;
+	ifArtillero = true;
+	atack.setSize(2, 2);
+	atack.setCenter(1, 1.4);
+	die.setSize(2, 2);
+	die.setCenter(1, 1.4);
+	statico.setSize(2, 2);
+	statico.setCenter(1, 1.4);
+	estoy_disp = false;
+	endgame = 0;
+	contador_muerte = 0;
+	me_muero = false;
+	salud = 1;
+}
+
 bool Artillero::ataca(Personaje& p)
 {
 	if (me_muero == false) {
-		float acc = 8;
+		float acc = 60;
 
 		if (DistanciaPlayer(p) < acc) {
 			double time = GetTickCount();

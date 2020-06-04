@@ -25,6 +25,7 @@ class Artillero :
 
 public:
 	Artillero();
+	Artillero(int x, int y);
 	bool ataca(Personaje& p);
 	void Mueve(float t);
 	void Dibuja();

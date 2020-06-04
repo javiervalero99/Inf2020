@@ -88,9 +88,9 @@ void Personaje::Mueve(float t)
 
 	if (estados[0] == estados[1] && estados[2] == 0) {
 		if (velocidad.x < 0)
-			aceleracion.x = -20;
+			aceleracion.x = -45;
 		if (velocidad.x > 0)
-			aceleracion.x = 12;
+			aceleracion.x = 45;
 
 	}
 	if (cae == true) {
@@ -98,9 +98,9 @@ void Personaje::Mueve(float t)
 		cae = false;
 	}
 	if (estados[0] == 1 && estados[1] == 0 && estados[2] == 0)
-		velocidad.x = 10;
+		velocidad.x = 8;
 	if (estados[0] == 0 && estados[1] == 1 && estados[2] == 0)
-		velocidad.x = -10;
+		velocidad.x = -8;
 
 	Run.loop();
 	Static.loop();
@@ -215,7 +215,7 @@ void Personaje::TeclaDown(unsigned char f) { //esta va con OnKeyboardDown
 
 		if ((f == ' ') && (valid_salto == true))
 		{
-			velocidad.y = 10.5;
+			velocidad.y = 11.5;
 			q = 1;
 			valid_salto = false;
 		}

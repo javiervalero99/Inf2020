@@ -19,9 +19,11 @@ private:
 	bool estoy_atacando;
 	bool me_muero;
 	bool rayos_y_centellas;
+	int patrulla1, patrulla2;
 	
 public:
 	Patrullero();
+	Patrullero(int x, int y,int p1, int p2);
 	void patrulla(float x1, float x2);
 	void Persigue(Personaje& p);
 	void Dibuja();

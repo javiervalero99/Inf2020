@@ -1,1 +1,10 @@
-﻿  08-04-2020.vcxproj -> D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe
+﻿  Patrullero.cpp
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(5,32): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(5,83): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(5,138): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(5,196): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(31,57): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(31,108): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(31,163): warning C4129: 'D': secuencia de escape de carácter no reconocida
+D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\src\Patrullero.cpp(31,221): warning C4129: 'D': secuencia de escape de carácter no reconocida
+  08-04-2020.vcxproj -> D:\Repo_Git\Trabajo-de-Informatica\Juego-Informatica\bin\08-04-2020.exe

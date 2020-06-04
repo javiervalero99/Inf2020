@@ -6,7 +6,7 @@ Mortero::Mortero(): collider(0.5, 0.5) , forma("\Data_Game/Enemigo_Mortero/dispa
 
 	forma.setSize(1 ,1 );
 	forma.setCenter(1, 0);
-	velo0 = 15;
+	velo0 = 33;
 
 	validacionAsignacion = 1;
 	velocidad.x = velo0;

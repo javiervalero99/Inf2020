@@ -23,7 +23,34 @@ Patrullero::Patrullero() : Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Di
 	rayos_y_centellas = false;
 	endgame = false;
 	contador_nuerte = 0;
+	patrulla1 = 19;
+	patrulla2 = 22;
 
+}
+
+Patrullero::Patrullero(int x, int y,int p1, int p2):Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Die("\Data_Game/Enem_Pat/Pat_die.png", 10, 2, 100), Attack("\Data_Game/Enem_Pat/Pat_attack.png", 7, 1, 80), Surprise("\Data_Game/Enem_Pat/Pat_surprise.png", 5, 1, 150)
+{
+	posicion.x = x;
+	posicion.y = y;
+	velocidad.x = 1;
+	cae = false;
+	Run.setSize(2, 2);
+	Run.setCenter(1, 0.7);
+	Die.setSize(2, 2);
+	Die.setCenter(1, 1);
+	Attack.setSize(2, 2);
+	Attack.setCenter(1, 0);
+	Surprise.setSize(2, 2);
+	Surprise.setCenter(1, 1);
+	salud = 1;
+	patrulla1 = posicion.x +3;
+	patrulla2 = posicion.x - 3;
+
+	estoy_atacando = false;
+	me_muero = false;
+	rayos_y_centellas = false;
+	endgame = false;
+	contador_nuerte = 0;
 
 }
 
@@ -38,7 +65,7 @@ void Patrullero::Persigue(Personaje& p)
 {
 	
 	// si no hay nada en medio(las disntacias  otra cosa no es mayor ) lo persigue
-	float acc = 6;
+	float acc = 2;
 
 
 	if (acc >= DistanciaPlayer(p))
@@ -76,7 +103,7 @@ void Patrullero::Persigue(Personaje& p)
 	}
 	else {//enemigo en modo default; puede implantarse lo que sea
 		contador = 0;
-		patrulla(19, 22);
+		patrulla(patrulla1, patrulla2);
 	}
 
 }

@@ -38,10 +38,14 @@ void Mundo::Dibuja()
 
 
 	Enemigos.Dibuja();
+
 	
 	glRotatef(180, 0, 1, 0);
-	glTranslated(0, 0, 1);
+	glTranslated(0, 0, -0.0051);
 	Mapa.Dibuja();
+	glTranslated(0, 0, 0.0051);
+	glTranslated(0, 0, -1);
+	Fondo.Dibuja();
 	glTranslated(0, 0, 1);
 	glRotatef(-180, 0, 1, 0);
 	glTranslated(0, 0, 70);
@@ -98,19 +102,18 @@ void Mundo::Mueve(float t)
 void Mundo::Inicializa()
 {
 	//---------------Inicializamos lista de objetos y enemigos-------
-	Enemigos.AddElem(new Patrullero);
-	Enemigos.AddElem(new Artillero);
+	Enemigos.AddElem(new Patrullero(-130,11,-138,-148));
+	Enemigos.AddElem(new Artillero(-233,9));
 	//---------------Spamear en cualquier parte del mapa--------------
-	Hombre.posicion.x = -11;
-	Hombre.posicion.y = 10.0;
+	Hombre.posicion.x = -121;
+	Hombre.posicion.y = 12.5;
 	//--------------------------------------------------------
 	x_ojo = Hombre.GetPosicion().x;
 	y_ojo = 10 + Hombre.GetPosicion().y;
 	z_ojo = -20;
 	//---------------------Sprites---------------------------------
-
-	Mapa.Inicializa("\Data_Game/Nivel1/Mapa.png", 69.3, 4.3, 140, 20);
-	Fondo.Inicializa("\Data_Game/Nivel1/Fondo.png", -60, 4.3, 450, 90);
+	Mapa.Inicializa("\Data_Game/Nivel1/Mapa.png", 148, 0.5, 344, 87.5);
+	Fondo.Inicializa("\Data_Game/Nivel1/Fondo.png", 148, 0.5, 344, 87.5);
 	//ETSIDI::playMusica("\Crimson_Nights_Track_02.mp3", true);
 	//--------------------Colliders--------------------------------
 	Leer_Fichero(route);
