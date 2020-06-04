@@ -144,6 +144,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Artillero.cpp" />
+    <ClCompile Include="src\Bonus.cpp" />
+    <ClCompile Include="src\BossFinal.cpp" />
     <ClCompile Include="src\CajaMunicion.cpp" />
     <ClCompile Include="src\Carcaj.cpp" />
     <ClCompile Include="src\ColliderMap.cpp" />
@@ -170,6 +172,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Artillero.h" />
+    <ClInclude Include="src\Bonus.h" />
+    <ClInclude Include="src\BossFinal.h" />
     <ClInclude Include="src\CajaMunicion.h" />
     <ClInclude Include="src\Carcaj.h" />
     <ClInclude Include="src\ColliderMap.h" />

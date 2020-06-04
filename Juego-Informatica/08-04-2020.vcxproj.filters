@@ -135,6 +135,12 @@
     <ClCompile Include="src\Flecha.cpp">
       <Filter>Archivos de origen\Personaje/Enemigo\municion</Filter>
     </ClCompile>
+    <ClCompile Include="src\Bonus.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo\municion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BossFinal.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector2D.h">
@@ -208,6 +214,12 @@
     </ClInclude>
     <ClInclude Include="src\Flecha.h">
       <Filter>Archivos de encabezado\Personaje/Enemigo\municion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Bonus.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo\municion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BossFinal.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

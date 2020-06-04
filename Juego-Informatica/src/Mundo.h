@@ -20,6 +20,7 @@
 #include "Artillero.h"
 #include "Tiempo.h"
 #include "Mortero.h"
+#include "Bonus.h"
 class Mundo
 {
 public:
@@ -42,6 +43,7 @@ public:
 	//	ImagenBucle Goku;
 	Imagen Mapa;
 	Imagen Fondo;
+	Imagen FondoCueva;
 	Personaje Hombre;
 	ListaCollider Colliders;
 

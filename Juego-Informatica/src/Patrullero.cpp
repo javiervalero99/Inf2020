@@ -43,8 +43,8 @@ Patrullero::Patrullero(int x, int y,int p1, int p2):Run("\Data_Game/Enem_Pat/Pat
 	Surprise.setSize(2, 2);
 	Surprise.setCenter(1, 1);
 	salud = 1;
-	patrulla1 = posicion.x +3;
-	patrulla2 = posicion.x - 3;
+	patrulla1 = p1;
+	patrulla2 = p2;
 
 	estoy_atacando = false;
 	me_muero = false;
@@ -56,16 +56,16 @@ Patrullero::Patrullero(int x, int y,int p1, int p2):Run("\Data_Game/Enem_Pat/Pat
 
 void Patrullero::patrulla(float x1, float x2)
 {
-	if (fabs(posicion.x) <= x1)
+	if (fabs(posicion.x) <= fabs(x1))
 		velocidad.x = -3;
-	if (fabs(posicion.x) >= x2)
+	if (fabs(posicion.x) >= fabs(x2))
 		velocidad.x = 3;
 }
 void Patrullero::Persigue(Personaje& p)
 {
 	
 	// si no hay nada en medio(las disntacias  otra cosa no es mayor ) lo persigue
-	float acc = 2;
+	float acc = 6;
 
 
 	if (acc >= DistanciaPlayer(p))

@@ -169,7 +169,7 @@ void HUD::Dibuja()
         break;
     case 10:
         glPushMatrix();
-        glTranslated( 8+ local.x, 4 + local.y,-1);
+        glTranslated( 10+ local.x, 5 + local.y,-1);
         full.draw();
         glTranslated(-0.5, 0, 0);
         full.draw();
@@ -179,7 +179,7 @@ void HUD::Dibuja()
         full.draw();
         glTranslated(-0.5, 0, 0);
         full.draw();
-        glTranslated(-6 -local.x, - 4-  local.y, -1);
+        glTranslated(-12 -local.x, - 5-  local.y, -1);
         glPopMatrix();
         break;
 

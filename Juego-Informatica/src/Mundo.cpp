@@ -41,12 +41,15 @@ void Mundo::Dibuja()
 
 	
 	glRotatef(180, 0, 1, 0);
-	glTranslated(0, 0, -0.0051);
-	Mapa.Dibuja();
 	glTranslated(0, 0, 0.0051);
+	Mapa.Dibuja();
+	glTranslated(0, 0, -0.0051);
 	glTranslated(0, 0, -1);
 	Fondo.Dibuja();
 	glTranslated(0, 0, 1);
+	glTranslated(0, 0, -0.5);
+	FondoCueva.Dibuja();
+	glTranslated(0, 0, 0.5);
 	glRotatef(-180, 0, 1, 0);
 	glTranslated(0, 0, 70);
 
@@ -103,10 +106,12 @@ void Mundo::Inicializa()
 {
 	//---------------Inicializamos lista de objetos y enemigos-------
 	Enemigos.AddElem(new Patrullero(-130,11,-138,-148));
+	Enemigos.AddElem(new Patrullero(-20, 15,-18,-24));
 	Enemigos.AddElem(new Artillero(-233,9));
+	Enemigos.AddElem(new Bonus(-5,5));
 	//---------------Spamear en cualquier parte del mapa--------------
-	Hombre.posicion.x = -121;
-	Hombre.posicion.y = 12.5;
+	Hombre.posicion.x = 0;
+	Hombre.posicion.y = 0;
 	//--------------------------------------------------------
 	x_ojo = Hombre.GetPosicion().x;
 	y_ojo = 10 + Hombre.GetPosicion().y;
@@ -114,6 +119,7 @@ void Mundo::Inicializa()
 	//---------------------Sprites---------------------------------
 	Mapa.Inicializa("\Data_Game/Nivel1/Mapa.png", 148, 0.5, 344, 87.5);
 	Fondo.Inicializa("\Data_Game/Nivel1/Fondo.png", 148, 0.5, 344, 87.5);
+	FondoCueva.Inicializa("\Data_Game/Nivel1/FondoCueva.png", 148, 0.5, 344, 87.5);
 	//ETSIDI::playMusica("\Crimson_Nights_Track_02.mp3", true);
 	//--------------------Colliders--------------------------------
 	Leer_Fichero(route);

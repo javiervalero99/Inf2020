@@ -57,7 +57,13 @@ public:
 	void TeclaUp(unsigned char key);
 	float GetSalud() { return salud; }
 	void SetSalud(float s) { salud = s; }
-	void AddSalud(float s) { salud += s; }
+	void AddSalud(float s) { 
+		salud += s;
+		if (salud > 10) {
+			salud = 10;
+		}
+
+	}
 	Carcaj& GetCarcaj() { return carcaj; }
 	bool Muerte();
 	//
