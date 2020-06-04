@@ -10,7 +10,7 @@ Collider
 
 Arriba.x Arriba.y Abajo.x Abajo.y   Num_Lista
 Begin_Collider
-  3.9    -1.1      -15       -5
+  3.9    -1.1      -15        -5
   -13      2.7      -20       -5
   -7.2     6.9      -10.4     5
   -16.4    10.4     -28.3     -5

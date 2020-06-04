@@ -15,7 +15,7 @@ public:
 	~Enemigo();
 	void Dibuja();
 	virtual void Mueve(float t);
-
+	
 	void Persigue(Personaje& p);
 	float DistanciaPlayer(Personaje& a);
 	float DistanciaPared();

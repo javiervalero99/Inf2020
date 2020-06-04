@@ -21,6 +21,8 @@
 #include "Tiempo.h"
 #include "Mortero.h"
 #include "Bonus.h"
+#include "BossFinal.h"
+
 class Mundo
 {
 public:

@@ -28,10 +28,10 @@ private:
 	int estado_basico;
 	int estado_muerte;
 	bool muerte;
-	bool endgame;
 	int contador_muerte;
 	double cd;
 public:
+	bool endgame;
 	int Dañoataque; //= a asignacionVida de Objeto General
 	bool validacionAsignacion;
 	bool cae;

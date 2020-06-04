@@ -32,18 +32,19 @@ bool MenuPrincipal::AddOpcion(Opcion_Menu* Opcion)
 
 void MenuPrincipal::CreateMenu()
 {
-	glPushMatrix();
+	glEnable(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("Data_Game/Nivel1/PantallaInicio.png").id);
+	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
-	glColor3ub(125, 0, 25);
-	glVertex3f(400, 300, -3.0);
-	glVertex3f(400, -300, -3.0);
-	glVertex3f(-400, -300, -3.0);
-	glVertex3f(-400, 300, -3.0);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 0); glVertex3f(7.5, 3.8, -3.0);//4,3
+	glTexCoord2d(1, 0); glVertex3f(7.5, -3.8, -3.0);//4 -3
+	glTexCoord2d(1, 1); glVertex3f(-7.5, -3.8, -3.0);//-4 -3
+	glTexCoord2d(0, 1); glVertex3f(-7.5, 3.8, -3.0);//-4 3
 	glEnd();
-	glPopMatrix;
-	for (int i = 0; i < NumeroOpciones; i++) {
-		lista[i]->Dibujar();
-	}
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
 }
 
 bool MenuPrincipal::DestroyMenu()

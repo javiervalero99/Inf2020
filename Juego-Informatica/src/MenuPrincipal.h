@@ -1,5 +1,6 @@
 #pragma once
 #define NUMERO_MAX_OPCIONES 5
+#include "ETSIDI.h"
 #include "Opcion_Menu.h"
 #include "glut.h"
 

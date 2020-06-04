@@ -1,5 +1,2 @@
-﻿  HUD.cpp
-C:\Inf2020\Juego-Informatica\src\HUD.cpp(7,19): warning C4129: 'D': secuencia de escape de carácter no reconocida
-C:\Inf2020\Juego-Informatica\src\HUD.cpp(7,68): warning C4129: 'D': secuencia de escape de carácter no reconocida
-C:\Inf2020\Juego-Informatica\src\HUD.cpp(7,123): warning C4129: 'D': secuencia de escape de carácter no reconocida
-  08-04-2020.vcxproj -> C:\Inf2020\Juego-Informatica\bin\08-04-2020.exe
+﻿  Coordinador_Juego.cpp
+  08-04-2020.vcxproj -> D:\GitHub\Inf2020\Juego-Informatica\bin\08-04-2020.exe

@@ -10,6 +10,7 @@ Mundo::Mundo()
 
 Mundo::~Mundo()
 {
+	Enemigos.clear();
 }
 
 void Mundo::RotarOjo()
@@ -23,7 +24,6 @@ void Mundo::RotarOjo()
 
 void Mundo::Dibuja()
 {
-
 	glEnable(GL_LIGHTING);
 	gluLookAt(Hombre.GetPosicion().x, Hombre.GetPosicion().y, z_ojo,  // posicion del ojo
 		Hombre.GetPosicion().x, Hombre.GetPosicion().y, 0.0, // hacia que punto mira  (donde este el personaje, quizas crear una clase camara) 
@@ -68,9 +68,12 @@ void Mundo::Dibuja()
 	Colliders.Dibuja();
 	*/
 	InteraccionListas::Collision(Hombre, Colliders);
-	InteraccionListas::Collision(Enemigos, Colliders),
-		InteraccionListas::Collision(Enemigos, Hombre);
+	InteraccionListas::Collision(Enemigos, Colliders);
+	InteraccionListas::Collision(Enemigos, Hombre);
 	InteraccionListas::Collision(Colliders, Hombre.GetCarcaj());
+//	InteraccionListas::Collision(Jefazo, Hombre);
+//	InteraccionListas::Collision(Jefazo, Colliders);
+
 	//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
 	/*if (valid9 == false)
 	{
@@ -99,12 +102,13 @@ void Mundo::Mueve(float t)
 	Enemigos.ataca(Hombre);
 	Enemigos.Muerte();
 
-}
 
+}
 
 void Mundo::Inicializa()
 {
 	//---------------Inicializamos lista de objetos y enemigos-------
+	Enemigos.AddElem(new BossFinal(-8, 15));
 	Enemigos.AddElem(new Patrullero(-130,11,-138,-148));
 	Enemigos.AddElem(new Patrullero(-20, 15,-18,-24));
 	Enemigos.AddElem(new Artillero(-233,9));
@@ -112,6 +116,9 @@ void Mundo::Inicializa()
 	//---------------Spamear en cualquier parte del mapa--------------
 	Hombre.posicion.x = 0;
 	Hombre.posicion.y = 0;
+	Hombre.SetSalud(10);
+	Hombre.endgame = false;
+
 	//--------------------------------------------------------
 	x_ojo = Hombre.GetPosicion().x;
 	y_ojo = 10 + Hombre.GetPosicion().y;
@@ -123,8 +130,6 @@ void Mundo::Inicializa()
 	//ETSIDI::playMusica("\Crimson_Nights_Track_02.mp3", true);
 	//--------------------Colliders--------------------------------
 	Leer_Fichero(route);
-
-
 }
 
 void Mundo::TeclaUp(unsigned char key)

@@ -27,6 +27,7 @@ private:
 	int estado_die;
 	int estado_jump;
 	int estado_statico;
+	int contador_die;
 
 	int DañoAtaque[4];
 	int n;				//Número de veces que lanza el ataque 1 y el 3.
@@ -45,16 +46,16 @@ private:
 	SpriteSequence Jump;//bool
 
 public:
-	BossFinal();
+	BossFinal(int x, int y);
 	~BossFinal();
 	bool ataca(Personaje &p);
-	
 	bool SetSalto(Personaje& p);
 	void ModoDiablo();				//Estado en el que el boss recupera la salud y lanza ataques más fuertes. Sólo se activa una vez.
 	void Dibuja();
 	void Mueve(float t);
 	void Persigue(Personaje &p);
 	bool ComenzarCombate(Personaje &p);
+	bool Endgame();
 };
 
 /*Cuando se vaya a hacer un ataque primero se debe debe asignar el valor de daño cirrespondiente en asignacion salud y luego 

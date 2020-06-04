@@ -1,6 +1,6 @@
 #include "BossFinal.h"
 
-BossFinal::BossFinal(): Ataque("\Data_Game/Enemigo_Boss/ataque.png", 7, 1, 100), Die("\Data_Game/Enemigo_Boss/die.png", 7, 2, 100), Patada("\Data_Game/Enemigo_Boss/patada.png", 6, 1, 100), Patada2("\Data_Game/Enemigo_Boss/patada2.png", 6, 1, 100), Puñetazo("\Data_Game/Enemigo_Boss/puñetazo.png", 5, 1, 100), Run("\Data_Game/Enemigo_Boss/run.png", 6, 1, 100), Statico("\Data_Game/Enemigo_Boss/statico.png", 2, 1, 250), Torbellino("\Data_Game/Enemigo_Boss/torbellino.png", 4, 1, 200), Jump("\Data_Game/Enemigo_Boss/jump.png", 3, 1, 100)
+BossFinal::BossFinal(int x, int y): Ataque("\Data_Game/Enemigo_Boss/ataque.png", 7, 1, 100), Die("\Data_Game/Enemigo_Boss/die.png", 7, 2, 100), Patada("\Data_Game/Enemigo_Boss/patada.png", 6, 1, 100), Patada2("\Data_Game/Enemigo_Boss/patada2.png", 6, 1, 100), Puñetazo("\Data_Game/Enemigo_Boss/puñetazo.png", 5, 1, 100), Run("\Data_Game/Enemigo_Boss/run.png", 6, 1, 100), Statico("\Data_Game/Enemigo_Boss/statico.png", 2, 1, 250), Torbellino("\Data_Game/Enemigo_Boss/torbellino.png", 4, 1, 200), Jump("\Data_Game/Enemigo_Boss/jump.png", 3, 1, 100)
 {
 	Ataque.setSize(4, 4);
 	Ataque.setCenter(2, 1);
@@ -21,9 +21,10 @@ BossFinal::BossFinal(): Ataque("\Data_Game/Enemigo_Boss/ataque.png", 7, 1, 100),
 	Jump.setSize(6,6);
 	Jump.setCenter(3, 2);
 	//Control del movimiento.
-	posicion.x = -25.0f;
-	posicion.y = 8+1.3/2;
+	posicion.x = -5;
+	posicion.y = 0;
 	salud = 10;
+	endgame = false;
 	//Control de estados.
 	estoy_statico = true;
 	EntrarModoDiablo = false;
@@ -33,6 +34,7 @@ BossFinal::BossFinal(): Ataque("\Data_Game/Enemigo_Boss/ataque.png", 7, 1, 100),
 	estoy_ataque3=false;
 	estoy_ataqueesp=false;
 	contador = 0;
+	contador_die = 0;
 	n = 0;
 	//Setear Daño de ataques.
 	for (int i = 1; i < 4; i++)		//Daño ataques 1, 2, 3.
@@ -82,7 +84,7 @@ bool BossFinal::ataca(Personaje &p)
 					}
 					case 3:
 					{
-						if (((TiempoRetardo - TiempoEjecucion) > 2000) && (estoy_ataque2 == false) && (estoy_ataque2 == false) && (estoy_ataqueesp == false))
+						if (((TiempoRetardo - TiempoEjecucion) > 1000) && (estoy_ataque2 == false) && (estoy_ataque2 == false) && (estoy_ataqueesp == false))
 						{
 							estoy_ataque3 = true;
 							Puñetazo.setState(0, false);
@@ -124,7 +126,7 @@ bool BossFinal::SetSalto(Personaje& p)
 
 void BossFinal::ModoDiablo()
 {
-	if (GetSalud() == 3 && !EntrarModoDiablo)
+	if (salud <= 3 && !EntrarModoDiablo)
 	{
 		salud = 10;
 		for (int i = 0; i < 4; i++)
@@ -138,6 +140,7 @@ void BossFinal::ModoDiablo()
 
 void BossFinal::Dibuja()
 {
+	std::cout << salud;
 	estado_ataque1 = Ataque.getState();
 	estado_ataque2 = Patada.getState();
 	estado_ataque3 = Puñetazo.getState();
@@ -148,12 +151,10 @@ void BossFinal::Dibuja()
 	if (estado_ataque1 == 2 && estoy_ataque1 == true)
 	{
 		validacionAsignacion = true;
-
 	}
 	if (estado_ataque1 == 5 && estoy_ataque1 == true)
 	{
 		validacionAsignacion = false;
-
 	}
 	if (estado_ataque2 == 2 && estoy_ataque2 == true)
 	{
@@ -167,10 +168,6 @@ void BossFinal::Dibuja()
 	{
 		validacionAsignacion = true;
 	}
-
-	
-	
-
 
 	if (estado_ataque1==6 && estoy_ataque1==true)
 	{
@@ -196,9 +193,10 @@ void BossFinal::Dibuja()
 		estoy_ataque1 = false;
 		contador++;
 	}
-	if (estado_die == 13)
+	if (estado_die == 13 && estoy_muriendo==true)
 	{
-		estado_die = false;
+		endgame = true;
+		estoy_muriendo = false;
 	}
 	if (estado_jump == 2)
 	{
@@ -215,31 +213,31 @@ void BossFinal::Dibuja()
 	   	 
 	
 	//ZONA SPRITES
-	if ((estoy_statico==true))//ESTA CORRIENDO
+	if ((estoy_statico==true && contador_die==0))//ESTA CORRIENDO
 	{
 		Statico.draw();
 	}
-	if ((estoy_statico == false) && (velocidad.x != 0) && (estoy_ataque1==false) && (estoy_ataque2 == false) && (estoy_ataque3 == false) && (estoy_ataqueesp == false) && (estoy_muriendo == false) && (velocidad.y==0))//ESTA CORRIENDO
+	if ((estoy_statico == false) && (velocidad.x != 0) && (estoy_ataque1==false) && (estoy_ataque2 == false) && (estoy_ataque3 == false) && (estoy_ataqueesp == false) && (contador_die == 0) && (velocidad.y==0))//ESTA CORRIENDO
 	{
 		Run.draw();
 	}
-	if ((estoy_statico == false) && (estoy_ataque1 == true) && (estoy_ataque2 == false) && (estoy_ataque3 == false) && (estoy_ataqueesp == false) && (estoy_muriendo == false) && (velocidad.y==0))
+	if ((estoy_statico == false) && (estoy_ataque1 == true) && (estoy_ataque2 == false) && (estoy_ataque3 == false) && (estoy_ataqueesp == false) && (contador_die == 0) && (velocidad.y==0))
 	{
 		Ataque.draw();
 	}
-	if ((estoy_statico == false) && (estoy_ataque1 == false) && (estoy_ataque2 == true) && (estoy_ataque3 == false) && (estoy_ataqueesp == false) && (estoy_muriendo == false) && (velocidad.y == 0))
+	if ((estoy_statico == false) && (estoy_ataque1 == false) && (estoy_ataque2 == true) && (estoy_ataque3 == false) && (estoy_ataqueesp == false) && (contador_die == 0) && (velocidad.y == 0))
 	{
 		Patada.draw();
 	}
-	if ((estoy_statico == false) && (estoy_ataque1 == false) && (estoy_ataque2 == false) && (estoy_ataque3 == true) && (estoy_ataqueesp == false) && (estoy_muriendo == false) && (velocidad.y == 0))
+	if ((estoy_statico == false) && (estoy_ataque1 == false) && (estoy_ataque2 == false) && (estoy_ataque3 == true) && (estoy_ataqueesp == false) && (contador_die == 0) && (velocidad.y == 0))
 	{
 		Puñetazo.draw();
 	}
-	if ((estoy_statico == false) && (estoy_ataque1 == false) && (estoy_ataque2 == false) && (estoy_ataque3 == false) && (estoy_ataqueesp == true) && (estoy_muriendo == false) && (velocidad.y == 0))
+	if ((estoy_statico == false) && (estoy_ataque1 == false) && (estoy_ataque2 == false) && (estoy_ataque3 == false) && (estoy_ataqueesp == true) && (contador_die == 0) && (velocidad.y == 0))
 	{
 		Torbellino.draw();
 	}
-	if ((estoy_statico == false) && (estoy_ataque1 == false) && (estoy_ataque2 == false) && (estoy_ataque3 == false) && (estoy_ataqueesp == false) && (estoy_muriendo == true) && (velocidad.y == 0))
+	if (estoy_muriendo==true)
 	{
 		Die.draw();
 	}
@@ -276,6 +274,11 @@ void BossFinal::Dibuja()
 
 void BossFinal::Mueve(float t)
 {
+	if (salud <= 0 && contador_die==0) {
+		estoy_muriendo = true;
+		Die.setState(0, false);
+		contador_die++;
+	}
 	posicion.x += velocidad.x * 0.025 + (1 / 2) * aceleracion.x * pow(0.025, 2);
 	velocidad.x -= aceleracion.x * 0.025;
 	//salto
@@ -287,7 +290,9 @@ void BossFinal::Mueve(float t)
 		cae = false;
 	}
 
-	
+		ModoDiablo();
+
+
 		Puñetazo.loop();
 
 		Patada.loop();
@@ -301,6 +306,8 @@ void BossFinal::Mueve(float t)
 		Run.loop();
 	
 		Statico.loop();
+
+		Die.loop();
 }
 
 void BossFinal::Persigue(Personaje& p)
@@ -330,7 +337,7 @@ void BossFinal::Persigue(Personaje& p)
 
 bool BossFinal::ComenzarCombate(Personaje& p)
 {
-	if ((DistanciaPlayer(p)<=5) || estoy_statico==false)
+	if (((DistanciaPlayer(p)<=5) || estoy_statico==false) && estoy_muriendo==false)
 	{
 		return true;
 	}
@@ -339,6 +346,11 @@ bool BossFinal::ComenzarCombate(Personaje& p)
 		return false;
 	}
 	
+}
+
+bool BossFinal::Endgame()
+{
+	return endgame;
 }
 
 

@@ -94,4 +94,3 @@ bool Enemigo::ataca(Personaje& p)
 
 	}
 }
-

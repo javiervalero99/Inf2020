@@ -71,7 +71,7 @@ bool ListaEnemObj::DeleteElem(int index)
 
 bool ListaEnemObj::clear()
 {
-	int n = 0;
+	n = 0;
 	for (int i = 0; i < MAX_NUM_ELEM; i++)
 		lista[i] = NULL;
 	return true;

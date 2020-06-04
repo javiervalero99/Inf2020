@@ -112,9 +112,10 @@ void Personaje::Mueve(float t)
 void Personaje::Dibuja()
 {
 	estado_muerte = Die.getState();
-	if (estado_muerte == 9 && muerte == true)
+	if (estado_muerte == 9 && muerte == true){
 		endgame = true;
-
+		muerte = false;
+	}
 
 	estado_flecha = Distance.getState();
 	if (estado_flecha == 5)
