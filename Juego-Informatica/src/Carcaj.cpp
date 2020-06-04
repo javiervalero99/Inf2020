@@ -23,16 +23,16 @@ void Carcaj::destruirContenido()
 void Carcaj::Dibuja()
 {
 	for (int i = 0; i < numero; i++)
-	flechas[i]->Dibuja();
+		flechas[i]->Dibuja();
 }
 
 void Carcaj::Mueve(float t)
 {
 	for (int i = 0; i < numero; i++)
-	flechas[i]->Mueve(t);
+		flechas[i]->Mueve(t);
 }
 
-void Carcaj::eliminar(int index)
+void Carcaj::DeleteElem(int index)
 {
 	if ((index < 0) || (index >= numero))
 		return;
@@ -41,6 +41,17 @@ void Carcaj::eliminar(int index)
 	for (int i = index; i < numero; i++)
 		flechas[i] = flechas[i + 1];
 
+}
+
+bool Carcaj::eliminar(Flecha* f)
+{
+	for (int i = 0; i < numero; i++) {
+		if (flechas[i] == f) {
+			DeleteElem(i);
+			return true;
+		}
+	}
+	return false;
 }
 
 Flecha* Carcaj::operator[](int i)
@@ -52,13 +63,13 @@ Flecha* Carcaj::operator[](int i)
 	return flechas[i];
 }
 
-bool Carcaj::agregar (int x, int y, bool b)
+bool Carcaj::agregar(int x, int y, bool b)
 {
-	if (numero < 5)
+	if (numero < MAX_FLECHAS_NUM)
 	{
 
-		flechas[numero++] = new Flecha(x,y,b);
-		flechas[numero-1]->SetFlecha(x, y,b);
+		flechas[numero++] = new Flecha(x, y, b);
+		flechas[numero - 1]->SetFlecha(x, y, b);
 	}
 	else
 		return false;

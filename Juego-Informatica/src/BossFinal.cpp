@@ -2,6 +2,7 @@
 
 BossFinal::BossFinal(int x, int y): Ataque("\Data_Game/Enemigo_Boss/ataque.png", 7, 1, 100), Die("\Data_Game/Enemigo_Boss/die.png", 7, 2, 100), Patada("\Data_Game/Enemigo_Boss/patada.png", 6, 1, 100), Patada2("\Data_Game/Enemigo_Boss/patada2.png", 6, 1, 100), Puñetazo("\Data_Game/Enemigo_Boss/puñetazo.png", 5, 1, 100), Run("\Data_Game/Enemigo_Boss/run.png", 6, 1, 100), Statico("\Data_Game/Enemigo_Boss/statico.png", 2, 1, 250), Torbellino("\Data_Game/Enemigo_Boss/torbellino.png", 4, 1, 200), Jump("\Data_Game/Enemigo_Boss/jump.png", 3, 1, 100)
 {
+	Collider.setTam(1, 2);
 	Ataque.setSize(4, 4);
 	Ataque.setCenter(2, 1);
 	Die.setSize(4, 4);
@@ -21,8 +22,8 @@ BossFinal::BossFinal(int x, int y): Ataque("\Data_Game/Enemigo_Boss/ataque.png",
 	Jump.setSize(6,6);
 	Jump.setCenter(3, 2);
 	//Control del movimiento.
-	posicion.x = -5;
-	posicion.y = 0;
+	posicion.x = x;
+	posicion.y = y;
 	salud = 10;
 	endgame = false;
 	//Control de estados.
@@ -115,6 +116,7 @@ bool BossFinal::ataca(Personaje &p)
 
 bool BossFinal::SetSalto(Personaje& p)
 {
+	
 	if (((p.GetPosicion().y - posicion.y) > 3) && DistanciaPlayer(p) > 5)
 	{
 
@@ -140,6 +142,7 @@ void BossFinal::ModoDiablo()
 
 void BossFinal::Dibuja()
 {
+
 	std::cout << salud;
 	estado_ataque1 = Ataque.getState();
 	estado_ataque2 = Patada.getState();

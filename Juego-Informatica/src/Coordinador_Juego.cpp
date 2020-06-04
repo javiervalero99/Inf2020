@@ -38,8 +38,12 @@ void Coordinador_Juego::TeclaUp(unsigned char key)
 
 void Coordinador_Juego::TeclaDown(unsigned char key)
 {
-
-	if (estado == INICIO) {
+	if (estado == INSTRUCCIONES) {
+		if (key == ' ') {
+			estado = INICIO;
+		}
+	}
+	else if (estado == INICIO) {
 		if (key == 's') {
 			exit(0);
 		}
@@ -77,6 +81,11 @@ void Coordinador_Juego::ClickDch(int state, int x, int y)
 			mundo.Inicializa();
 			estado = CARGA;
 		}
+			bool x_en_boton_juego1 = (x >= 730) && (x <= 878);
+			bool y_en_boton_juego1= (y >= 412) && (y <= 457);
+			if ((x_en_boton_juego1 == true) && (y_en_boton_juego1 == true)) {
+				estado = INSTRUCCIONES;
+			}
 	}
 }
 
@@ -122,6 +131,7 @@ void Coordinador_Juego::Dibuja()
 			estado = JUEGO;
 	}
 	else if (estado == JUEGO) {
+		ETSIDI::playMusica("Data_Game/SONG.mp3", true);
 		mundo.Dibuja();
 		if (mundo.Enemigos[0].Endgame())
 			estado = FIN;
@@ -170,6 +180,20 @@ void Coordinador_Juego::Dibuja()
 		ETSIDI::printxy("MENU DE PAUSA", -5, 10);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 		ETSIDI::printxy("Pulsa -C- para continuar", -5, 5);
+	}
+	else if (estado == INSTRUCCIONES) {
+		gluLookAt(0, 0, 7.5,
+			0.0, 0.0, 0.0,
+			0.0, 1.0, 0.0);
+		glDisable(GL_LIGHTING);
+		menu.CreateMenu();
+		ETSIDI::setTextColor(50, 150, 50);
+		ETSIDI::setFont("Data_Game/fuentes/Venatto.ttf", 20);
+		ETSIDI::printxy("I N S T R U C C I O N E S :", -2, 1);
+		ETSIDI::printxy("'A'   M O V I M I E N T O  I Z Q U I E R D A             'D'   M O V I M I E N T O  D E R E C H A ", -2, 0);
+		ETSIDI::printxy(" 'Q'   A R C O                                         'E'  A T A Q U E  B A S I C O", -2, -1);
+		ETSIDI::printxy("E S P A C I O   S A L T O       P U L S A L O   P A R A   C O N T I N U A R", -2, -2);
+		ETSIDI::playMusica("C:/Users/rengarete/Downloads/SONG.mp3", true);
 	}
 }
 

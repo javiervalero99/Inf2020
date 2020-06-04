@@ -1,10 +1,10 @@
 #pragma once
 #include "Flecha.h"
-
+#define MAX_FLECHAS_NUM 5
 class Carcaj
 {
 private:
-	Flecha* flechas[5];
+	Flecha* flechas[MAX_FLECHAS_NUM];
 	int numero;
 	int max_elem;
 	bool impacto;
@@ -14,15 +14,15 @@ public:
 	void destruirContenido();
 	void Dibuja();
 	void Mueve(float t);
-	void eliminar(int index);
+	void DeleteElem(int index);
+	bool eliminar(Flecha* f);
 	Flecha* operator [](int i);
 
-	bool agregar(int x , int y, bool b);
+	bool agregar(int x, int y, bool b);
 	inline  int getNumero() {
 		return numero;
 	}
 };
-
 
 
 

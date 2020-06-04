@@ -16,6 +16,9 @@ public:
 	static bool Collision(CajaMunicion& l, Personaje& per);
 	static bool Collision(ListaEnemObj& l, Carcaj& c);
 	static bool Collision(ListaCollider& lista, Carcaj& c);
+	static bool DemasiadoLejos(Personaje& h, Carcaj& c);
 
 };
+
+
 

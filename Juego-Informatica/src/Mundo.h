@@ -22,27 +22,26 @@
 #include "Mortero.h"
 #include "Bonus.h"
 #include "BossFinal.h"
+#include "Pinchos.h"
+#include "Coco_Dandee.h"
 
 class Mundo
 {
 public:
 	Mundo();
 	virtual ~Mundo();
-	void Tecla(unsigned char key);
 	void Inicializa();
 	void RotarOjo();
 	void Mueve(float t);
 	void Dibuja();
 	void TeclaUp(unsigned char key);
 	void TeclaDown(unsigned char key);
-	void ClickDch(int state, int x, int y);
 	void Leer_Fichero(const char[]);
 	bool Leer_Collider(char[], ColliderMap* p);
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;
 	bool FIN = false;
-	//	ImagenBucle Goku;
 	Imagen Mapa;
 	Imagen Fondo;
 	Imagen FondoCueva;
@@ -51,8 +50,7 @@ public:
 
 
 	HUD hud;
-	//Patrullero enemigo;
-	
+	int contador_boss;
 	ListaEnemObj Enemigos;
 	// variables de juego
 

@@ -22,7 +22,7 @@ protected:
 	bool menuDestruido;
 	MenuPrincipal menu;
 	Mundo mundo;
-	enum Estado { INICIO, CARGA, JUEGO, GAMEOVER, FIN, PAUSA };
+	enum Estado { INICIO, CARGA, JUEGO, GAMEOVER, FIN, PAUSA,INSTRUCCIONES };
 	Estado estado;
 	friend class BossFinal;
 };

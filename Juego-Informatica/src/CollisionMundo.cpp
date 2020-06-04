@@ -145,6 +145,27 @@ bool CollisionMundo::Collision(Flecha& per, ColliderMap pared)
 	}
 }
 
+bool CollisionMundo::Collision(ObjetoGeneral& obj, Flecha& f)
+{
+	float tamxPer = f.ImpactoFlecha.tam.x / 2;
+	float tamxObj = obj.Collider.tam.x / 2;
+	float tamyPer = f.ImpactoFlecha.tam.y / 2;
+	float tamyObj = obj.Collider.tam.y / 2;
+	float partDelantePersonaje = f.GetPosicion().x + tamxPer;
+	float partTraseraPersonaje = f.GetPosicion().x - tamxPer;
+	float partArribaPersonaje = f.GetPosicion().y + tamyPer;
+	float partAbajoPersonaje = f.GetPosicion().y - tamyPer;
+	float partDelanteObj = obj.GetPosicion().x + tamxObj;
+	float partTraseraObj = obj.GetPosicion().x - tamxObj;
+	float partArribaObj = obj.GetPosicion().y + tamyObj;
+	float partAbajoObj = obj.GetPosicion().y - tamyObj;
+
+
+	bool CollisionX = ((partDelantePersonaje + 0.01 >= partTraseraObj) && (partTraseraPersonaje + 0.01 <= partDelanteObj));
+	bool CollisionY = ((partArribaPersonaje + 0.01 >= partAbajoObj) && (partAbajoPersonaje + 0.01 <= partArribaObj));
+	return CollisionX && CollisionY;
+}
+
 
 
 bool CollisionMundo::Collision(Personaje& per, ColliderMap pared)

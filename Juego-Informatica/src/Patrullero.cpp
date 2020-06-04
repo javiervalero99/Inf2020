@@ -28,7 +28,7 @@ Patrullero::Patrullero() : Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Di
 
 }
 
-Patrullero::Patrullero(int x, int y,int p1, int p2):Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Die("\Data_Game/Enem_Pat/Pat_die.png", 10, 2, 100), Attack("\Data_Game/Enem_Pat/Pat_attack.png", 7, 1, 80), Surprise("\Data_Game/Enem_Pat/Pat_surprise.png", 5, 1, 150)
+Patrullero::Patrullero(int x, int y, int p1, int p2) :Run("\Data_Game/Enem_Pat/Pat_jump.png", 7, 1, 40), Die("\Data_Game/Enem_Pat/Pat_die.png", 10, 2, 100), Attack("\Data_Game/Enem_Pat/Pat_attack.png", 7, 1, 80), Surprise("\Data_Game/Enem_Pat/Pat_surprise.png", 5, 1, 150)
 {
 	posicion.x = x;
 	posicion.y = y;
@@ -63,7 +63,7 @@ void Patrullero::patrulla(float x1, float x2)
 }
 void Patrullero::Persigue(Personaje& p)
 {
-	
+
 	// si no hay nada en medio(las disntacias  otra cosa no es mayor ) lo persigue
 	float acc = 6;
 
@@ -75,8 +75,8 @@ void Patrullero::Persigue(Personaje& p)
 			Surprise.setState(0, false);
 			contador++;
 		}
-		
-		if ( DistanciaPlayer(p) < 0.6) {
+
+		if (DistanciaPlayer(p) < 0.6) {
 			if (contador_a == 0) {
 				estoy_atacando = true;
 				Attack.setState(0, false);
@@ -84,11 +84,11 @@ void Patrullero::Persigue(Personaje& p)
 
 
 			}
-			
+
 		}
-		if (DistanciaPlayer(p) >0.6)
+		if (DistanciaPlayer(p) > 0.6)
 			contador_a = 0;
-			
+
 
 
 		float mov = p.posicion.x - posicion.x;
@@ -110,7 +110,7 @@ void Patrullero::Persigue(Personaje& p)
 
 void Patrullero::Dibuja()
 {
-	
+
 	estado_muerte = Die.getState();
 	if (estado_muerte == 10 && me_muero == true)
 		endgame = true;
@@ -118,10 +118,10 @@ void Patrullero::Dibuja()
 	estado_ay_caramba = Surprise.getState();
 	if (estado_ay_caramba == 4) {
 		rayos_y_centellas = false;
-		
+
 	}
 	estado_ataque = Attack.getState();
-	if (estado_ataque == 3 ) {
+	if (estado_ataque == 3) {
 		validacionAsignacion = true;
 
 	}
@@ -140,7 +140,7 @@ void Patrullero::Dibuja()
 		Surprise.draw();
 	}
 
-	if ((estoy_atacando == true) &&(rayos_y_centellas == false) && me_muero == false) {
+	if ((estoy_atacando == true) && (rayos_y_centellas == false) && me_muero == false) {
 		Attack.draw();
 	}
 
@@ -161,7 +161,7 @@ void Patrullero::Dibuja()
 		Die.flip(true, false);
 	}
 	//ZONA SPRITES
-	if ((velocidad.x != 0) && rayos_y_centellas == false && estoy_atacando ==false && me_muero ==false)//ESTA CORRIENDO
+	if ((velocidad.x != 0) && rayos_y_centellas == false && estoy_atacando == false && me_muero == false)//ESTA CORRIENDO
 	{
 		Run.draw();
 

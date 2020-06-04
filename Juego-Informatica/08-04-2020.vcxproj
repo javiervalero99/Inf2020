@@ -148,6 +148,7 @@
     <ClCompile Include="src\BossFinal.cpp" />
     <ClCompile Include="src\CajaMunicion.cpp" />
     <ClCompile Include="src\Carcaj.cpp" />
+    <ClCompile Include="src\Coco_Dandee.cpp" />
     <ClCompile Include="src\ColliderMap.cpp" />
     <ClCompile Include="src\CollisionMundo.cpp" />
     <ClCompile Include="src\Collision_Movil.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="src\BossFinal.h" />
     <ClInclude Include="src\CajaMunicion.h" />
     <ClInclude Include="src\Carcaj.h" />
+    <ClInclude Include="src\Coco_Dandee.h" />
     <ClInclude Include="src\ColliderMap.h" />
     <ClInclude Include="src\CollisionMundo.h" />
     <ClInclude Include="src\Collision_Movil.h" />
@@ -195,6 +197,7 @@
     <ClInclude Include="src\Opcion_Menu.h" />
     <ClInclude Include="src\Patrullero.h" />
     <ClInclude Include="src\Personaje.h" />
+    <ClInclude Include="src\Pinchos.h" />
     <ClInclude Include="src\Tiempo.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>

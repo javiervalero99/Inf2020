@@ -6,6 +6,8 @@ Flecha::Flecha() : arrow("\Data_Game/Objects/flecha.png", 1, 1, 100), ImpactoFle
 	posicion.y = -100;
 	arrow.setSize(2, 2);
 	arrow.setCenter(1.8, 1.1);
+	validacionAsignacion = true;
+	Dañoataque = -1;
 }
 
 Flecha::Flecha(float posx, float posy, bool direccion_derecha) : arrow("\Data_Game/Objects/flecha.png", 1, 1, 100), ImpactoFlecha(2, 0.5)
@@ -15,6 +17,8 @@ Flecha::Flecha(float posx, float posy, bool direccion_derecha) : arrow("\Data_Ga
 	arrow.setSize(2, 2);
 	arrow.setCenter(1.8, 1.1);
 	SetFlecha(posx, posy, direccion_derecha);
+	validacionAsignacion = true;
+	Dañoataque = -1;
 }
 
 Flecha::~Flecha()
@@ -44,7 +48,7 @@ void Flecha::Dibuja()
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
 	//ImpactoFlecha.Dibuja();
-	ImpactoFlecha.Dibuja();
+	//ImpactoFlecha.Dibuja();
 	arrow.draw();
 	glTranslatef(-posicion.x, -posicion.y, 0);
 	glPopMatrix();

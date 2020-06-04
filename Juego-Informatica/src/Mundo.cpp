@@ -24,13 +24,20 @@ void Mundo::RotarOjo()
 
 void Mundo::Dibuja()
 {
+	float limx = Hombre.GetPosicion().x;
+	float limy = Hombre.GetPosicion().y;
+	if (limy < 0)
+		limy = 0;
+	if (limx > 1)
+		limx = 1;
+
 	glEnable(GL_LIGHTING);
-	gluLookAt(Hombre.GetPosicion().x, Hombre.GetPosicion().y, z_ojo,  // posicion del ojo
-		Hombre.GetPosicion().x, Hombre.GetPosicion().y, 0.0, // hacia que punto mira  (donde este el personaje, quizas crear una clase camara) 
-		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
+	gluLookAt(limx, limy, z_ojo,  // posicion del ojo
+		limx, limy, 0.0, // hacia que punto mira  (donde este el personaje, quizas crear una clase camara) 
+		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)
 
 //aqui es donde hay que poner el codigo de dibujo
-//dibujo del suelo
+
 
 	glColor3ub(255, 255, 0);
 	glTranslated(0, 1, 0);
@@ -68,25 +75,19 @@ void Mundo::Dibuja()
 	Colliders.Dibuja();
 	*/
 	InteraccionListas::Collision(Hombre, Colliders);
-	InteraccionListas::Collision(Enemigos, Colliders);
-	InteraccionListas::Collision(Enemigos, Hombre);
+	InteraccionListas::Collision(Enemigos, Colliders),
+		InteraccionListas::Collision(Enemigos, Hombre);
 	InteraccionListas::Collision(Colliders, Hombre.GetCarcaj());
-//	InteraccionListas::Collision(Jefazo, Hombre);
-//	InteraccionListas::Collision(Jefazo, Colliders);
+	InteraccionListas::Collision(Enemigos, Hombre.GetCarcaj());
+	InteraccionListas::DemasiadoLejos(Hombre, Hombre.GetCarcaj());
 
-	//bool valid9 = CollisionMundo::Collision(enemigo, Pared2);
-	/*if (valid9 == false)
-	{
-		enemigo.cae = true;
-		enemigo.j++;
-	}*/
 
 	hud.SetPos(Hombre);
 	hud.SetVida(Hombre);
 	hud.Dibuja();
 
 
-	//artillero.Dibuja();
+
 
 
 }
@@ -98,27 +99,38 @@ void Mundo::Mueve(float t)
 	Enemigos.Mueve(t);
 	Enemigos.Persigue(Hombre);
 
-	//artillero.Mueve(t);
 	Enemigos.ataca(Hombre);
 	Enemigos.Muerte();
-
+	if (Enemigos[0].GetSalud() <= 3 && contador_boss == 0) {
+		Enemigos.AddElem(new Bonus(-266.4, 14));
+		Enemigos.AddElem(new Bonus(-284.6, 14));
+		contador_boss += 1;
+	}
 
 }
 
 void Mundo::Inicializa()
 {
 	//---------------Inicializamos lista de objetos y enemigos-------
-	Enemigos.AddElem(new BossFinal(-8, 15));
-	Enemigos.AddElem(new Patrullero(-130,11,-138,-148));
-	Enemigos.AddElem(new Patrullero(-20, 15,-18,-24));
-	Enemigos.AddElem(new Artillero(-233,9));
-	Enemigos.AddElem(new Bonus(-5,5));
-	//---------------Spamear en cualquier parte del mapa--------------
+	Enemigos.AddElem(new BossFinal(-275, 15));
+	Enemigos.AddElem(new Patrullero(-20, 12, -17, -26));                //    -16.4    10.4 - 28.3 - 5
+	Enemigos.AddElem(new Bonus(-60, 14));                            //    -57      12.2 - 68.7 - 5
+	Enemigos.AddElem(new Artillero(-100, 13));                        //-80.8    12.2 - 106.7 - 5
+	Enemigos.AddElem(new Patrullero(-125, 12, -124, -128));            //  -123     10.2 - 141 - 5
+	Enemigos.AddElem(new Croco(-133, 12, -129, -137));
+	Enemigos.AddElem(new Bonus(-145, 22));                        //    -140.7   20.8 - 154 - 5
+	Enemigos.AddElem(new Artillero(-177, 22));                    //    - 169.5   20.8 - 179.5 - 5
+	Enemigos.AddElem(new Artillero(-233, 9));       //    -230     7.8 - 297 - 5
+	Enemigos.AddElem(new Pinchos(-88.63, 12.8, 3, 2));
+	Enemigos.AddElem(new Pinchos(-126, 0, 212, 4));
+	Enemigos.AddElem(new Pinchos(10, 5, 2, 30));
+	Enemigos.AddElem(new Pinchos(7.5, -10, 10, 2));
+	//---------------Hombre y variables--------------
 	Hombre.posicion.x = 0;
 	Hombre.posicion.y = 0;
 	Hombre.SetSalud(10);
 	Hombre.endgame = false;
-
+	contador_boss = 0;
 	//--------------------------------------------------------
 	x_ojo = Hombre.GetPosicion().x;
 	y_ojo = 10 + Hombre.GetPosicion().y;
@@ -138,7 +150,7 @@ void Mundo::TeclaUp(unsigned char key)
 }
 void Mundo::TeclaDown(unsigned char key)
 {
-	//printf("%d\n", key);
+
 
 	Hombre.TeclaDown(key);
 

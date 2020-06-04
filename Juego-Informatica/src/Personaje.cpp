@@ -52,16 +52,17 @@ Personaje::~Personaje()
 
 void Personaje::Mueve(float t)
 {
-	//Ecuaciones de movimiento
-	   //printf("r=%d y velocidad=%f\n", r, velocidad.x);
-	posicion.x += velocidad.x * 0.025 + (1 / 2) * aceleracion.x * pow(0.025, 2);
-	velocidad.x -= aceleracion.x * 0.025;
-	//salto
-	velocidad.y -= aceleracion.y * 0.025;
-	posicion.y += velocidad.y * 0.025 - (1 / 2) * aceleracion.y * pow(0.025, 2);
+	if (salud > 0) {
+		//Ecuaciones de movimiento
+		   //printf("r=%d y velocidad=%f\n", r, velocidad.x);
+		posicion.x += velocidad.x * 0.025 + (1 / 2) * aceleracion.x * pow(0.025, 2);
+		velocidad.x -= aceleracion.x * 0.025;
+		//salto
+		velocidad.y -= aceleracion.y * 0.025;
+		posicion.y += velocidad.y * 0.025 - (1 / 2) * aceleracion.y * pow(0.025, 2);
 
-	carcaj.Mueve(0.025);
-
+		carcaj.Mueve(0.025);
+	}
 	if (salud <= 0 && contador_muerte == 0)
 	{
 		muerte = true;
@@ -83,25 +84,25 @@ void Personaje::Mueve(float t)
 	}
 	// 
 	//gestiom maquina de estados 
-	
 
+	if (salud > 0) {
 
-	if (estados[0] == estados[1] && estados[2] == 0) {
-		if (velocidad.x < 0)
-			aceleracion.x = -45;
-		if (velocidad.x > 0)
-			aceleracion.x = 45;
+		if (estados[0] == estados[1] && estados[2] == 0) {
+			if (velocidad.x < 0)
+				aceleracion.x = -45;
+			if (velocidad.x > 0)
+				aceleracion.x = 45;
 
+		}
+		if (cae == true) {
+			aceleracion.y = 15;
+			cae = false;
+		}
+		if (estados[0] == 1 && estados[1] == 0 && estados[2] == 0)
+			velocidad.x = 8;
+		if (estados[0] == 0 && estados[1] == 1 && estados[2] == 0)
+			velocidad.x = -8;
 	}
-	if (cae == true) {
-		aceleracion.y = 15;
-		cae = false;
-	}
-	if (estados[0] == 1 && estados[1] == 0 && estados[2] == 0)
-		velocidad.x = 8;
-	if (estados[0] == 0 && estados[1] == 1 && estados[2] == 0)
-		velocidad.x = -8;
-
 	Run.loop();
 	Static.loop();
 	Distance.loop();

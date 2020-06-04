@@ -18,6 +18,8 @@ private:
 	SpriteSequence arrow;//lo pongo en ingles para no confundir
 	bool dir;
 public:
+	int Dañoataque; //Cuanto dañan o aportan al personaje, Daño<0, Vida>0
+	bool validacionAsignacion; //Indica cuando debe hacerse el daño o la vida por defecto false
 	Collision_Movil ImpactoFlecha;
 	Flecha();
 	Flecha(float posx, float posy, bool direccion_derecha); //cada vez que se llame a la función sera para disparar una flecha, se le pasa posición del hombre

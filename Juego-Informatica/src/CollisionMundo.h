@@ -15,4 +15,5 @@ public:
 	static bool Collision(Mortero& mor, ColliderMap pared);
 	static bool Collision(Mortero& obj, Personaje& per);
 	static bool Collision(Flecha& f, ColliderMap pared);
+	static bool Collision(ObjetoGeneral& obj, Flecha& f);
 };

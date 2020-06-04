@@ -5,7 +5,7 @@
 using ETSIDI::SpriteSequence;
 
 class Patrullero : public Enemigo {
-private:
+protected:
 	SpriteSequence Run;//sprite corriendo
 	SpriteSequence Die;//sprite para muerte
 	SpriteSequence Attack;//sprite catacando

@@ -141,6 +141,9 @@
     <ClCompile Include="src\BossFinal.cpp">
       <Filter>Archivos de origen\Personaje/Enemigo</Filter>
     </ClCompile>
+    <ClCompile Include="src\Coco_Dandee.cpp">
+      <Filter>Archivos de origen\Personaje/Enemigo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector2D.h">
@@ -219,6 +222,12 @@
       <Filter>Archivos de encabezado\Personaje/Enemigo\municion</Filter>
     </ClInclude>
     <ClInclude Include="src\BossFinal.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Coco_Dandee.h">
+      <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pinchos.h">
       <Filter>Archivos de encabezado\Personaje/Enemigo</Filter>
     </ClInclude>
   </ItemGroup>

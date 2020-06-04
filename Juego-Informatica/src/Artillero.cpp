@@ -1,10 +1,10 @@
 #include "Artillero.h"
 
 
-Artillero::Artillero() : atack("\Data_Game/Enemigo_Mortero/shot.png",3,1, 100), die("\Data_Game/Enemigo_Mortero/death.png", 10, 1, 100), statico("\Data_Game/Enemigo_Mortero/static.png", 2, 1, 250)
+Artillero::Artillero() : atack("\Data_Game/Enemigo_Mortero/shot.png", 3, 1, 100), die("\Data_Game/Enemigo_Mortero/death.png", 10, 1, 100), statico("\Data_Game/Enemigo_Mortero/static.png", 2, 1, 250)
 {
-	Collider.setTam(0.5, 0.5);
-	
+	Collider.setTam(1, 1);
+
 	ifArtillero = true;
 	atack.setSize(2, 2);
 	atack.setCenter(1, 1.4);
@@ -20,18 +20,18 @@ Artillero::Artillero() : atack("\Data_Game/Enemigo_Mortero/shot.png",3,1, 100), 
 
 }
 
-Artillero::Artillero(int x, int y): atack("\Data_Game/Enemigo_Mortero/shot.png", 3, 1, 100), die("\Data_Game/Enemigo_Mortero/death.png", 10, 1, 100), statico("\Data_Game/Enemigo_Mortero/static.png", 2, 1, 250)
+Artillero::Artillero(int x, int y) : atack("\Data_Game/Enemigo_Mortero/shot.png", 3, 1, 100), die("\Data_Game/Enemigo_Mortero/death.png", 10, 1, 100), statico("\Data_Game/Enemigo_Mortero/static.png", 2, 1, 250)
 {
-	Collider.setTam(0.5, 0.5);
+	Collider.setTam(1, 1);
 	posicion.x = x;
 	posicion.y = y;
 	ifArtillero = true;
 	atack.setSize(2, 2);
-	atack.setCenter(1, 1.4);
+	atack.setCenter(1, 1.2);
 	die.setSize(2, 2);
-	die.setCenter(1, 1.4);
+	die.setCenter(1, 1.2);
 	statico.setSize(2, 2);
-	statico.setCenter(1, 1.4);
+	statico.setCenter(1, 1.2);
 	estoy_disp = false;
 	endgame = 0;
 	contador_muerte = 0;
@@ -91,8 +91,8 @@ void Artillero::Mueve(float t)
 }
 
 void Artillero::Dibuja()
-{ 
-	
+{
+
 	estado_atq = atack.getState();
 	if (estado_atq == 9)
 		estoy_disp = false;
@@ -100,6 +100,7 @@ void Artillero::Dibuja()
 	glTranslated(posicion.x, posicion.y, 0);
 	//glColor3ub(255, 0, 0);
 	//glutSolidCube(1.3f);
+	//Collider.Dibuja();
 	if (estoy_disp == false && me_muero == false)
 		statico.draw();
 	if (estoy_disp == true && me_muero == false)
